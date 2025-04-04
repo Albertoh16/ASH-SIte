@@ -8,51 +8,28 @@
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">MyWebsite</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="bg-primary text-white text-center py-5">
-        <div class="container">
-            <h1>Welcome to My Bootstrap Website</h1>
-            <p class="lead">A simple responsive site using Bootstrap</p>
-            <a href="#about" class="btn btn-light btn-lg">Learn More</a>
-        </div>
-    </header>
-
-    <!-- About Section -->
-    <section id="about" class="container my-5">
-        <h2 class="text-center">About Me</h2>
-        <p class="text-center">I'm passionate about web development and love building projects with Bootstrap.</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="bg-light py-5">
-        <div class="container text-center">
-            <h2>Contact</h2>
-            <p>Email: myemail@example.com</p>
-            <p>Follow me on <a href="#">Twitter</a></p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2025 MyWebsite. All rights reserved.</p>
-    </footer>
+  <!-- Fixed Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">MySite</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
     <!-- Bootstrap JS -->
     <script src="node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
