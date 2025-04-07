@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ASH-Site/static/css/main.71ee8cba.css",
-    "main.js": "/ASH-Site/static/js/main.e4fda20f.js",
-    "static/media/Background.png": "/ASH-Site/static/media/Background.874086899fbc7223a4ca.png",
-    "static/media/Website Logo.png": "/ASH-Site/static/media/Website Logo.e1eb28d73f662da572de.png",
-    "index.html": "/ASH-Site/index.html",
-    "main.71ee8cba.css.map": "/ASH-Site/static/css/main.71ee8cba.css.map",
-    "main.e4fda20f.js.map": "/ASH-Site/static/js/main.e4fda20f.js.map"
+    "main.css": "/ASH-SIte/static/css/main.bb3e7e41.css",
+    "main.js": "/ASH-SIte/static/js/main.d0ce8bfd.js",
+    "static/media/Background.png": "/ASH-SIte/static/media/Background.874086899fbc7223a4ca.png",
+    "static/media/Website Logo.png": "/ASH-SIte/static/media/Website Logo.e1eb28d73f662da572de.png",
+    "index.html": "/ASH-SIte/index.html",
+    "main.bb3e7e41.css.map": "/ASH-SIte/static/css/main.bb3e7e41.css.map",
+    "main.d0ce8bfd.js.map": "/ASH-SIte/static/js/main.d0ce8bfd.js.map"
   },
   "entrypoints": [
-    "static/css/main.71ee8cba.css",
-    "static/js/main.e4fda20f.js"
+    "static/css/main.bb3e7e41.css",
+    "static/js/main.d0ce8bfd.js"
   ]
 }
