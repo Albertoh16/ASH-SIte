@@ -1,0 +1,91 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 2rem;
+    background-color: #1e2731;
+    position: relative;
+    z-index: 2;
+}
+
+/*
+- Has items displayed side-by-side
+- Pads the items according to their font size
+*/
+
+.brandImg{
+    height: 70px;
+    width: 140px;
+}
+
+.nav-menu{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    display: flex;
+    flex: 1;
+    height: 100%;
+}
+ul li{
+    background-color: #1e2731;
+    font-size: x-large;
+    list-style: none;
+    padding: 1rem;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    width: 250px;
+}
+
+ul li:hover{
+    background-color: #191d26;
+}
+
+.hamburger{
+    display: none;
+}
+
+.icon{
+    color: white;
+    cursor: pointer;
+    scale: 3;
+}
+
+/* .nav-icons{
+    scale: 1.5;
+    padding: 10px 0;
+    color: white;
+} */
+
+/*
+- Removes any list stylization
+- Pads the items according to their font size
+*/
+
+/*
+- Hides Nav Menu Toggle
+*/ 
+
+/* OVERRIDES STYLES ABOVE WHEN REACHING PIXEL THRESHOLD*/
+@media screen and (max-width:1100px){
+    /*Hides Nav Menu*/
+    .nav-menu{
+        display: none;
+    }
+
+
+    /* 
+    .nav-icons{
+        display: none;
+    } 
+    */
+
+    /*Reveals Nav Menu Toggle*/
+    .hamburger{
+        display: block;
+        flex: 1;
+        text-align: right;
+    }
+}

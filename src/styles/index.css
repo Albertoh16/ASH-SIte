@@ -1,0 +1,142 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: #12151c;
+}
+
+body::after{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("../assets/Background.png");
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fadeInBackground 1s ease-in forwards;
+    animation-delay: 2.2s;
+    z-index: -1;  
+    
+}
+
+h1{
+    color: white;
+    font-size: 4rem;
+    padding-top: 10px;
+}
+
+h2{
+    color: white;
+    font-size: 2rem;
+}
+
+.container{
+    max-width: 1240px;
+    margin: auto;
+    padding: 0 1rem;
+} 
+
+.fakeout{
+    z-index: 0;
+    text-align: center;
+    padding: 350px 0;
+}
+
+.HW{
+    text-align: center;
+    background-color: #12151cbd;
+    animation: fadeOut 0.5s ease-in-out 2.2s forwards;;
+}
+
+.greeting{
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.nah{
+    opacity: 0;
+    list-style: none;
+    animation: fadeIn 1s ease-out 0.8s forwards,
+               fadeOut 0.5s ease-in-out 2.2s forwards;
+}
+
+.jk{
+    opacity: 0;
+    padding-left: 15px;
+    list-style: none;
+    animation: fadeIn 1s ease-out 1.5s forwards,
+               fadeOut 0.5s ease-in-out 2.2s forwards;
+}
+
+.welcome{
+    z-index: 1;
+    top: 595px;
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    width: 100%;
+    font-size: 3.5rem;
+    background-color: #12151cbd;
+    animation: fadeIn 1s ease-out 2.2s forwards,
+    moveUp 0.7s ease-in-out 2.2s forwards;
+}
+
+.containers{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.mainBox{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
+    width: 1500px;
+    height: 1000px;
+    border: 15px solid #12151c;
+    background-color: #12151cbd;
+    border-radius: 8px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; }
+}
+
+@keyframes fadeInBackground {
+    to {
+      opacity: 0.4;
+    }
+}
+
+@keyframes moveUp {
+    to { top: 80px; }
+  }
+
+@media screen and (max-width: 940px){
+    h1{
+        font-size: 2.5rem;
+    }
+    
+    h2{
+        font-size: 1.5rem;
+    }
+}
