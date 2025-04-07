@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import Navbar from './components/navbar/Navbar';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './styles/index.css'
 
