@@ -4,8 +4,8 @@ import React from 'react';
 import {HiOutlineMenuAlt4} from 'react-icons/hi'
 import { useNavigate } from 'react-router-dom';
 
-import '../../styles/NavbarStyles.css'
-import logo from '../../assets/Website Logo.png';
+import '../styles/NavbarStyles.css'
+import logo from '../assets/Website Logo.png';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -18,8 +18,7 @@ function Navbar() {
     <div className="navbar">
       <img src={logo} alt="logo" className='brandImg'/>
       <ul className="nav-menu">
-      <li onClick={() => handleClick('/')}>HOME</li>
-        <li onClick={() => handleClick('/about')}>ABOUT ME</li>
+        <li onClick={() => handleClick('/')}>HOME</li>
         <li onClick={() => handleClick('/experience')}>MY EXPERIENCE</li>
         <li onClick={() => handleClick('/projects')}>MY PROJECTS</li>
       </ul>

@@ -5,8 +5,9 @@
     height: 80px;
     padding: 0 2rem;
     background-color: #1e2731;
-    position: relative;
+    position: fixed;
     z-index: 2;
+    width: 100%;
 }
 
 /*
@@ -28,19 +29,22 @@
     flex: 1;
     height: 100%;
 }
+
 ul li{
+    z-index: 2;
     background-color: #1e2731;
-    font-size: x-large;
+    font-size: 30px;
     list-style: none;
     padding: 1rem;
+    margin-left: 1rem;
     color: white;
-    cursor: pointer;
     text-align: center;
-    width: 250px;
+    width: auto;
 }
 
 ul li:hover{
     background-color: #191d26;
+    cursor: pointer;
 }
 
 .hamburger{

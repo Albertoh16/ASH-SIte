@@ -1,11 +1,6 @@
-import React, { useRef } from 'react';
-import Navbar from './components/navbar/Navbar';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-
-import './styles/index.css'
-
+import Navbar from './components/Navbar';
 import Home from './index';
-import AboutPage from './pages/about';
 import ExperiencePage from './pages/experience';
 import ProjectsPage from './pages/projects';
 
@@ -15,7 +10,6 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutPage />} />
         <Route path="/experience" element={<ExperiencePage />} />
         <Route path="/projects" element={<ProjectsPage />} />
       </Routes>
