@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/ASH-SIte/static/css/main.bb3e7e41.css",
-    "main.js": "/ASH-SIte/static/js/main.085eb81e.js",
-    "static/media/Background.png": "/ASH-SIte/static/media/Background.874086899fbc7223a4ca.png",
+    "main.css": "/ASH-SIte/static/css/main.66008a27.css",
+    "main.js": "/ASH-SIte/static/js/main.8c636042.js",
+    "static/media/Background.png": "/ASH-SIte/static/media/Background.bd08f27ba6b626fd5784.png",
+    "static/media/TeamPicture.jpg": "/ASH-SIte/static/media/TeamPicture.ec8afd0e4b170464f207.jpg",
+    "static/media/ProfessionalPic.jpg": "/ASH-SIte/static/media/ProfessionalPic.4b7bb0978bc7f665d045.jpg",
     "static/media/Website Logo.png": "/ASH-SIte/static/media/Website Logo.e1eb28d73f662da572de.png",
     "index.html": "/ASH-SIte/index.html",
-    "main.bb3e7e41.css.map": "/ASH-SIte/static/css/main.bb3e7e41.css.map",
-    "main.085eb81e.js.map": "/ASH-SIte/static/js/main.085eb81e.js.map"
+    "main.66008a27.css.map": "/ASH-SIte/static/css/main.66008a27.css.map",
+    "main.8c636042.js.map": "/ASH-SIte/static/js/main.8c636042.js.map"
   },
   "entrypoints": [
-    "static/css/main.bb3e7e41.css",
-    "static/js/main.085eb81e.js"
+    "static/css/main.66008a27.css",
+    "static/js/main.8c636042.js"
   ]
 }
