@@ -1,7 +1,8 @@
+/* This is all the stylings for the home page */
+
 *{
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
 }
 
 body{
@@ -37,34 +38,12 @@ h2{
     font-size: 2rem;
 }
 
-.window{
-    display: flex;
-    opacity: 0;
-    z-index: 1;
+.fakeout{
     position: absolute;
-    top: 80px;
-    width: 100%;
-    height: 550px;
-    background-color: #12151cad;
-    animation: fadeIn 0.5s ease-in 2s forwards;
-}
-
-.mc{
-
-    position: relative;
     z-index: 1;
-    top: 363px;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 1200px;
-    background-color: #12151c;
-}
-
-.fakeout{
-    position: relative;
-    z-index: 1;
+    transform: translate(-50%, 100px);
     text-align: center;
     padding: 350px 0;
 }
@@ -98,21 +77,137 @@ h2{
 
 .welcome{
     z-index: 1;
-    top: 500px;
+    top: 600px;
     position: absolute;
     text-align: center;
     opacity: 0;
     width: 100%;
     font-size: 5rem;
-    animation: fadeIn 1s ease-out 2.2s forwards,
-    moveUp 0.7s ease-in-out 2.2s forwards;
+    animation: fadeIn 0.9s ease-out 2.2s forwards,
+    moveUp 0.7s ease-in-out 2.3s forwards;
 }
+
+.window{
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    height: 550px;
+    background-color: #12151cad;
+    animation: fadeIn 1s ease-in 2.1s forwards;
+}
+
+.mainContainer{
+    opacity: 0;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 2680px;
+    top: 630px;
+    background-color: #0f1218;
+    margin-bottom: 100px;
+    animation: fadeIn 0.4s ease-out 2.05s forwards
+}
+
+.contextSection{
+    flex-direction: column;
+    align-items: center;
+    width: 1700px;
+    height: 2200px;
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 100px);
+    background-color: #090a0ea2;
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+.divider{
+    background-color: #531516;
+    position: relative;
+    width: 100%;
+    height: 20px;
+}
+
+#dividerOne{
+    margin-top: -1950px;
+}
+
+#dividerTwo{
+    top: 750px;
+}
+
+#dividerThree{
+    top: 1500px;
+}
+
+.textContainer{
+    float: left;
+    box-sizing: border-box;
+    position: absolute;
+    left: 5%;
+    border-radius: 20px;
+    width: 55%;
+    color: #bd2427;
+    font-size: 29px;
+    text-align: center;
+}
+
+.imgContainer{
+    background-color: #192029;
+    position: absolute;
+    float: right;
+    right: 5%;
+}
+
+#selfPortrait{
+    height: 495px;
+    top: 70px;
+}
+
+#teamImg{
+    height: 400px;
+    top: 130px;
+}
+
+#logoImg{
+    height: 249px;
+    top: 170px;
+}
+
+#who{
+    height: 430px;
+    top: 105px;
+}
+
+#why{
+    height: 510px;
+    top: 70px;
+}
+
+#what{
+    height: 300px;
+    top: 140px;
+}
+
+strong{
+    color: #bd2427;
+    background-color: #090a0e8c;
+    font-size: 45px;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -70px);
+}
+
 
 @keyframes fadeIn {
-    to { opacity: 1; }
-}
-
-@keyframes toggle {
     to { opacity: 1; }
 }
 
@@ -123,6 +218,48 @@ h2{
 @keyframes moveUp {
     to { top: 285px; }
   }
+
+
+@media screen and (max-width: 1920px){
+    .contextSection{
+        width: 1200px;
+    }   
+
+    .textContainer{
+        width: 52%;
+        font-size: 23px;
+    }
+    
+    #selfPortrait{
+        height: 400px;
+        top: 120px;
+    }
+    
+    #teamImg{
+        height: 320px;
+        top: 170px;
+    }
+    
+    #logoImg{
+        height: 200px;
+        top: 170px;
+    }
+    
+    #who{
+        height: 430px;
+        top: 117px;
+    }
+    
+    #why{
+        height: 510px;
+        top: 80px;
+    }
+    
+    #what{
+        height: 300px;
+        top: 165px;
+    }
+}
 
 @media screen and (max-width: 940px){
     h1{

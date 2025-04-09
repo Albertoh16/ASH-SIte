@@ -4,7 +4,7 @@
     justify-content: space-between;
     height: 80px;
     padding: 0 2rem;
-    background-color: #1e2731;
+    background-color: #1a222b;
     position: fixed;
     z-index: 2;
     width: 100%;
@@ -32,7 +32,7 @@
 
 ul li{
     z-index: 2;
-    background-color: #1e2731;
+    background-color: #1a222b;
     font-size: 30px;
     list-style: none;
     padding: 1rem;
@@ -43,7 +43,7 @@ ul li{
 }
 
 ul li:hover{
-    background-color: #191d26;
+    background-color: #14171f;
     cursor: pointer;
 }
 
@@ -57,17 +57,6 @@ ul li:hover{
     scale: 3;
 }
 
-/* .nav-icons{
-    scale: 1.5;
-    padding: 10px 0;
-    color: white;
-} */
-
-/*
-- Removes any list stylization
-- Pads the items according to their font size
-*/
-
 /*
 - Hides Nav Menu Toggle
 */ 
@@ -78,13 +67,6 @@ ul li:hover{
     .nav-menu{
         display: none;
     }
-
-
-    /* 
-    .nav-icons{
-        display: none;
-    } 
-    */
 
     /*Reveals Nav Menu Toggle*/
     .hamburger{
