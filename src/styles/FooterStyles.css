@@ -9,7 +9,6 @@
 }
 
 .footerContainer{
-    background-color: crimson;
     height: 200px;
     width: 1850px;
     position: relative;
@@ -25,24 +24,19 @@
     width: 550px;
     top: 8%;
     left: 5%;
-}
-
-#division1{
-    background-color: blueviolet;
-}
-
-#division2{
-    background-color: rgb(195, 226, 43);
-}
-
-#division3{
-    background-color: rgb(4, 255, 0);
+    text-align: center;
 }
 
 .divisionTitle{
-    text-align: center;
-    text-decoration: underline;
-    color: white;
-    font-size: 25px;
+    color: #bd2427;
+    font-size: 28px;
     margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.linkTxt{
+    color: white;
+    margin-top: 15px;
+    font-size: 21px;
+    display: block;
 }
