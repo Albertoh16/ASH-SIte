@@ -5,17 +5,17 @@
     width: 100%;
     bottom: 0px;
     position: relative; 
-    top: 100%; 
+    top: 75%; 
+    display: inline-block;
 }
 
 .footerContainer{
     height: 200px;
     width: 1850px;
-    position: relative;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -147%);
+    position: sticky;
     display: flex;
+    margin-top: 25px;
+    margin-left: 25px;
 }
 
 .footerDivision{
@@ -25,6 +25,9 @@
     top: 8%;
     left: 5%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .divisionTitle{
@@ -36,7 +39,8 @@
 
 .linkTxt{
     color: white;
-    margin-top: 15px;
-    font-size: 21px;
-    display: block;
+    width: fit-content;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 10px;
 }
