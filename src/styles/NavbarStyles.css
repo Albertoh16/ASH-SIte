@@ -6,7 +6,7 @@
     padding: 0 2rem;
     background-color: #1a222b;
     position: fixed;
-    z-index: 2;
+    z-index: 10;
     width: 100%;
 }
 
@@ -23,7 +23,7 @@
 .nav-menu{
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-56%);
     list-style: none;
     display: flex;
     flex: 1;
@@ -39,7 +39,7 @@ ul li{
     margin-left: 1rem;
     color: white;
     text-align: center;
-    width: auto;
+    width: 300px;
 }
 
 ul li:hover{
