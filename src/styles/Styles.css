@@ -279,6 +279,10 @@ strong{
         width: 1200px;
     }   
 
+    .mainContainer{
+        height: 636px;
+    }
+
     .subjectContainer{
         width: 1200px;
     }
@@ -326,10 +330,163 @@ strong{
 
 @media screen and (max-width: 940px){
     h1{
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
     
     h2{
         font-size: 1.5rem;
     }
+
+    .fakeout{
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, 340px);
+        text-align: center;
+    }
+
+    .nah{
+        font-size: 28px;
+        transform: translate(0px, -30px);
+        list-style: none;
+        animation: fadeIn 1s ease-out 0.8s forwards,
+                   fadeOut 0.5s ease-in-out 2.2s forwards;
+    }
+    
+    .jk{
+        font-size: 28px;
+        transform: translate(0px, -30px);
+        list-style: none;
+        animation: fadeIn 1s ease-out 1.5s forwards,
+                   fadeOut 0.5s ease-in-out 2.2s forwards;
+    }
+
+    .welcome{
+        font-size: 2rem;
+        top: 430px;
+    }
+
+    .window{
+        top: 80px;
+        width: 100%;
+        height: 260px;
+    }
+
+    .largeCollage{
+        height: 250px;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, 80px);
+        filter: blur(6px);
+        animation: fadeIn 0.7s ease-in 2.4s forwards;
+    }
+
+    .subjectContainer{
+        width: 440px;
+        height: 40px;
+    }
+
+    strong{
+        font-size: 17px;
+        transform: translate(-50%, 6px);
+    }
+
+    .arrow{
+        right: 10px;
+        top: 5px;
+        font-size: 32px;
+    }
+
+    #aboutMe{
+        transform: translate(-50%, 370px);
+    }
+    
+    #aboutSite{
+        transform: translate(-50%, 380px);
+    }
+    
+    #aboutCS{
+        transform: translate(-50%, 390px);
+    }
+    
+    #aboutLogo{
+        transform: translate(-50%, 400px);
+        margin-bottom: -320px;
+    }
+
+    .contextSection{
+        width: 440px;
+        margin-top: 0;
+        margin-bottom: -20px;
+    }
+
+    #AM{
+        height: 260px;
+        transform: translate(-50%, 340px);
+    }
+    
+    #AS{
+        height: 235px;
+        transform: translate(-50%, 340px);
+    }
+    
+    #ACS{
+        height: 275px;
+        transform: translate(-50%, 350px);
+    }
+    
+    #AL{
+        height: 180px;
+        transform: translate(-50%, 370px);
+        margin-bottom: -100px;
+    }
+    
+    #who{
+        font-size: 10px;
+        height: 175px;
+        top: 35px;
+    }
+    
+    #selfPortrait{
+        height: 130px;
+        top: 80px;
+    }
+    
+    #what{
+        font-size: 10px;
+        height: 300px;
+        top: 50px;
+    }
+    
+    #journeyImg{
+        height: 105px;
+        top: 85px;
+    }
+    
+    #why{
+        font-size: 9px;
+        height: 485px;
+        top: 50px;
+    }
+    
+    #teamImg{
+        height: 100px;
+        top: 107px;
+    }
+    
+    #where{
+        font-size: 10px;
+        height: 220px;
+        top: 45px;
+    }
+    
+    #logoImg{
+        height: 70px;
+        top: 75px;
+    }
+
+    @keyframes moveUp {
+        to { top: 150px; }
+      }
 }

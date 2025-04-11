@@ -44,3 +44,38 @@
     margin-top: 0;
     margin-bottom: 10px;
 }
+
+@media screen and (max-width: 940px){
+    .footer{
+        height: 150px;
+        top: 140%; 
+    }
+
+    .footerContainer{
+        background-color: #09ff00;
+        height: 100px;
+        width: 440px;
+        margin-top: 25px;
+        margin-left: 25px;
+    }
+
+    .footerDivision{
+        background-color: blueviolet;
+        height: 80px;
+        width: 132px;
+        top: 10%;
+        left: 5%;
+    }
+
+    .divisionTitle{
+        font-size: 16px;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    
+    .linkTxt{
+        font-size: 7px;
+        margin-top: -5px;
+        margin-bottom: 10px;
+    }
+}
