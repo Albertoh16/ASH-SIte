@@ -330,7 +330,7 @@ strong{
 
 @media screen and (max-width: 940px){
     h1{
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
     
     h2{
@@ -342,54 +342,55 @@ strong{
         z-index: 1;
         left: 50%;
         margin-right: -50%;
-        transform: translate(-50%, 340px);
+        transform: translate(-50%, 200px);
         text-align: center;
     }
 
     .nah{
-        font-size: 28px;
-        transform: translate(0px, -30px);
+        font-size: 24px;
+        transform: translate(0px, -20px);
         list-style: none;
         animation: fadeIn 1s ease-out 0.8s forwards,
                    fadeOut 0.5s ease-in-out 2.2s forwards;
     }
     
     .jk{
-        font-size: 28px;
-        transform: translate(0px, -30px);
+        padding-left: 9px;
+        font-size: 24px;
+        transform: translate(0px, -20px);
         list-style: none;
         animation: fadeIn 1s ease-out 1.5s forwards,
                    fadeOut 0.5s ease-in-out 2.2s forwards;
     }
 
     .welcome{
-        font-size: 2rem;
-        top: 430px;
+        font-size: 1.5rem;
+        top: 290px;
     }
 
     .window{
         top: 80px;
         width: 100%;
-        height: 260px;
+        height: 150px;
     }
 
     .largeCollage{
-        height: 250px;
+        height: 200px;
         left: 50%;
         margin-right: -50%;
-        transform: translate(-50%, 80px);
+        transform: translate(-50%, 20px);
         filter: blur(6px);
         animation: fadeIn 0.7s ease-in 2.4s forwards;
     }
 
     .subjectContainer{
-        width: 440px;
+        width: 350px;
         height: 40px;
     }
 
     strong{
-        font-size: 17px;
-        transform: translate(-50%, 6px);
+        font-size: 14px;
+        transform: translate(-50%, 10px);
     }
 
     .arrow{
@@ -399,80 +400,80 @@ strong{
     }
 
     #aboutMe{
-        transform: translate(-50%, 370px);
+        transform: translate(-50%, 280px);
     }
     
     #aboutSite{
-        transform: translate(-50%, 380px);
+        transform: translate(-50%, 300px);
     }
     
     #aboutCS{
-        transform: translate(-50%, 390px);
+        transform: translate(-50%, 320px);
     }
     
     #aboutLogo{
-        transform: translate(-50%, 400px);
+        transform: translate(-50%, 340px);
         margin-bottom: -320px;
     }
 
     .contextSection{
-        width: 440px;
+        width: 350px;
         margin-top: 0;
         margin-bottom: -20px;
     }
 
     #AM{
-        height: 260px;
-        transform: translate(-50%, 340px);
+        height: 200px;
+        transform: translate(-50%, 240px);
     }
     
     #AS{
-        height: 235px;
-        transform: translate(-50%, 340px);
+        height: 170px;
+        transform: translate(-50%, 260px);
     }
     
     #ACS{
-        height: 275px;
-        transform: translate(-50%, 350px);
+        height: 232px;
+        transform: translate(-50%, 280px);
     }
     
     #AL{
         height: 180px;
-        transform: translate(-50%, 370px);
+        transform: translate(-50%, 300px);
         margin-bottom: -100px;
     }
     
     #who{
-        font-size: 10px;
+        font-size: 7px;
         height: 175px;
-        top: 35px;
+        top: 55px;
     }
     
     #selfPortrait{
-        height: 130px;
-        top: 80px;
+        height: 100px;
+        top: 70px;
     }
     
     #what{
-        font-size: 10px;
+        font-size: 7px;
         height: 300px;
         top: 50px;
     }
     
     #journeyImg{
-        height: 105px;
-        top: 85px;
+        height: 85px;
+        top: 65px;
     }
     
     #why{
-        font-size: 9px;
+        font-size: 7px;
         height: 485px;
         top: 50px;
     }
     
     #teamImg{
-        height: 100px;
-        top: 107px;
+        height: 85px;
+        top: 88px;
     }
     
     #where{
@@ -487,6 +488,6 @@ strong{
     }
 
     @keyframes moveUp {
-        to { top: 150px; }
+        to { top: 110px; }
       }
 }
