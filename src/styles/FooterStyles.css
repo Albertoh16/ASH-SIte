@@ -45,6 +45,19 @@
     margin-bottom: 10px;
 }
 
+@media screen and (max-width: 1920px){
+    /* .footer{
+        height: 250px;
+        background-color: #1a222b;
+        z-index: 2;
+        width: 100%;
+        bottom: 0px;
+        position: relative; 
+        top: 350%; 
+        display: inline-block;
+    } */
+}
+
 @media screen and (max-width: 940px){
     .footer{
         height: 150px;
