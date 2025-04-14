@@ -1,0 +1,493 @@
+/* This is all the stylings for the home page */
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: #12151c;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* body::after{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url("../assets/Background.png");
+    filter: blur(5px);
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in 2.2s forwards;
+    z-index: -1;  
+} */
+
+h1{
+    color: white;
+    font-size: 4rem;
+    padding-top: 10px;
+}
+
+h2{
+    color: white;
+    font-size: 2rem;
+}
+
+.fakeout{
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 340px);
+    text-align: center;
+}
+
+.HW{
+    text-align: center;
+    animation: fadeOut 0.5s ease-in-out 2.2s forwards;;
+}
+
+.greeting{
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.nah{
+    opacity: 0;
+    transform: translate(0px, -50px);
+    list-style: none;
+    animation: fadeIn 1s ease-out 0.8s forwards,
+               fadeOut 0.5s ease-in-out 2.2s forwards;
+}
+
+.jk{
+    opacity: 0;
+    transform: translate(0px, -50px);
+    padding-left: 15px;
+    list-style: none;
+    animation: fadeIn 1s ease-out 1.5s forwards,
+               fadeOut 0.5s ease-in-out 2.2s forwards;
+}
+
+.welcome{
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+    z-index: 2;
+    top: 460px;
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    width: 100%;
+    font-size: 5rem;
+    animation: fadeIn 1s ease-out 2s forwards,
+    moveUp 0.7s ease-in-out 2.4s forwards;
+}
+
+.largeCollage{
+    opacity: 0;
+    position: absolute;
+    height: 790px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -170px);
+    filter: blur(6px);
+    animation: fadeIn 0.7s ease-in 2.4s forwards;
+}
+
+.window{
+    opacity: 0;
+    z-index: 2;
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    height: 550px;
+    background-color: #12151c6c;
+    animation: fadeIn 0.7s ease-in 2.4s forwards;
+}
+
+.mainContainer{
+    opacity: 0;
+    width: 100%;
+    height: 1150px;
+    animation: fadeIn 0.7s ease-out 2.4s forwards;
+}
+
+.subjectContainer{
+    height: 80px;
+    width: 1400px;
+    position: relative;
+    left: 50%;
+    margin-right: -50%;
+    background-color: #090c0f;
+    cursor: pointer;
+    user-select: none;
+    z-index: 3;
+}
+
+#aboutMe{
+    transform: translate(-50%, 700px);
+}
+
+#aboutSite{
+    transform: translate(-50%, 720px);
+}
+
+#aboutCS{
+    transform: translate(-50%, 740px);
+}
+
+#aboutLogo{
+    transform: translate(-50%, 760px);
+    margin-bottom: -320px;
+}
+
+.arrow{
+    float: right;
+    position: relative;
+    right: 10px;
+    color: #531516;
+    font-size: 80px;
+}
+
+.contextSection{
+    flex-direction: column;
+    align-items: center;
+    width: 1400px;
+    position: relative;
+    left: 50%;
+    margin-right: -50%;
+    background-color: #0c0d13;
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+    z-index: 1;
+    margin-bottom: -80px;
+}
+
+.textContainer{
+    float: left;
+    box-sizing: border-box;
+    position: absolute;
+    left: 5%;
+    border-radius: 20px;
+    width: 55%;
+    color: #bd2427;
+    font-size: 25px;
+    text-align: center;
+}
+
+.imgContainer{
+    background-color: #192029;
+    position: absolute;
+    float: right;
+    right: 5%;
+}
+
+#AM{
+    height: 600px;
+    transform: translate(-50%, 620px);
+}
+
+#AS{
+    height: 550px;
+    transform: translate(-50%, 640px);
+}
+
+#ACS{
+    height: 700px;
+    transform: translate(-50%, 660px);
+}
+
+#AL{
+    height: 500px;
+    transform: translate(-50%, 680px);
+    margin-bottom: -100px;
+}
+
+#who{
+    height: 375px;
+    top: 125px;
+}
+
+#selfPortrait{
+    height: 400px;
+    top: 135px;
+}
+
+#what{
+    height: 300px;
+    top: 130px;
+}
+
+#journeyImg{
+    height: 350px;
+    top: 130px;
+}
+
+#why{
+    height: 485px;
+    top: 105px;
+}
+
+#teamImg{
+    height: 350px;
+    top: 200px;
+}
+
+#where{
+    height: 220px;
+    top: 145px;
+}
+
+#logoImg{
+    height: 220px;
+    top: 170px;
+}
+
+strong{
+    color: #bd2427;
+    font-size: 45px;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 6px);
+}
+
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; }
+}
+
+@keyframes moveUp {
+    to { top: 200px; }
+  }
+
+
+@media screen and (max-width: 1920px){
+    .contextSection{
+        width: 1200px;
+    }   
+
+    .mainContainer{
+        height: 1100px;
+    }
+
+    .subjectContainer{
+        width: 1200px;
+    }
+
+    #who{
+        font-size: 23px;
+        top: 125px;
+    }
+    
+    #selfPortrait{
+        height: 350px;
+        top: 160px;
+    }
+    
+    #what{
+        font-size: 23px;
+        top: 135px;
+    }
+    
+    #journeyImg{
+        height: 300px;
+        top: 160px;
+    }
+    
+    #why{
+        font-size: 23px;
+        top: 120px;
+    }
+    
+    #teamImg{
+        height: 300px;
+        top: 230px;
+    }
+    
+    #where{
+        font-size: 23px;
+        top: 160px;
+    }
+    
+    #logoImg{
+        height: 190px;
+        top: 190px;
+    }
+}
+
+@media screen and (max-width: 940px){
+    h1{
+        font-size: 1.8rem;
+    }
+    
+    h2{
+        font-size: 1.5rem;
+    }
+
+    .fakeout{
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, 200px);
+        text-align: center;
+    }
+
+    .nah{
+        font-size: 24px;
+        transform: translate(0px, -20px);
+        list-style: none;
+        animation: fadeIn 1s ease-out 0.8s forwards,
+                   fadeOut 0.5s ease-in-out 2.2s forwards;
+    }
+    
+    .jk{
+        padding-left: 9px;
+        font-size: 24px;
+        transform: translate(0px, -20px);
+        list-style: none;
+        animation: fadeIn 1s ease-out 1.5s forwards,
+                   fadeOut 0.5s ease-in-out 2.2s forwards;
+    }
+
+    .welcome{
+        font-size: 1.5rem;
+        top: 290px;
+    }
+
+    .window{
+        top: 80px;
+        width: 100%;
+        height: 150px;
+    }
+
+    .largeCollage{
+        height: 200px;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, 20px);
+        filter: blur(6px);
+        animation: fadeIn 0.7s ease-in 2.4s forwards;
+    }
+
+    .subjectContainer{
+        width: 350px;
+        height: 40px;
+    }
+
+    strong{
+        font-size: 14px;
+        transform: translate(-50%, 10px);
+    }
+
+    .arrow{
+        right: 10px;
+        top: 5px;
+        font-size: 32px;
+    }
+
+    #aboutMe{
+        transform: translate(-50%, 280px);
+    }
+    
+    #aboutSite{
+        transform: translate(-50%, 300px);
+    }
+    
+    #aboutCS{
+        transform: translate(-50%, 320px);
+    }
+    
+    #aboutLogo{
+        transform: translate(-50%, 340px);
+        margin-bottom: -320px;
+    }
+
+    .contextSection{
+        width: 350px;
+        margin-top: 0;
+        margin-bottom: -20px;
+    }
+
+    #AM{
+        height: 200px;
+        transform: translate(-50%, 240px);
+    }
+    
+    #AS{
+        height: 170px;
+        transform: translate(-50%, 260px);
+    }
+    
+    #ACS{
+        height: 232px;
+        transform: translate(-50%, 280px);
+    }
+    
+    #AL{
+        height: 180px;
+        transform: translate(-50%, 300px);
+        margin-bottom: -100px;
+    }
+    
+    #who{
+        font-size: 7px;
+        height: 175px;
+        top: 55px;
+    }
+    
+    #selfPortrait{
+        height: 100px;
+        top: 70px;
+    }
+    
+    #what{
+        font-size: 7px;
+        height: 300px;
+        top: 50px;
+    }
+    
+    #journeyImg{
+        height: 85px;
+        top: 65px;
+    }
+    
+    #why{
+        font-size: 7px;
+        height: 485px;
+        top: 50px;
+    }
+    
+    #teamImg{
+        height: 85px;
+        top: 88px;
+    }
+    
+    #where{
+        font-size: 10px;
+        height: 220px;
+        top: 45px;
+    }
+    
+    #logoImg{
+        height: 70px;
+        top: 75px;
+    }
+
+    @keyframes moveUp {
+        to { top: 110px; }
+      }
+}
