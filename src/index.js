@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import './styles/Styles.css'
+import { useState } from 'react';
 import Footer from './components/Footer';
 import portrait from './assets/ProfessionalPic.jpg'
 import logoImage from './assets/Website Logo.png'
 import teamPic from './assets/TeamPicture.jpg'
 import smallCollage from './assets/smallCollage.png'
-import largeCollage from './assets/largeCollage.png'
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
-import { useState } from 'react';
 import Navbar from './components/Navbar';
+import largeCollage from './assets/largeCollage.png'
+
+import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,79 +25,175 @@ function Index(){
     const [opened2, open2] = useState(false);
     const [opened3, open3] = useState(false);
     const [opened4, open4] = useState(false);
-    
+
     return(
         <div>
             <title>ASH</title>
             <link rel="shortcut icon" type= 'image/png' href="assets/favicon.png" />
-            <div className='fakeout'>
-                <h1 className='HW'>&lt;h1&gt;HELLO WORLD!&lt;/h1&gt;</h1>
-                <div className='greeting'>
-                    <li className='nah'>Nah,</li>
-                    <li className='jk'>just kidding.</li>
-                </div>
+            
+            <body className='-z-50 bg-mainTwo'></body>
+
+            {/* Main Image Container */}
+            <div className='-z-40 bg-orange-400 w-full absolute 
+            h-48 top-20 min-w-[480px]'>
+
+                {/* Large Collage */}
+                <img src={largeCollage} alt="port" className='h-full blur-sm w-full opacity-0 animate-fadeIn2'/>   
             </div>
 
-            <Navbar />
+            {/* Window */}
+            <div className='-z-30 bg-window text-white w-full text-center font-bold absolute 
+            h-48 top-20 text-3xl min-w-[480px]'>
 
-            <h2 className='welcome'>Welcome to my website!</h2>
+                {/* Fakout Container */}
+                <div className='-z-20 text-white list-none text-center 
+                text-2xl'>
+
+                    {/* Hello World Text */}
+                    <h1 className=' animate-fadeOut2 aboslute 
+                    translate-y-[40%]'>
+                     
+                        &lt;h1&gt;HELLO WORLD!&lt;/h1&gt;
+                    </h1>
+                    
+                    {/* Fakeout Container */}
+                    <div className='flex justify-center 
+                    mt-[3%]'>
+                        
+                        <li className=' opacity-0 animate-fadeIn08out2'>Nah,</li>
+                        <li className=' opacity-0 ml-2 animate-fadeIn15out2'>just kidding.</li>
+                    </div>
+                </div>
+                
+                {/* Welcome Text */}
+                <div className='-z-20 opacity-0 animate-fadeIn2 w-full absolute 
+                top-1/2 left-1/2 translate-y-[-70%] -translate-x-1/2'>
+                    
+                    Welcome to my website!
+                </div>
             
-            <div class="mainContainer">
-                <div className='window'></div>
-                <img src={largeCollage} alt="port" className='largeCollage'/>   
+            </div>
+            
+            {/* Main Container */}
+            <div class="-z-40 bg-amber-500 w-full absolute flex flex-col 
+            h-400px top-[272px] min-w-[480px]">
+                
+                {/* About Me Subject Container */}
+                <div onClick={() => open(prev => !prev)} class="-z-10 bg-lime-500 font-bold text-mainRed 
+                h-16 w-[90%] min-h-16 ml-[5%] mb-4 mt-4">
 
-                <div onClick={() => open(prev => !prev)} class="subjectContainer" id='aboutMe'>
-                    <strong>"Who are you?"</strong>
+                    {/* Inner Subject Container */}
+                    <div className='relative text-center 
+                    text-[21px]'>
+                
+                        {/* Subject Title */}
+                        <div className='mt-[15px]'>"Who are you?"</div>
 
-                    {opened ? <FaArrowUp className="arrow" /> : <FaArrowDown className="arrow" />}
+                        {/* Subject Container Arrow */}
+                        {opened ? <FaArrowUp className="absolute float-right right-2 text-4xl top-0" /> : 
+                                <FaArrowDown className="absolute float-right right-2 text-4xl top-0" />}
+
+                    </div>
                 </div>
 
                 {opened && (
-                    <div className='contextSection' id='AM'>
-                        <h3 class="textContainer" id='who'>
+
+                    // About Me Subject Context Section
+                    <div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center
+                    w-[90%] h-[670px] ml-[5%] mb-[30px] mt-[-80px]'>
+
+                        {/* Self Portrait Image */}
+                        <img src={portrait} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
+                        h-[200px] w-[200px] top-[80px]'/>      
+                        
+                        {/* "Who Am I" Text Container */}
+                        <div class="bg-sky-400 text-center font-semibold 
+                        w-[90%] text-[1.2rem] ml-[5%] mt-[95px] mb-[14px]">
+
                             My name is Alberto Hernandez, I'm currently a senior in FIU studying for my Bachelor's in Computer Science (CS).
                             While doing my studies, i've made it my mission to dip my thumbs in all sorts of fields relating to tech. Whether 
                             it be software engineering, systems programming, or even my greatest passion, directing, and 
                             engineering, video games! So far it's been a very busy, yet enlightning experience getting to understand such a wide
                             variety of intricacies and I only plan on continuing to span on as much knowledge the CS field has to offer!
-                        </h3>
                         
-                        <img src={portrait} alt="port" className='imgContainer' id='selfPortrait'/>                        
+                        </div>
+            
                     </div>
                 )}
 
-                <div onClick={() => open2(prev => !prev)} class="subjectContainer" id='aboutSite'>
-                    <strong>"What's the point of this website?"</strong>
+                {/* About Site Subject Container */}
+                <div onClick={() => open2(prev => !prev)} class="-z-10 bg-lime-500 font-bold text-mainRed 
+                h-16 w-[90%] min-h-16 ml-[5%] mb-4">
 
-                    {opened2 ? <FaArrowUp className="arrow" /> : <FaArrowDown className="arrow" />}
-                    
+                    {/* Inner Subject Container */}
+                    <div className='relative text-center 
+                    text-[21px]'>
+
+                        <div className='mt-[15px]'>"What's the point of this website?"</div>
+
+                        {/* Subject Container Arrow */}
+                        {opened2 ? <FaArrowUp className="absolute float-right right-2 text-4xl top-0" /> : 
+                                <FaArrowDown className="absolute float-right right-2 text-4xl top-0" />}
+
+                    </div>                   
                 </div>
                 
                 {opened2 && (
-                    <div className='contextSection' id='AS'>
-                        <h3 class="textContainer" id='what'>
+
+                    // About Me Subject Context Section
+                    <div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center
+                    w-[90%] h-[600px] ml-[5%] mb-[30px] mt-[-80px]'>
+
+                        {/* Different Teams Image */}
+                        <img src={smallCollage} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
+                        h-[170px] w-[220px] mt-[80px]'/>   
+
+                        {/* "What's the point of this website?" Text Container */}
+                        <div class="bg-sky-400 text-center font-semibold 
+                        w-[90%] text-[1.2rem] ml-[5%] mt-[20px] mb-[14px]">
+
                             Well first and foremost I want to leave my own little spec in this gigantic world-wide
                             internet, I just think it's cool to be a part of it in some way. However, I have my other
                             reasons; for instance, I want to have my own unique looking portfolio, something where I can
                             show my personality, expertise, and my overall journey in life. I've been lucky to have the
                             opportunity to work with all kinds of different teams, many of which are my closest friends!
-                        </h3>
-
-                        <img src={smallCollage} alt="port" className='imgContainer' id='journeyImg'/>   
+                        </div>
+                    
                     </div>
-
                 )}
 
-                <div onClick={() => open3(prev => !prev)} class="subjectContainer" id='aboutCS'>
-                    <strong>"Why Computer Science?"</strong>
+                {/* About CS Subject Container */}
+                <div onClick={() => open3(prev => !prev)} class="-z-10 bg-lime-500 font-bold text-mainRed 
+                h-16 w-[90%] min-h-16 ml-[5%] mb-4">
 
-                    {opened3 ? <FaArrowUp className="arrow" /> : <FaArrowDown className="arrow" />}
-                    
+                    {/* Inner Subject Container */}
+                    <div className='relative text-center 
+                    text-[21px]'>
+                        
+                        {/* Subject Title */}
+                        <div className='mt-[15px]'>"Why Computer Science?"</div>
+
+                        {/* Subject Container Arrow */}
+                        {opened3 ? <FaArrowUp className="absolute float-right right-2 text-4xl top-0" /> : 
+                                <FaArrowDown className="absolute float-right right-2 text-4xl top-0" />}
+
+                    </div>
                 </div>
                 
                 {opened3 && (
-                    <div className='contextSection' id='ACS'>
-                        <h3 class="textContainer" id='why'>
+
+                    // About Me Subject Context Section
+                    <div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center
+                    w-[90%] h-[800px] ml-[5%] mb-[30px] mt-[-80px]'>
+
+                        {/* Team Picture Container */}
+                        <img src={teamPic} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
+                        h-[170px] w-[220px] mt-[80px]'/>   
+
+                        {/* "What's the point of this website?" Text Container */}
+                        <div class="bg-sky-400 text-center font-semibold 
+                        w-[90%] text-[1.2rem] ml-[5%] mt-[20px] mb-[14px]">
+
                             As a child in the mid 2000s, I used to play with my dad's Dell laptop all
                             the time. Just opening all sorts of random Windows applications and not haveing
                             a clue in the world. I had no idea how any of that worked, but all I knew is that 
@@ -106,37 +203,53 @@ function Index(){
                             can find me working on random small projects, working in internships for large tech
                             companies such as Mercedes-Benz and UKG, and even directing and developing on a 
                             large-scale video game slated for commercial release with a sizable team!
-                        </h3>
-                        
-                        <img src={teamPic} alt="port" className='imgContainer' id='teamImg'/>
+                        </div>
+                    
                     </div>
                 )}
 
-                <div onClick={() => open4(prev => !prev)} class="subjectContainer" id='aboutLogo'>
-                    <strong>"Where did the logo come from?"</strong>
+                {/* About Logo Subject Container */}
+                <div onClick={() => open4(prev => !prev)} class="-z-10 bg-lime-500 font-bold text-mainRed 
+                h-16 w-[90%] min-h-16 ml-[5%] mb-[20px]">
 
-                    {opened4 ? <FaArrowUp className="arrow" /> : <FaArrowDown className="arrow" />}
-                    
-                </div>
+                    {/* Inner Subject Container */}
+                    <div className='relative text-center 
+                    text-[21px]'>
+
+                        {/* Subject Title */}
+                        <div className='mt-[15px]'>"Where did the logo come from?"</div>
+
+                        {/* Subject Container Arrow */}
+                        {opened4 ? <FaArrowUp className="absolute float-right right-2 text-4xl top-0" /> : 
+                                <FaArrowDown className="absolute float-right right-2 text-4xl top-0" />}
+
+                    </div>
+                </div> 
                 
                 {opened4 && (
-                    <div className='contextSection' id='AL'>
-                        <h3 class="textContainer" id='where'>
+                    // About Logo Subject Context Section
+                    <div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center
+                    w-[90%] h-[450px] ml-[5%] mb-[80px] mt-[-80px]'>
+                    
+                        {/* Team Picture Container */}
+                        <img src={logoImage} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
+                        h-[120px] w-[220px] mt-[80px]'/>   
+                    
+                        {/* "Where did the logo come from?" Text Container */}
+                        <div class="bg-sky-400 text-center font-semibold 
+                        w-[90%] text-[1.2rem] ml-[5%] mt-[20px] mb-[14px]">
+
                             ASH is the initials of my full name, Alberto Sebastian Hernandez (ASH). The design
                             mimics that of my professional signature, where the S not only ties my first and last 
                             initials together, but also resembles the infinity symbol. Why the infinity symbol?
                             Well, there's an infinite amount of interpretations to that.
-                        </h3>
+                        </div>
                         
-                        <img src={logoImage} alt="port" className='imgContainer' id='logoImg'/>
                     </div>
                 )}
                 
-                
-                <Footer />
+                {/* <Footer /> */}
             </div>
-
-            
         </div>
     );
 }

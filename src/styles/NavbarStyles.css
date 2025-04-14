@@ -3,52 +3,98 @@
     align-items: center;
     justify-content: space-between;
     height: 80px;
-    padding: 0 2rem;
+    /* padding: 0 2rem; */
+    padding: 0 1rem;
     background-color: #1a222b;
     position: fixed;
     z-index: 10;
     width: 100%;
 }
 
-/*
-- Has items displayed side-by-side
-- Pads the items according to their font size
-*/
-
 .brandImg{
-    height: 70px;
-    width: 140px;
+    height: 50px;
 }
 
 .nav-menu{
+    display: none;
+    /* display: flex; */
     position: absolute;
-    left: 50%;
-    transform: translateX(-56%);
-    list-style: none;
-    display: flex;
-    flex: 1;
+    left: 250px;
+    transform: translateX(-65%);
+    width: 250px;
     height: 100%;
+    background-color: #bbff00;
+    padding: 0;
 }
 
-ul li{
-    z-index: 2;
-    background-color: #1a222b;
-    font-size: 30px;
-    list-style: none;
-    padding: 1rem;
-    margin-left: 1rem;
-    color: white;
+.navMenuSelect{
+    font-size: 11px;
     text-align: center;
-    width: 300px;
+    flex-grow: 1;
+    flex-basis: 0;
+    position: relative;
+    background-color: #0077ff60;
+    
 }
 
-ul li:hover{
-    background-color: #14171f;
+.navMenuSelect:hover{
+    /* background-color: #14171f; */
+    background-color: #7bff00;
     cursor: pointer;
 }
 
 .hamburger{
-    display: none;
+    margin-right: 10%;
+}
+
+.sideMenu{
+    background-color: #12151c;
+    position: fixed;
+    overflow: hidden;
+    float: right;
+    right: -60%;
+    top: 80px;
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    z-index: 2;
+}
+
+.sideMenu.Opened{
+    animation: moveMenuLeft .3s ease forwards;
+}
+
+.sideMenu.Closed{
+    animation: moveMenuRight .3s ease-in-out forwards;
+}
+
+.sideMenuSelect{
+    color: white;
+    font-size: 20px;
+    margin-bottom: 8px;
+    padding: 10px 0;
+    background-color: #0e1016;
+}
+
+.sideBlur{
+    background-color: #00000093;
+    position: fixed;
+    overflow: hidden;
+    float: right;
+    right: 0%;
+    top: 80px;
+    height: 100%;
+    width: 40%;
+}
+
+.sideBlur.Opened{
+    animation: moveBlurLeft .3s ease forwards;
+}
+
+.sideBlur.Closed{
+    animation: moveBlurRight .3s ease-in-out forwards;
 }
 
 .icon{
@@ -57,21 +103,42 @@ ul li:hover{
     scale: 3;
 }
 
-/*
-- Hides Nav Menu Toggle
-*/ 
+@keyframes moveMenuLeft {
+    from { right: -60%;}
+    to { right: 0%; }
+}
 
-/* OVERRIDES STYLES ABOVE WHEN REACHING PIXEL THRESHOLD*/
-@media screen and (max-width:1100px){
-    /*Hides Nav Menu*/
-    .nav-menu{
-        display: none;
-    }
+@keyframes moveMenuRight {
+    from { right: 0%;}
+    to { right: -60%; }
+}
 
-    /*Reveals Nav Menu Toggle*/
-    .hamburger{
-        display: block;
-        flex: 1;
-        text-align: right;
-    }
+@keyframes moveBlurLeft {
+    from { right: -60%;}
+    to { right: 60%; }
+}
+
+@keyframes moveBlurRight {
+    from { right: 60%;}
+    to { right: -60%; }
+}
+
+/* mobile landscape */
+@media all and (min-width: 480px) {
+
+}
+
+/* tablet */
+@media all and (min-width: 768px) {
+
+}
+
+/* desktop */
+@media all and (min-width: 1024px) {
+
+}
+
+/* desktop wide */
+@media all and (min-width: 1200px) {
+
 }

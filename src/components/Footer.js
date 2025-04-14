@@ -10,7 +10,7 @@ function Footer() {
 
           <div class="footerDivision">
             <h3 class="divisionTitle">Contacts</h3>
-            <a href="mailto:albertohern1116@gmail.com" className='linkTxt'>albertohern1116@gmail.com</a>
+            <a href="mailto:albertohern1116@gmail.com" className='linkTxt' id='email'>albertohern1116@gmail.com</a>
             <h3 className='linkTxt'>Mobile Number: (786) 479-1686</h3>
           </div>
 
