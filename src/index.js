@@ -36,9 +36,10 @@ function Index(){
             <h1 className='text-white text-2xl'>Work in progress!</h1>
 
             {/* Main Image Container */}
-            <div className='-z-40 bg-orange-400 w-full absolute 
-            h-48 top-20 min-w-[350px]
+            <div className='z-0 bg-fuchsia-500 w-full absolute min-w-[335px]
+            h-48 top-20 
             sm:top-24 
+            lg:h-80 lg:top-32
             '>
 
                 {/* Large Collage */}
@@ -47,20 +48,25 @@ function Index(){
             </div>
 
             {/* Window */}
-            <div className='-z-30 bg-window text-white w-full text-center font-bold absolute 
-            h-48 top-20 text-3xl min-w-[350px]
+            <div className='z-10 bg-window text-white w-full text-center font-bold absolute min-w-[335px]
+            h-48 top-20 text-3xl 
             sm:text-5xl sm:top-24
+            lg:h-80 lg:top-32 lg:text-6xl 
             '>
 
                 {/* Fakout Container */}
-                <div className='-z-20 text-white list-none text-center 
+                <div className='z-10 text-white list-none text-center 
                 text-2xl
                 sm:text-4xl
+                lg:text-5xl
                 '>
 
                     {/* Hello World Text */}
                     <h1 className=' animate-fadeOut2 aboslute 
-                    translate-y-[40%]
+                    translate-y-[150%]
+                    sm:translate-y-[80%]
+                    md:translate-y-[80%]
+                    lg:translate-y-[120%]
                     '>
                      
                         &lt;h1&gt;HELLO WORLD!&lt;/h1&gt;
@@ -69,9 +75,10 @@ function Index(){
                     
                     {/* Fakeout Container */}
                     <div className='flex justify-center 
-                    mt-[3%]
+                    mt-[15%]
                     sm:mt-[11%]
                     md:mt-[8%]
+                    lg:mt-[12%]
                     '>
                         
                         <li className=' opacity-0 animate-fadeIn08out2'>Nah,</li>
@@ -82,7 +89,7 @@ function Index(){
                 </div>
                 
                 {/* Welcome Text */}
-                <div className='-z-20 opacity-0 animate-fadeIn2 w-full absolute 
+                <div className='z-10 opacity-0 animate-fadeIn2 w-full absolute 
                 top-1/2 left-1/2 translate-y-[-70%] -translate-x-1/2
                 '>
                     
@@ -92,29 +99,37 @@ function Index(){
             </div>
             
             {/* Main Container */}
-            <div className="-z-40 opacity-0 bg-amber-500 w-full absolute flex flex-col animate-fadeIn2
-            h-400px top-[272px] min-w-[350px]
+            <div className='-z-40 bg-amber-500 w-full absolute flex flex-col
+            h-fit top-[272px] min-w-[335px]
             sm:top-[289px]
-            ">
+            lg:top-[448px]
+            '>
                 
                 {/* About Me Subject Container */}
-                <div onClick={() => open(prev => !prev)} className="-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 
-                translate-x-[-55%] h-16 mt-4 ml-[5%] mb-4 max-w-[485px]
-                sm:translate-x-[-57%] sm:h-20 sm:ml-[5%] sm:mb-1 sm:mt-4 sm:max-w-[600px]
-                md:translate-x-[-58%] md:h-20 md:ml-[5%] md:mb-1 md:mt-4 md:max-w-[700px]
-                ">
+                <div onClick={() => open(prev => !prev)} className='-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 top-[-1000px]
+                translate-x-[-55%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveAMdown
+                sm:translate-x-[-57%] sm:h-20 sm:ml-[5%] sm:mb-1 sm:max-w-[600px]
+                md:translate-x-[-58%] md:max-w-[700px]
+                lg:translate-x-[-56%] lg:max-w-[900px]
+                xl:max-w-[1100px]
+                '>
 
                     {/* Inner Subject Container */}
                     <div className='relative
                     text-[16px]
                     subAdj1:text-[20px]
                     sm:text-3xl
+                    lg:text-center
+                    xl:text-4xl 
                     '>
                 
                         {/* Subject Title */}
                         <div className='
                         mt-[20px] ml-[5%]
                         subAdj1:mt-[17px]
+                        sm:mt-[22px]
+                        lg:ml-[0%]
+                        xl:mt-[19px]
                         '>
                             "Who are you?"
 
@@ -124,13 +139,15 @@ function Index(){
                         {opened ? <FaArrowUp className="absolute float-right 
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
-                        sm:right-2 sm:text-6xl sm:top-[-5px]
+                        sm:text-6xl sm:top-[-10px]
+                        xl:text-7xl xl:top-[-14px]
                         "/> : 
 
                         <FaArrowDown className="absolute float-right 
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
-                        sm:right-2 sm:text-6xl sm:top-[-5px]
+                        sm:text-6xl sm:top-[-10px]
+                        xl:text-7xl xl:top-[-14px]
                         "/>}
 
                     </div>
@@ -139,10 +156,12 @@ function Index(){
                 {opened && (
 
                     // About Me Subject Context Section
-                    <div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center relative left-1/2 w-[90%] 
-                    translate-x-[-55%] h-fit ml-[5%] mb-[30px] mt-[-80px] max-w-[485px]
-                    sm:translate-x-[-57%] sm:max-w-[600px]
+                    <div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center relative left-1/2
+                    translate-x-[-55%] h-fit ml-[5%] mb-[30px] mt-[-50px] max-w-[485px]
+                    sm:translate-x-[-57%] sm:max-w-[600px] 
                     md:translate-x-[-58%] md:max-w-[700px]
+                    lg:translate-x-[-56%] lg:max-w-[900px]
+                    xl:max-w-[1100px]
                     '>
 
                         {/* Self Portrait Image */}
@@ -153,7 +172,10 @@ function Index(){
                         
                         {/* "Who Am I" Text Container */}
                         <div className="bg-sky-400 text-center font-semibold w-[90%] 
-                        text-[1.3rem] ml-[5%] mt-[115px] mb-[14px]
+                        text-[1.2rem] ml-[5%] mt-[115px] mb-[14px]
+                        sm:text-[1.3rem]
+                        lg:text-[1.5rem]
+                        xl:text-[1.7rem]
                         ">
 
                             My name is Alberto Hernandez, I'm currently a senior in FIU studying for my Bachelor's in Computer Science (CS).
@@ -168,10 +190,12 @@ function Index(){
                 )}
 
                 {/* About Site Subject Container */}
-                <div onClick={() => open2(prev => !prev)} className="-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 
-                translate-x-[-55%] h-16 ml-[5%] mb-4 max-w-[485px]
+                <div onClick={() => open2(prev => !prev)} className="-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 top-[-1000px]
+                translate-x-[-55%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveASdown
                 sm:translate-x-[-57%] sm:h-20 sm:ml-[5%] sm:mb-1 sm:mt-4 sm:max-w-[600px]
                 md:translate-x-[-58%] md:max-w-[700px]
+                lg:translate-x-[-56%] lg:max-w-[900px]
+                xl:max-w-[1100px]
                 ">
 
                     {/* Inner Subject Container */}
@@ -179,12 +203,18 @@ function Index(){
                     text-[16px]
                     subAdj1:text-[20px]
                     sm:text-3xl
+                    lg:text-center
+                    xl:text-4xl
                     '>
 
                     <div className='
                     mt-[20px] ml-[5%]
                     subAdj1:mt-[17px]
+                    sm:mt-[22px]
+                    lg:ml-[0%]
+                    xl:mt-[19px]
                     '>
+
                         "What's the point of this website?"
 
                     </div>
@@ -193,13 +223,15 @@ function Index(){
                         {opened2 ? <FaArrowUp className="absolute float-right 
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
-                        sm:right-2 sm:text-6xl sm:top-[-5px]
+                        sm:text-6xl sm:top-[-10px]
+                        xl:text-7xl xl:top-[-14px]
                         "/> : 
 
                         <FaArrowDown className="absolute float-right 
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
-                        sm:right-2 sm:text-6xl sm:top-[-5px]
+                        sm:text-6xl sm:top-[-10px]
+                        xl:text-7xl xl:top-[-14px]
                         "/>}
 
                     </div>                   
@@ -209,9 +241,11 @@ function Index(){
 
                     // About Me Subject Context Section
                     <div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center relative left-1/2 
-                    translate-x-[-55%] w-[90%] h-fit ml-[5%] mb-[30px] mt-[-80px] max-w-[485px]
+                    translate-x-[-55%] h-fit ml-[5%] mb-[30px] mt-[-55px] max-w-[485px]
                     sm:translate-x-[-57%] sm:max-w-[600px]
                     md:translate-x-[-58%] md:max-w-[700px]
+                    lg:translate-x-[-56%] lg:max-w-[900px]
+                    xl:max-w-[1100px]
                     '>
 
                         {/* Different Teams Image */}
@@ -221,8 +255,11 @@ function Index(){
                         '/>   
 
                         {/* "What's the point of this website?" Text Container */}
-                        <div className="bg-sky-400 text-center font-semibold 
-                        w-[90%] text-[1.3rem] ml-[5%] mt-[20px] mb-[14px]
+                        <div className="bg-sky-400 text-center font-semibold w-[90%] 
+                        text-[1.2rem] ml-[5%] mt-[20px] mb-[14px]
+                        sm:text-[1.3rem]
+                        lg:text-[1.5rem]
+                        xl:text-[1.7rem]
                         ">
 
                             Well first and foremost I want to leave my own little spec in this gigantic world-wide
@@ -236,10 +273,12 @@ function Index(){
                 )}
 
                 {/* About CS Subject Container */}
-                <div onClick={() => open3(prev => !prev)} className="-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 
-                translate-x-[-55%] h-16 ml-[5%] mb-4 max-w-[485px]
+                <div onClick={() => open3(prev => !prev)} className="-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 top-[-1000px] 
+                translate-x-[-55%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveACSdown
                 sm:translate-x-[-57%] sm:h-20 sm:mb-1 sm:mt-4 sm:max-w-[600px]
                 md:translate-x-[-58%] md:mb-1 md:max-w-[700px]
+                lg:translate-x-[-56%] lg:max-w-[900px]
+                xl:max-w-[1100px]
                 ">
 
                     {/* Inner Subject Container */}
@@ -247,13 +286,19 @@ function Index(){
                     text-[16px]
                     subAdj1:text-[20px]
                     sm:text-3xl
+                    lg:text-center
+                    xl:text-4xl
                     '>
                         
                         {/* Subject Title */}
                         <div className='
                         mt-[20px] ml-[5%]
                         subAdj1:mt-[17px]
+                        sm:mt-[22px]
+                        lg:ml-[0%]
+                        xl:mt-[19px]
                         '>
+
                             "Why Computer Science?"
 
                         </div>
@@ -262,13 +307,15 @@ function Index(){
                         {opened3 ? <FaArrowUp className="absolute float-right 
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
-                        sm:right-2 sm:text-6xl sm:top-[-5px]
+                        sm:text-6xl sm:top-[-10px]
+                        xl:text-7xl xl:top-[-14px]
                         "/> : 
 
                         <FaArrowDown className="absolute float-right 
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
-                        sm:right-2 sm:text-6xl sm:top-[-5px]
+                        sm:text-6xl sm:top-[-10px]
+                        xl:text-7xl xl:top-[-14px]
                         "/>}
 
                     </div>
@@ -278,9 +325,11 @@ function Index(){
 
                     // About Me Subject Context Section
                     <div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center relative left-1/2 
-                    translate-x-[-55%] w-[90%] h-fit ml-[5%] mb-[30px] mt-[-80px] max-w-[485px]
+                    translate-x-[-55%] h-fit ml-[5%] mb-[30px] mt-[-58px] max-w-[485px]
                     sm:translate-x-[-57%] sm:max-w-[600px]
                     md:translate-x-[-58%] md:max-w-[700px]
+                    lg:translate-x-[-56%] lg:max-w-[900px]
+                    xl:max-w-[1100px]
                     '>
 
                         {/* Team Picture Container */}
@@ -292,7 +341,9 @@ function Index(){
                         {/* "What's the point of this website?" Text Container */}
                         <div className="bg-sky-400 text-center font-semibold w-[90%] 
                         text-[1.2rem] ml-[5%] mt-[20px] mb-[14px]
-                        sm:text-[1.3rem] sm:ml-[5%] sm:mt-[20px] sm:mb-[14px]
+                        sm:text-[1.3rem]
+                        lg:text-[1.5rem]
+                        xl:text-[1.7rem]
                         ">
 
                             As a child in the mid 2000s, I used to play with my dad's Dell laptop all
@@ -310,10 +361,12 @@ function Index(){
                 )}
 
                 {/* About Logo Subject Container */}
-                <div onClick={() => open4(prev => !prev)} className="-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 
-                translate-x-[-55%] h-16 ml-[5%] mb-4 max-w-[485px]
-                sm:translate-x-[-57%] sm:h-20 sm:mb-4 sm:mt-4 sm:max-w-[600px]
-                md:translate-x-[-58%] md:mb-4 md:max-w-[700px]
+                <div onClick={() => open4(prev => !prev)} className="-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 top-[-1000px] 
+                translate-x-[-55%] h-16 ml-[5%] mb-12 max-w-[485px] animate-moveALdown
+                sm:translate-x-[-57%] sm:h-20 sm:mt-4 sm:max-w-[600px]
+                md:translate-x-[-58%] md:max-w-[700px]
+                lg:translate-x-[-56%] lg:max-w-[900px]
+                xl:max-w-[1100px]
                 ">
 
                     {/* Inner Subject Container */}
@@ -321,12 +374,17 @@ function Index(){
                     text-[16px]
                     subAdj1:text-[20px]
                     sm:text-3xl
+                    lg:text-center
+                    xl:text-4xl
                     '>
 
                         {/* Subject Title */}
                         <div className='
                         mt-[20px] ml-[5%]
                         subAdj1:mt-[17px]
+                        sm:mt-[22px]
+                        lg:ml-[0%]
+                        xl:mt-[19px]
                         '>
                             
                             "Where did the logo come from?"
@@ -337,13 +395,15 @@ function Index(){
                         {opened4 ? <FaArrowUp className="absolute float-right 
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
-                        sm:right-2 sm:text-6xl sm:top-[-5px]
+                        sm:text-6xl sm:top-[-10px]
+                        xl:text-7xl xl:top-[-14px]
                         "/> : 
 
                         <FaArrowDown className="absolute float-right 
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
-                        sm:right-2 sm:text-6xl sm:top-[-5px]
+                        sm:text-6xl sm:top-[-10px]
+                        xl:text-7xl xl:top-[-14px]
                         "/>}
 
                     </div>
@@ -352,21 +412,26 @@ function Index(){
                 {opened4 && (
                     // About Logo Subject Context Section
                     <div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center relative left-1/2 
-                    translate-x-[-55%] w-[90%] h-fit ml-[5%] mb-[80px] mt-[-80px] max-w-[485px]
-                    sm:translate-x-[-57%] sm:max-w-[600px]
+                    translate-x-[-55%] h-fit ml-[5%] mb-[80px] mt-[-61px] max-w-[485px]
+                    sm:translate-x-[-57%] sm:max-w-[600px] 
                     md:translate-x-[-58%] md:max-w-[700px]
+                    lg:translate-x-[-56%] lg:max-w-[900px]
+                    xl:max-w-[1100px]
                     '>
                     
                         {/* Team Picture Container */}
                         <img src={logoImage} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
                         h-[120px] w-[220px] mt-[80px]
-                        sm:h-[200px] sm:w-[320px] sm:mt-[90px]
+                        sm:h-[180px] sm:w-[320px] sm:mt-[90px]
+                        lg:mt-[50px]
                         '/>   
                     
                         {/* "Where did the logo come from?" Text Container */}
                         <div className="bg-sky-400 text-center font-semibold w-[90%]
                         text-[1.2rem] ml-[5%] mt-[20px] mb-[14px]
-                        sm:text-[1.3rem] sm:ml-[5%] sm:mt-[20px] sm:mb-[14px]
+                        sm:text-[1.3rem]
+                        lg:text-[1.5rem]
+                        xl:text-[1.7rem]
                         ">
 
                             ASH is the initials of my full name, Alberto Sebastian Hernandez (ASH). The design
