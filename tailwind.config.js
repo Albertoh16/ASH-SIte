@@ -1,7 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}",],
-  theme: {    
+  theme: {   
+    screens: {
+      'sm': '640px',
+      // @media (min-width: 640px)
+  
+      'md': '768px',
+      // @media (min-width: 768px)
+  
+      'lg': '1024px',
+      // @media (min-width: 1024px)
+  
+      'xl': '1280px',
+      // @media (min-width: 1280px)
+
+      'subAdj1': '440px',
+      // @media (min-width: 1280px)   
+    },
+    
     extend: {
       colors:{
         'main': '#1b222c',
@@ -21,14 +38,38 @@ module.exports = {
         fadeOut: {
           '0%': { opacity: 1 },
           '100%': { opacity: 0 },
-        }
+        },
+
+        moveAMdown: {
+          '0%': { top: -500  },
+          '100%': { top: 30 }
+        },
+
+        moveASdown: {
+          '0%': { top: -500  },
+          '100%': { top: 25 }
+        },
+
+        moveACSdown: {
+          '0%': { top: -500  },
+          '100%': { top: 22 }
+        },
+
+        moveALdown: {
+          '0%': { top: -500  },
+          '100%': { top: 19 }
+        },
       },
 
       animation: {
-        fadeIn08out2: 'fadeIn 0.7s ease-in 0.8s forwards, fadeOut 0.7s ease-in 2s forwards',
-        fadeIn15out2: 'fadeIn 0.7s ease-in 1.5s forwards, fadeOut 0.7s ease-in 2s forwards',
-        fadeIn2: 'fadeIn 0.7s ease-in 2s forwards',
-        fadeOut2: 'fadeOut 0.7s ease-in 2s forwards'
+        fadeIn08out2: 'fadeIn 0.5s ease-in 0.8s forwards, fadeOut 0.5s ease-in 2s forwards',
+        fadeIn15out2: 'fadeIn 0.5s ease-in 1.5s forwards, fadeOut 0.5s ease-in 2s forwards',
+        fadeIn2: 'fadeIn 0.5s ease-in 2s forwards',
+        fadeOut2: 'fadeOut 0.5s ease-in 2s forwards',
+        moveAMdown: 'moveAMdown 0.5s ease-in 1.8s forwards',
+        moveASdown: 'moveASdown 0.5s ease-in 2s forwards',
+        moveACSdown: 'moveACSdown 0.5s ease-in 2.2s forwards',
+        moveALdown: 'moveALdown 0.5s ease-in 2.4s forwards'
       }
     },
   },
