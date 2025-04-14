@@ -35,7 +35,7 @@ function Index(){
 
             {/* Main Image Container */}
             <div className='-z-40 bg-orange-400 w-full absolute 
-            h-48 top-20 min-w-[480px]'>
+            h-48 top-20 min-w-[350px]'>
 
                 {/* Large Collage */}
                 <img src={largeCollage} alt="port" className='h-full blur-sm w-full opacity-0 animate-fadeIn2'/>   
@@ -43,7 +43,7 @@ function Index(){
 
             {/* Window */}
             <div className='-z-30 bg-window text-white w-full text-center font-bold absolute 
-            h-48 top-20 text-3xl min-w-[480px]'>
+            h-48 top-20 text-3xl min-w-[350px]'>
 
                 {/* Fakout Container */}
                 <div className='-z-20 text-white list-none text-center 
@@ -76,7 +76,7 @@ function Index(){
             
             {/* Main Container */}
             <div class="-z-40 bg-amber-500 w-full absolute flex flex-col 
-            h-400px top-[272px] min-w-[480px]">
+            h-400px top-[272px] min-w-[350px]">
                 
                 {/* About Me Subject Container */}
                 <div onClick={() => open(prev => !prev)} class="-z-10 bg-lime-500 font-bold text-mainRed 
@@ -84,14 +84,14 @@ function Index(){
 
                     {/* Inner Subject Container */}
                     <div className='relative text-center 
-                    text-[21px]'>
+                    text-[16px]'>
                 
                         {/* Subject Title */}
-                        <div className='mt-[15px]'>"Who are you?"</div>
+                        <div className='mt-[20px]'>"Who are you?"</div>
 
                         {/* Subject Container Arrow */}
-                        {opened ? <FaArrowUp className="absolute float-right right-2 text-4xl top-0" /> : 
-                                <FaArrowDown className="absolute float-right right-2 text-4xl top-0" />}
+                        {opened ? <FaArrowUp className="absolute float-right right-2 text-4xl top-[-5px]" /> : 
+                                <FaArrowDown className="absolute float-right right-2 text-4xl top-[-5px]" />}
 
                     </div>
                 </div>
@@ -100,7 +100,7 @@ function Index(){
 
                     // About Me Subject Context Section
                     <div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center
-                    w-[90%] h-[670px] ml-[5%] mb-[30px] mt-[-80px]'>
+                    w-[90%] h-[730px] ml-[5%] mb-[30px] mt-[-80px]'>
 
                         {/* Self Portrait Image */}
                         <img src={portrait} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
@@ -127,13 +127,13 @@ function Index(){
 
                     {/* Inner Subject Container */}
                     <div className='relative text-center 
-                    text-[21px]'>
+                    text-[16px]'>
 
-                        <div className='mt-[15px]'>"What's the point of this website?"</div>
+                        <div className='mt-[20px]'>"What's the point of this website?"</div>
 
                         {/* Subject Container Arrow */}
-                        {opened2 ? <FaArrowUp className="absolute float-right right-2 text-4xl top-0" /> : 
-                                <FaArrowDown className="absolute float-right right-2 text-4xl top-0" />}
+                        {opened2 ? <FaArrowUp className="absolute float-right right-2 text-4xl top-[-5px]" /> : 
+                                <FaArrowDown className="absolute float-right right-2 text-4xl top-[-5px]" />}
 
                     </div>                   
                 </div>
@@ -142,7 +142,7 @@ function Index(){
 
                     // About Me Subject Context Section
                     <div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center
-                    w-[90%] h-[600px] ml-[5%] mb-[30px] mt-[-80px]'>
+                    w-[90%] h-[630px] ml-[5%] mb-[30px] mt-[-80px]'>
 
                         {/* Different Teams Image */}
                         <img src={smallCollage} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
@@ -168,14 +168,14 @@ function Index(){
 
                     {/* Inner Subject Container */}
                     <div className='relative text-center 
-                    text-[21px]'>
+                    text-[16px]'>
                         
                         {/* Subject Title */}
-                        <div className='mt-[15px]'>"Why Computer Science?"</div>
+                        <div className='mt-[20px]'>"Why Computer Science?"</div>
 
                         {/* Subject Container Arrow */}
-                        {opened3 ? <FaArrowUp className="absolute float-right right-2 text-4xl top-0" /> : 
-                                <FaArrowDown className="absolute float-right right-2 text-4xl top-0" />}
+                        {opened3 ? <FaArrowUp className="absolute float-right right-2 text-4xl top-[-5px]" /> : 
+                                <FaArrowDown className="absolute float-right right-2 text-4xl top-[-5px]" />}
 
                     </div>
                 </div>
@@ -184,7 +184,7 @@ function Index(){
 
                     // About Me Subject Context Section
                     <div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center
-                    w-[90%] h-[800px] ml-[5%] mb-[30px] mt-[-80px]'>
+                    w-[90%] h-[830px] ml-[5%] mb-[30px] mt-[-80px]'>
 
                         {/* Team Picture Container */}
                         <img src={teamPic} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
@@ -214,14 +214,14 @@ function Index(){
 
                     {/* Inner Subject Container */}
                     <div className='relative text-center 
-                    text-[21px]'>
+                    text-[16px]'>
 
                         {/* Subject Title */}
-                        <div className='mt-[15px]'>"Where did the logo come from?"</div>
+                        <div className='mt-[20px]'>"Where did the logo come from?"</div>
 
                         {/* Subject Container Arrow */}
-                        {opened4 ? <FaArrowUp className="absolute float-right right-2 text-4xl top-0" /> : 
-                                <FaArrowDown className="absolute float-right right-2 text-4xl top-0" />}
+                        {opened4 ? <FaArrowUp className="absolute float-right right-2 text-4xl top-[-5px]" /> : 
+                                <FaArrowDown className="absolute float-right right-2 text-4xl top-[-5px]" />}
 
                     </div>
                 </div> 
@@ -229,7 +229,7 @@ function Index(){
                 {opened4 && (
                     // About Logo Subject Context Section
                     <div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center
-                    w-[90%] h-[450px] ml-[5%] mb-[80px] mt-[-80px]'>
+                    w-[90%] h-[470px] ml-[5%] mb-[80px] mt-[-80px]'>
                     
                         {/* Team Picture Container */}
                         <img src={logoImage} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
