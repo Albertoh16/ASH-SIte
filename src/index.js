@@ -8,8 +8,8 @@ import logoImage from './assets/Website Logo.png'
 import teamPic from './assets/TeamPicture.jpg'
 import smallCollage from './assets/smallCollage.png'
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
-import Navbar from './components/Navbar';
 import largeCollage from './assets/largeCollage.png'
+import { motion } from "framer-motion";
 
 import './index.css';
 
@@ -31,9 +31,7 @@ function Index(){
             <title>ASH</title>
             <link rel="shortcut icon" type= 'image/png' href="assets/favicon.png" />
             
-            <body className='-z-50 bg-mainTwo'></body>
-
-            <h1 className='text-white text-2xl'>Work in progress!</h1>
+            <body className='-z-50 bg-mainTwo m-0 p-0'></body>
 
             {/* Main Image Container */}
             <div className='z-0 bg-fuchsia-500 w-full absolute min-w-[335px]
@@ -43,7 +41,7 @@ function Index(){
             '>
 
                 {/* Large Collage */}
-                <img src={largeCollage} alt="port" className='h-full blur-sm w-full opacity-0 animate-fadeIn2'/>   
+                <img src={largeCollage} alt="port" className='z-0 h-full blur-sm w-full opacity-0 animate-fadeIn2'/>   
                 
             </div>
 
@@ -62,7 +60,7 @@ function Index(){
                 '>
 
                     {/* Hello World Text */}
-                    <h1 className=' animate-fadeOut2 aboslute 
+                    <h1 className=' animate-fadeOut2 aboslute select-none
                     translate-y-[150%]
                     sm:translate-y-[80%]
                     md:translate-y-[80%]
@@ -81,15 +79,15 @@ function Index(){
                     lg:mt-[12%]
                     '>
                         
-                        <li className=' opacity-0 animate-fadeIn08out2'>Nah,</li>
-                        <li className=' opacity-0 ml-2 animate-fadeIn15out2'>just kidding.</li>
+                        <li className=' opacity-0 animate-fadeIn08out2 select-none'>Nah,</li>
+                        <li className=' opacity-0 ml-2 animate-fadeIn15out2 select-none'>just kidding.</li>
 
                     </div>
 
                 </div>
                 
                 {/* Welcome Text */}
-                <div className='z-10 opacity-0 animate-fadeIn2 w-full absolute 
+                <div className='z-10 opacity-0 animate-fadeIn2 w-full absolute select-none
                 top-1/2 left-1/2 translate-y-[-70%] -translate-x-1/2
                 '>
                     
@@ -99,14 +97,14 @@ function Index(){
             </div>
             
             {/* Main Container */}
-            <div className='-z-40 bg-amber-500 w-full absolute flex flex-col
-            h-fit top-[272px] min-w-[335px]
+            <div className='-z-40 bg-amber-500 w-full absolute flex flex-col min-w-[335px] h-fit
+            top-[272px] 
             sm:top-[289px]
             lg:top-[448px]
             '>
                 
                 {/* About Me Subject Container */}
-                <div onClick={() => open(prev => !prev)} className='-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 top-[-1000px]
+                <div onClick={() => open(prev => !prev)} className='-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 top-[-1000px] cursor-pointer
                 translate-x-[-55%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveAMdown
                 sm:translate-x-[-57%] sm:h-20 sm:ml-[5%] sm:mb-1 sm:max-w-[600px]
                 md:translate-x-[-58%] md:max-w-[700px]
@@ -124,7 +122,7 @@ function Index(){
                     '>
                 
                         {/* Subject Title */}
-                        <div className='
+                        <div className=' select-none
                         mt-[20px] ml-[5%]
                         subAdj1:mt-[17px]
                         sm:mt-[22px]
@@ -136,19 +134,17 @@ function Index(){
                         </div>
 
                         {/* Subject Container Arrow */}
-                        {opened ? <FaArrowUp className="absolute float-right 
+                        <motion.div className="absolute float-right 
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
                         sm:text-6xl sm:top-[-10px]
                         xl:text-7xl xl:top-[-14px]
-                        "/> : 
-
-                        <FaArrowDown className="absolute float-right 
-                        right-2 text-4xl top-[-5px]
-                        subAdj1:top-[-3px]
-                        sm:text-6xl sm:top-[-10px]
-                        xl:text-7xl xl:top-[-14px]
-                        "/>}
+                        "
+                        animate={{ rotate: opened ? -180 : 0 }}
+                        >
+                            <FaArrowDown/>
+                            
+                        </motion.div>
 
                     </div>
                 </div>
@@ -156,13 +152,17 @@ function Index(){
                 {opened && (
 
                     // About Me Subject Context Section
-                    <div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center relative left-1/2
+                    <motion.div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center relative left-1/2
                     translate-x-[-55%] h-fit ml-[5%] mb-[30px] mt-[-50px] max-w-[485px]
                     sm:translate-x-[-57%] sm:max-w-[600px] 
                     md:translate-x-[-58%] md:max-w-[700px]
                     lg:translate-x-[-56%] lg:max-w-[900px]
                     xl:max-w-[1100px]
-                    '>
+                    '
+                        initial={{ height: 0 }}
+                        transition={{type: "spring", stiffness: 70}}
+                        animate={{ height: opened ? "auto" : 0 }}
+                    >
 
                         {/* Self Portrait Image */}
                         <img src={portrait} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
@@ -186,11 +186,11 @@ function Index(){
                         
                         </div>
             
-                    </div>
+                    </motion.div>
                 )}
 
                 {/* About Site Subject Container */}
-                <div onClick={() => open2(prev => !prev)} className="-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 top-[-1000px]
+                <div onClick={() => open2(prev => !prev)} className="-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 top-[-1000px] cursor-pointer
                 translate-x-[-55%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveASdown
                 sm:translate-x-[-57%] sm:h-20 sm:ml-[5%] sm:mb-1 sm:mt-4 sm:max-w-[600px]
                 md:translate-x-[-58%] md:max-w-[700px]
@@ -207,7 +207,7 @@ function Index(){
                     xl:text-4xl
                     '>
 
-                    <div className='
+                    <div className=' select-none
                     mt-[20px] ml-[5%]
                     subAdj1:mt-[17px]
                     sm:mt-[22px]
@@ -220,19 +220,17 @@ function Index(){
                     </div>
 
                         {/* Subject Container Arrow */}
-                        {opened2 ? <FaArrowUp className="absolute float-right 
+                        <motion.div className="absolute float-right 
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
                         sm:text-6xl sm:top-[-10px]
                         xl:text-7xl xl:top-[-14px]
-                        "/> : 
-
-                        <FaArrowDown className="absolute float-right 
-                        right-2 text-4xl top-[-5px]
-                        subAdj1:top-[-3px]
-                        sm:text-6xl sm:top-[-10px]
-                        xl:text-7xl xl:top-[-14px]
-                        "/>}
+                        "
+                        animate={{ rotate: opened2 ? -180 : 0 }}
+                        >
+                            <FaArrowDown/>
+                            
+                        </motion.div>
 
                     </div>                   
                 </div>
@@ -240,13 +238,17 @@ function Index(){
                 {opened2 && (
 
                     // About Me Subject Context Section
-                    <div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center relative left-1/2 
+                    <motion.div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center relative left-1/2 
                     translate-x-[-55%] h-fit ml-[5%] mb-[30px] mt-[-55px] max-w-[485px]
                     sm:translate-x-[-57%] sm:max-w-[600px]
                     md:translate-x-[-58%] md:max-w-[700px]
                     lg:translate-x-[-56%] lg:max-w-[900px]
                     xl:max-w-[1100px]
-                    '>
+                    '
+                        initial={{ height: 0 }}
+                        transition={{type: "spring", stiffness: 70}}
+                        animate={{ height: opened2 ? "auto" : 0 }}
+                    >
 
                         {/* Different Teams Image */}
                         <img src={smallCollage} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
@@ -269,17 +271,21 @@ function Index(){
                             opportunity to work with all kinds of different teams, many of which are my closest friends!
                         </div>
                     
-                    </div>
+                    </motion.div>
                 )}
 
                 {/* About CS Subject Container */}
-                <div onClick={() => open3(prev => !prev)} className="-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 top-[-1000px] 
+                <div onClick={() => open3(prev => !prev)} className="-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 top-[-1000px] cursor-pointer 
                 translate-x-[-55%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveACSdown
                 sm:translate-x-[-57%] sm:h-20 sm:mb-1 sm:mt-4 sm:max-w-[600px]
                 md:translate-x-[-58%] md:mb-1 md:max-w-[700px]
                 lg:translate-x-[-56%] lg:max-w-[900px]
                 xl:max-w-[1100px]
-                ">
+                "
+                    initial={{ height: 0 }}
+                    transition={{type: "spring", stiffness: 70}}
+                    animate={{ height: opened3 ? "auto" : 0 }}
+                >
 
                     {/* Inner Subject Container */}
                     <div className='relative
@@ -291,7 +297,7 @@ function Index(){
                     '>
                         
                         {/* Subject Title */}
-                        <div className='
+                        <div className=' select-none
                         mt-[20px] ml-[5%]
                         subAdj1:mt-[17px]
                         sm:mt-[22px]
@@ -304,19 +310,17 @@ function Index(){
                         </div>
 
                         {/* Subject Container Arrow */}
-                        {opened3 ? <FaArrowUp className="absolute float-right 
+                        <motion.div className="absolute float-right 
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
                         sm:text-6xl sm:top-[-10px]
                         xl:text-7xl xl:top-[-14px]
-                        "/> : 
-
-                        <FaArrowDown className="absolute float-right 
-                        right-2 text-4xl top-[-5px]
-                        subAdj1:top-[-3px]
-                        sm:text-6xl sm:top-[-10px]
-                        xl:text-7xl xl:top-[-14px]
-                        "/>}
+                        "
+                        animate={{ rotate: opened3 ? -180 : 0 }}
+                        >
+                            <FaArrowDown/>
+                            
+                        </motion.div>
 
                     </div>
                 </div>
@@ -324,13 +328,17 @@ function Index(){
                 {opened3 && (
 
                     // About Me Subject Context Section
-                    <div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center relative left-1/2 
+                    <motion.div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center relative left-1/2 
                     translate-x-[-55%] h-fit ml-[5%] mb-[30px] mt-[-58px] max-w-[485px]
                     sm:translate-x-[-57%] sm:max-w-[600px]
                     md:translate-x-[-58%] md:max-w-[700px]
                     lg:translate-x-[-56%] lg:max-w-[900px]
                     xl:max-w-[1100px]
-                    '>
+                    '
+                        initial={{ height: 0 }}
+                        transition={{type: "spring", stiffness: 70}}
+                        animate={{ height: opened3 ? "auto" : 0 }}               
+                    >
 
                         {/* Team Picture Container */}
                         <img src={teamPic} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
@@ -357,11 +365,11 @@ function Index(){
                             large-scale video game slated for commercial release with a sizable team!
                         </div>
                     
-                    </div>
+                    </motion.div>
                 )}
 
                 {/* About Logo Subject Container */}
-                <div onClick={() => open4(prev => !prev)} className="-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 top-[-1000px] 
+                <div onClick={() => open4(prev => !prev)} className="-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 top-[-1000px] cursor-pointer
                 translate-x-[-55%] h-16 ml-[5%] mb-12 max-w-[485px] animate-moveALdown
                 sm:translate-x-[-57%] sm:h-20 sm:mt-4 sm:max-w-[600px]
                 md:translate-x-[-58%] md:max-w-[700px]
@@ -379,7 +387,7 @@ function Index(){
                     '>
 
                         {/* Subject Title */}
-                        <div className='
+                        <div className=' select-none
                         mt-[20px] ml-[5%]
                         subAdj1:mt-[17px]
                         sm:mt-[22px]
@@ -392,38 +400,40 @@ function Index(){
                         </div>
 
                         {/* Subject Container Arrow */}
-                        {opened4 ? <FaArrowUp className="absolute float-right 
+                        <motion.div className="absolute float-right 
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
                         sm:text-6xl sm:top-[-10px]
                         xl:text-7xl xl:top-[-14px]
-                        "/> : 
-
-                        <FaArrowDown className="absolute float-right 
-                        right-2 text-4xl top-[-5px]
-                        subAdj1:top-[-3px]
-                        sm:text-6xl sm:top-[-10px]
-                        xl:text-7xl xl:top-[-14px]
-                        "/>}
+                        "
+                        animate={{ rotate: opened4 ? -180 : 0 }}
+                        >
+                            <FaArrowDown/>
+                            
+                        </motion.div>
 
                     </div>
                 </div> 
                 
                 {opened4 && (
                     // About Logo Subject Context Section
-                    <div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center relative left-1/2 
+                    <motion.div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center relative left-1/2 
                     translate-x-[-55%] h-fit ml-[5%] mb-[80px] mt-[-61px] max-w-[485px]
                     sm:translate-x-[-57%] sm:max-w-[600px] 
                     md:translate-x-[-58%] md:max-w-[700px]
                     lg:translate-x-[-56%] lg:max-w-[900px]
                     xl:max-w-[1100px]
-                    '>
+                    '
+                        initial={{ height: 0 }}
+                        transition={{type: "spring", stiffness: 70}}
+                        animate={{ height: opened4 ? "auto" : 0 }}
+                    >
                     
                         {/* Team Picture Container */}
                         <img src={logoImage} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
-                        h-[120px] w-[220px] mt-[80px]
-                        sm:h-[180px] sm:w-[320px] sm:mt-[90px]
-                        lg:mt-[50px]
+                        h-[120px] w-[220px] mt-[50px]
+                        sm:h-[180px] sm:w-[320px] sm:mt-[60px]
+                        lg:mt-[60px]
                         '/>   
                     
                         {/* "Where did the logo come from?" Text Container */}
@@ -440,7 +450,7 @@ function Index(){
                             Well, there's an infinite amount of interpretations to that.
                         </div>
                         
-                    </div>
+                    </motion.div>
                 )}
                 
             </div>
