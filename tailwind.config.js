@@ -3,6 +3,12 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}",],
   theme: {   
     screens: {
+      'tiny': '335px',
+      // @media (min-width: 335px) 
+
+      'subAdj1': '440px',
+      // @media (min-width: 440px) 
+
       'sm': '640px',
       // @media (min-width: 640px)
   
@@ -14,9 +20,6 @@ module.exports = {
   
       'xl': '1280px',
       // @media (min-width: 1280px)
-
-      'subAdj1': '440px',
-      // @media (min-width: 1280px)   
     },
     
     extend: {
@@ -24,9 +27,16 @@ module.exports = {
         'main': '#1b222c',
         'mainTwo': '#12151c',
         'mainThree': '#191d26',
+        'mainFour': '#232834',
         'mainRed': '#661b1c',
         'MainRedTwo': '#531516',
+        'MainRedThree': '#832123',
         'window': '#12151ca4'
+      },
+
+      // Shadows for layering.
+      boxShadow: {
+        bottom: "0 10px 4px -2px rgba(0, 0, 0, 0.2)"
       },
 
       keyframes:{
@@ -59,6 +69,26 @@ module.exports = {
           '0%': { top: -500  },
           '100%': { top: 19 }
         },
+
+        slideMenuLeft: {
+          '0%': { right: -500  },
+          '100%': { right: 0 }
+        },
+
+        slideMenuRight: {
+          '0%': { right: 0  },
+          '100%': { right: -500 }
+        },
+
+        slideShadowLeft: {
+          '0%': { right: -500  },
+          '100%': { right: 400 }
+        },
+
+        slideShadowRight: {
+          '0%': { right: 400  },
+          '100%': {right: -500 }
+        },
       },
 
       animation: {
@@ -69,7 +99,9 @@ module.exports = {
         moveAMdown: 'moveAMdown 0.5s ease-in 1.8s forwards',
         moveASdown: 'moveASdown 0.5s ease-in 2s forwards',
         moveACSdown: 'moveACSdown 0.5s ease-in 2.2s forwards',
-        moveALdown: 'moveALdown 0.5s ease-in 2.4s forwards'
+        moveALdown: 'moveALdown 0.5s ease-in 2.4s forwards',
+        slideMenuLeft: 'slideMenuLeft 0.5s ease-in forwards',
+        slideMenuLRight: 'slideMenuRight 0.5s ease-in forwards',
       }
     },
   },

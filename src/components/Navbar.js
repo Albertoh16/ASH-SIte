@@ -7,18 +7,35 @@ import { motion } from "framer-motion";
 import '../index.css';
 
 function Navbar() {
-  const navigate = useNavigate();
-
-  const handleClick = (path) => {
-     navigate(path);
-  };
-
+  const navigate = useNavigate();  
   const [navOpened, openNav] = useState(false);
+  const [animStarted, startAnim] = useState(false);
+
+  const Pagenvigation = (path) => {
+     navigate(path);
+     DelayClose();
+  };
+  
+  const DelayClose = () => {
+    startAnim(prev => !prev)
+
+    // Instant for false to true.
+    if (!navOpened) {
+      openNav(true);
+    } 
+    
+    // Delays from true to false.
+    else {
+      // Sets a 500ms delay
+      setTimeout(() => openNav(false), 500);
+    }
+  };
+  
 
   return (
 
     // Navbar main container
-    <div className='z-50 bg-orange-800 min-w-[335px] w-full
+    <div className='z-50 bg-mainThree min-w-[335px] w-full
     h-20
     sm:h-24
     lg:h-32 lg:fixed
@@ -32,13 +49,14 @@ function Navbar() {
       '/>
 
       {/* Nav Menu */}
-      <ul className="bg-yellow-200 h-full absolute hidden text-center text-white text-[20px]
+      <ul className="h-full absolute hidden text-center text-white text-[20px]
       w-[50%] left-1/2 translate-x-[-49%]
       lg:flex
       ">
 
         {/* Navbar Options */}
-        <div onClick={() => handleClick('/')} className="w-1/3 h-[80%] mt-[13px] bg-green-800 font-semibold hover:bg-red-400 cursor-pointer
+        <div onClick={() => Pagenvigation('/')} 
+        className="w-1/3 h-[80%] mt-[13px] bg-mainThree font-semibold hover:bg-mainTwo cursor-pointer select-none shadow-lg shadow-black/50 active:mt-4 active:shadow-none
         leading-[5] ml-[10px] mr-[10px]
         ">
         
@@ -46,7 +64,8 @@ function Navbar() {
         
         </div>
         
-        <div onClick={() => handleClick('/experience')} className="w-1/3 h-[80%] mt-[13px] bg-green-800 font-semibold hover:bg-red-400 cursor-pointer
+        <div onClick={() => Pagenvigation('/experience')} 
+        className="w-1/3 h-[80%] mt-[13px] bg-mainThree font-semibold hover:bg-mainTwo cursor-pointer select-none shadow-lg shadow-black/50 active:mt-4 active:shadow-none
         leading-[5]
         ">
         
@@ -54,7 +73,8 @@ function Navbar() {
         
         </div>
         
-        <div onClick={() => handleClick('/projects')} className="w-1/3 h-[80%] mt-[13px] bg-green-800 font-semibold hover:bg-red-400 cursor-pointer
+        <div onClick={() => Pagenvigation('/projects')} 
+        className="w-1/3 h-[80%] mt-[13px] bg-mainThree font-semibold hover:bg-mainTwo cursor-pointer select-none shadow-lg shadow-black/50 active:mt-4 active:shadow-none
         leading-[5] ml-[10px] mr-[10px]
         ">
           
@@ -64,83 +84,91 @@ function Navbar() {
       </ul>
 
       {/* Hamburger Icon */}
-      <div className="text-white float-right me-[2%] cursor-pointer
+      <div className="text-white float-right me-[2%] cursor-pointer active:text-gray-500
         text-[60px] mt-[8px]
         sm:text-[80px] sm:mt-[5px] 
         lg:hidden
       \">
 
-          <HiOutlineMenuAlt4 onClick={() => openNav(prev => !prev)}
+          <HiOutlineMenuAlt4 onClick={DelayClose}
       />
       </div>
 
-      {/* <div className={`sideMenu ${navOpened ? 'Opened' : 'Closed'}`}>
-        <div class="sideMenuSelect">Home</div>
-        <div class="sideMenuSelect">My Projects</div>
-        <div class="sideMenuSelect">My Experience</div>
-        <div class="sideMenuSelect">Contacts</div>
-      </div> */}
+    {navOpened && (
 
-      <div style={{ pointerEvents: 'none' }} className='absolute w-[100%] h-[100%]  overflow-hidden' id='obj'>
-        {/* Motion Animatior for Side Menu */}
-        <motion.div className="z-50 float-right absolute right-[-100%] animate-slideMenuRight w-[50%] h-[100%] bg-slate-700 flex flex-col text-center
-        mt-20
-        sm:mt-24
-        lg:hidden
-        "
-          animate={{ right: navOpened ? "0%" : "-60%" }}
-          transition={{ duration: 0.5}}
-        >
-          {/* Home Option */}
-          <div class=" mt-[5%] h-[10%] w-[100%] bg-teal-400 text-white font-semibold
-          text-[20px] leading-[4.2]
-          subAdj1:text-[30px] subAdj1:leading-[2.8]        
-          ">
+        <div className='z-50 w-[100%] h-[100%] overflow-hidden
+        '>
+          {/* Motion Animatior for Side Menu */}
+          <motion.div className="z-50 float-right absolute w-[50%] h-[100%] bg-mainThree bor flex flex-col text-center border-4 border-mainTwo
+          mt-[12px]
+          sm:mt-[11px]
+          lg:hidden
+          "
+            initial={{ right: "-80%" }}
+            animate={{ right: animStarted ? 0 : "-80%" }}
+            transition={{ duration: 0.4 }}
+          >
+            {/* Home Option */}
+            <div onClick={() => Pagenvigation('/')} 
+            class=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
+            border-mainTwo shadow-bottom shadow-black/50 active:bg-mainTwo active:mt-[6%] active:shadow-none
+            text-[20px] leading-[4.2]
+            subAdj1:text-[30px] subAdj1:leading-[2.8]        
+            ">
+              
+              Home
+              
+            </div>
+
+            {/* Projects Option */}
+            <div onClick={() => Pagenvigation('/projects')} 
+            class=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
+            border-mainTwo shadow-bottom shadow-black/50 active:bg-mainTwo active:mt-[6%] active:shadow-none
+            text-[20px] leading-[4.2] 
+            subAdj1:text-[30px] subAdj1:leading-[2.8]      
+            ">
+              My Projects
             
-            Home
+            </div>
             
-          </div>
+            {/* Experience Option */} 
+            <div onClick={() => Pagenvigation('/experience')} 
+            class=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
+            border-mainTwo shadow-bottom shadow-black/50 active:bg-mainTwo active:mt-[6%] active:shadow-none
+            text-[20px] leading-[4.2]
+            subAdj1:text-[30px] subAdj1:leading-[2.8]    
+            ">
+              My Experience
+              
+            </div>
 
-          {/* Projects Option */}
-          <div class=" mt-[5%] h-[10%] w-[100%] bg-teal-400 text-white font-semibold 
-          text-[20px] leading-[4.2]
-          subAdj1:text-[30px] subAdj1:leading-[2.8]      
-          ">
-            My Projects
-          
-          </div>
-          
-          {/* Experience Option */}
-          <div class=" mt-[5%] h-[10%] w-[100%] bg-teal-400 text-white font-semibold 
-          text-[20px] leading-[4.2]
-          subAdj1:text-[30px] subAdj1:leading-[2.8]    
-          ">
-            My Experience
+            {/* Contacts Option */}
+            <div class=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
+            border-mainTwo shadow-bottom shadow-black/50 active:bg-mainTwo active:mt-[6%] active:shadow-none
+            text-[20px] leading-[4.2]
+            subAdj1:text-[30px] subAdj1:leading-[2.8]    
+            ">
+              Contacts
             
-          </div>
+            </div>
 
-          {/* Contacts Option */}
-          <div class=" mt-[5%] h-[10%] w-[100%] bg-teal-400 text-white font-semibold 
-          text-[20px] leading-[4.2]
-          subAdj1:text-[30px] subAdj1:leading-[2.8]    
-          ">
-            Contacts
-          
-          </div>
-
-        </motion.div>
+          </motion.div>
 
 
-        {/* Motion Animatior for Side Menu */}
-        <motion.div className="z-40 float-right absolute right-[-100%] animate-slideMenuRight w-[50%] h-[100%] bg-black
-        mt-20
-        sm:mt-24
-        lg:hidden
-        "
-          animate={{ right: navOpened ? "50%" : "-60%" }}
-          transition={{ duration: 0.6 }}
-        />
-      </div>
+          {/* Motion Animatior for Side Menu */}
+          <motion.div className="z-40 float-right absolute w-[60%] h-[100%] bg-black/50
+          mt-[12px]
+          sm:mt-[11px]
+          lg:hidden
+          "
+            initial={{ right: "-60%" }}
+            animate={{ right: animStarted ? "45%" : "-60%" }}
+            transition={{ duration: animStarted ? 0.6 : 0.3 }}
+          />
+        </div>
+
+      )}
+
     </div>
   )
 }

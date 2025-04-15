@@ -1,5 +1,5 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-// import Navbar from './components/Navbar';
+import Navbar from './components/Navbar';
 import Home from './index';
 import ExperiencePage from './pages/experience';
 import ProjectsPage from './pages/projects';
@@ -7,7 +7,7 @@ import ProjectsPage from './pages/projects';
 function App() { 
   return (
     <Router>
-      {/* <Navbar /> */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/experience" element={<ExperiencePage />} />

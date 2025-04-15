@@ -34,7 +34,7 @@ function Index(){
             <body className='-z-50 bg-mainTwo m-0 p-0'></body>
 
             {/* Main Image Container */}
-            <div className='z-0 bg-fuchsia-500 w-full absolute min-w-[335px]
+            <div className='-z-40 w-full absolute min-w-[335px]
             h-48 top-20 
             sm:top-24 
             lg:h-80 lg:top-32
@@ -47,9 +47,9 @@ function Index(){
 
             {/* Window */}
             <div className='z-10 bg-window text-white w-full text-center font-bold absolute min-w-[335px]
-            h-48 top-20 text-3xl 
+            h-52 top-20 text-3xl 
             sm:text-5xl sm:top-24
-            lg:h-80 lg:top-32 lg:text-6xl 
+            lg:h-[340px] lg:top-32 lg:text-6xl 
             '>
 
                 {/* Fakout Container */}
@@ -97,17 +97,18 @@ function Index(){
             </div>
             
             {/* Main Container */}
-            <div className='-z-40 bg-amber-500 w-full absolute flex flex-col min-w-[335px] h-fit
+            <div className='-z-50 bg-mainTwo w-full absolute flex flex-col min-w-[335px] h-fit
             top-[272px] 
             sm:top-[289px]
             lg:top-[448px]
             '>
                 
                 {/* About Me Subject Container */}
-                <div onClick={() => open(prev => !prev)} className='-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 top-[-1000px] cursor-pointer
-                translate-x-[-55%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveAMdown
-                sm:translate-x-[-57%] sm:h-20 sm:ml-[5%] sm:mb-1 sm:max-w-[600px]
-                md:translate-x-[-58%] md:max-w-[700px]
+                <div onClick={() => open(prev => !prev)} 
+                className='-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom active:mt-1 active:shadow-none
+                translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveAMdown
+                sm:translate-x-[-56.5%] sm:h-20 sm:ml-[5%] sm:mb-1 sm:max-w-[600px]
+                md:translate-x-[-55.5%] md:max-w-[700px]
                 lg:translate-x-[-56%] lg:max-w-[900px]
                 xl:max-w-[1100px]
                 '>
@@ -152,10 +153,10 @@ function Index(){
                 {opened && (
 
                     // About Me Subject Context Section
-                    <motion.div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center relative left-1/2
-                    translate-x-[-55%] h-fit ml-[5%] mb-[30px] mt-[-50px] max-w-[485px]
-                    sm:translate-x-[-57%] sm:max-w-[600px] 
-                    md:translate-x-[-58%] md:max-w-[700px]
+                    <motion.div className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 overflow-hidden
+                    translate-x-[-55.5%] h-fit ml-[5%] mb-[30px] mt-[-50px] max-w-[485px]
+                    sm:translate-x-[-56.5%] sm:max-w-[600px] 
+                    md:translate-x-[-55.5%] md:max-w-[700px]
                     lg:translate-x-[-56%] lg:max-w-[900px]
                     xl:max-w-[1100px]
                     '
@@ -171,7 +172,7 @@ function Index(){
                         '/>      
                         
                         {/* "Who Am I" Text Container */}
-                        <div className="bg-sky-400 text-center font-semibold w-[90%] 
+                        <div className="text-center font-bold w-[90%] 
                         text-[1.2rem] ml-[5%] mt-[115px] mb-[14px]
                         sm:text-[1.3rem]
                         lg:text-[1.5rem]
@@ -190,10 +191,11 @@ function Index(){
                 )}
 
                 {/* About Site Subject Container */}
-                <div onClick={() => open2(prev => !prev)} className="-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 top-[-1000px] cursor-pointer
-                translate-x-[-55%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveASdown
-                sm:translate-x-[-57%] sm:h-20 sm:ml-[5%] sm:mb-1 sm:mt-4 sm:max-w-[600px]
-                md:translate-x-[-58%] md:max-w-[700px]
+                <div onClick={() => open2(prev => !prev)} 
+                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom active:mt-5 active:shadow-none
+                translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveASdown 
+                sm:translate-x-[-56.5%] sm:h-20 sm:ml-[5%] sm:mb-1 sm:mt-4 sm:max-w-[600px]
+                md:translate-x-[-55.5%] md:max-w-[700px]
                 lg:translate-x-[-56%] lg:max-w-[900px]
                 xl:max-w-[1100px]
                 ">
@@ -238,10 +240,11 @@ function Index(){
                 {opened2 && (
 
                     // About Me Subject Context Section
-                    <motion.div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center relative left-1/2 
-                    translate-x-[-55%] h-fit ml-[5%] mb-[30px] mt-[-55px] max-w-[485px]
-                    sm:translate-x-[-57%] sm:max-w-[600px]
-                    md:translate-x-[-58%] md:max-w-[700px]
+                    <motion.div 
+                    className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 overflow-hidden
+                    translate-x-[-55.5%] h-fit ml-[5%] mb-[30px] mt-[-55px] max-w-[485px]
+                    sm:translate-x-[-56.5%] sm:max-w-[600px]
+                    md:translate-x-[-55.5%] md:max-w-[700px]
                     lg:translate-x-[-56%] lg:max-w-[900px]
                     xl:max-w-[1100px]
                     '
@@ -252,12 +255,13 @@ function Index(){
 
                         {/* Different Teams Image */}
                         <img src={smallCollage} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
-                        h-[170px] w-[220px] mt-[80px]
-                        sm:h-[250px] sm:w-[300px] sm:mt-[100px]
+                        h-[170px] w-[240px] mt-[80px]
+                        sm:h-[250px] sm:w-[350px] sm:mt-[100px]
+                        lg:h-[400px] lg:w-[500px] lg:mt-[100px]
                         '/>   
 
                         {/* "What's the point of this website?" Text Container */}
-                        <div className="bg-sky-400 text-center font-semibold w-[90%] 
+                        <div className="text-center font-bold w-[90%] 
                         text-[1.2rem] ml-[5%] mt-[20px] mb-[14px]
                         sm:text-[1.3rem]
                         lg:text-[1.5rem]
@@ -275,10 +279,11 @@ function Index(){
                 )}
 
                 {/* About CS Subject Container */}
-                <div onClick={() => open3(prev => !prev)} className="-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 top-[-1000px] cursor-pointer 
-                translate-x-[-55%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveACSdown
-                sm:translate-x-[-57%] sm:h-20 sm:mb-1 sm:mt-4 sm:max-w-[600px]
-                md:translate-x-[-58%] md:mb-1 md:max-w-[700px]
+                <div onClick={() => open3(prev => !prev)} 
+                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom active:mt-5 active:shadow-none
+                translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveACSdown
+                sm:translate-x-[-56.5%] sm:h-20 sm:mb-1 sm:mt-4 sm:max-w-[600px]
+                md:translate-x-[-55.5%] md:mb-1 md:max-w-[700px]
                 lg:translate-x-[-56%] lg:max-w-[900px]
                 xl:max-w-[1100px]
                 "
@@ -328,10 +333,10 @@ function Index(){
                 {opened3 && (
 
                     // About Me Subject Context Section
-                    <motion.div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center relative left-1/2 
-                    translate-x-[-55%] h-fit ml-[5%] mb-[30px] mt-[-58px] max-w-[485px]
-                    sm:translate-x-[-57%] sm:max-w-[600px]
-                    md:translate-x-[-58%] md:max-w-[700px]
+                    <motion.div className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 overflow-hidden
+                    translate-x-[-55.5%] h-fit ml-[5%] mb-[30px] mt-[-58px] max-w-[485px]
+                    sm:translate-x-[-56.5%] sm:max-w-[600px]
+                    md:translate-x-[-55.5%] md:max-w-[700px]
                     lg:translate-x-[-56%] lg:max-w-[900px]
                     xl:max-w-[1100px]
                     '
@@ -342,12 +347,13 @@ function Index(){
 
                         {/* Team Picture Container */}
                         <img src={teamPic} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
-                        h-[170px] w-[220px] mt-[80px]
-                        sm:h-[250px] sm:w-[300px] sm:mt-[100px]
-                        '/>   
+                        h-[170px] w-[250px] mt-[80px]
+                        sm:h-[250px] sm:w-[350px] sm:mt-[100px]
+                        lg:h-[350px] lg:w-[450px]
+                        '/>    
 
                         {/* "What's the point of this website?" Text Container */}
-                        <div className="bg-sky-400 text-center font-semibold w-[90%] 
+                        <div className=" text-center font-bold w-[90%] 
                         text-[1.2rem] ml-[5%] mt-[20px] mb-[14px]
                         sm:text-[1.3rem]
                         lg:text-[1.5rem]
@@ -369,10 +375,11 @@ function Index(){
                 )}
 
                 {/* About Logo Subject Container */}
-                <div onClick={() => open4(prev => !prev)} className="-z-10 bg-lime-500 font-bold text-mainRed relative left-1/2 top-[-1000px] cursor-pointer
-                translate-x-[-55%] h-16 ml-[5%] mb-12 max-w-[485px] animate-moveALdown
-                sm:translate-x-[-57%] sm:h-20 sm:mt-4 sm:max-w-[600px]
-                md:translate-x-[-58%] md:max-w-[700px]
+                <div onClick={() => open4(prev => !prev)} 
+                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom active:mt-5 active:shadow-none
+                translate-x-[-55.5%] h-16 ml-[5%] mb-12 max-w-[485px] animate-moveALdown
+                sm:translate-x-[-56.5%] sm:h-20 sm:mt-4 sm:max-w-[600px]
+                md:translate-x-[-55.5%] md:max-w-[700px]
                 lg:translate-x-[-56%] lg:max-w-[900px]
                 xl:max-w-[1100px]
                 ">
@@ -417,10 +424,10 @@ function Index(){
                 
                 {opened4 && (
                     // About Logo Subject Context Section
-                    <motion.div className='-z-20 bg-purple-600 text-mainRed rounded-lg flex flex-col justify-center relative left-1/2 
-                    translate-x-[-55%] h-fit ml-[5%] mb-[80px] mt-[-61px] max-w-[485px]
-                    sm:translate-x-[-57%] sm:max-w-[600px] 
-                    md:translate-x-[-58%] md:max-w-[700px]
+                    <motion.div className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 overflow-hidden
+                    translate-x-[-55.5%] h-fit ml-[5%] mb-[80px] mt-[-61px] max-w-[485px]
+                    sm:translate-x-[-56.5%] sm:max-w-[600px] 
+                    md:translate-x-[-55.5%] md:max-w-[700px]
                     lg:translate-x-[-56%] lg:max-w-[900px]
                     xl:max-w-[1100px]
                     '
@@ -437,7 +444,7 @@ function Index(){
                         '/>   
                     
                         {/* "Where did the logo come from?" Text Container */}
-                        <div className="bg-sky-400 text-center font-semibold w-[90%]
+                        <div className=" text-center font-bold w-[90%]
                         text-[1.2rem] ml-[5%] mt-[20px] mb-[14px]
                         sm:text-[1.3rem]
                         lg:text-[1.5rem]
@@ -453,9 +460,15 @@ function Index(){
                     </motion.div>
                 )}
                 
-            </div>
+
+                {/* Footer Container */}
+                <div className='h-[200px] w-[100%] relative hidden bg-mainThree
+                lg:flex
+                '>
+                    <Footer />
+                </div>
             
-            {/* <Footer /> */}
+            </div>
         </div>
     );
 }
