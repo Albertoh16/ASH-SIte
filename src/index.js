@@ -10,7 +10,6 @@ import smallCollage from './assets/smallCollage.png'
 import { FaArrowDown } from "react-icons/fa";
 import largeCollage from './assets/largeCollage.png'
 import { motion } from "framer-motion";
-
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -41,8 +40,15 @@ function Index(){
             '>
 
                 {/* Large Collage */}
-                <img src={largeCollage} alt="port" className='z-0 h-full blur-sm w-full opacity-0 animate-fadeIn2
-                '/>   
+                <motion.img src={largeCollage} alt="port" className='z-0 h-full blur-sm w-full opacity-0
+                '
+
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 2, ease: 'easeOut' }}
+                >
+
+                </motion.img>   
                 
             </div>
 
@@ -61,16 +67,20 @@ function Index(){
                 '>
 
                     {/* Hello World Text */}
-                    <h1 className=' animate-fadeOut2 aboslute select-none
+                    <motion.div className='aboslute select-none
                     translate-y-[150%]
                     sm:translate-y-[80%]
                     md:translate-y-[80%]
                     lg:translate-y-[120%]
-                    '>
+                    '
+                    initial={{ opacity: 1 }}
+                    animate={{ opacity: 0 }}
+                    transition={{ duration: 0.5, delay: 2, ease: 'easeOut' }}                   
+                    >
                      
                         &lt;h1&gt;HELLO WORLD!&lt;/h1&gt; 
 
-                    </h1>
+                    </motion.div>
                     
                     {/* Fakeout Container */}
                     <div className='flex justify-center
@@ -113,7 +123,8 @@ function Index(){
                 lg:translate-x-[-56%] lg:max-w-[900px]
                 xl:max-w-[1100px]
                 2xl:max-w-[50%] 2xl:translate-x-[-60%]
-                '>
+                '
+                >
 
                     {/* Inner Subject Container */}
                     <div className='relative
@@ -138,6 +149,7 @@ function Index(){
 
                         {/* Subject Container Arrow */}
                         <motion.div className="absolute float-right 
+                        tiny:text-3xl tiny:top-[0px]
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
                         sm:text-6xl sm:top-[-10px]
@@ -227,6 +239,7 @@ function Index(){
 
                         {/* Subject Container Arrow */}
                         <motion.div className="absolute float-right 
+                        tiny:text-3xl tiny:top-[0px]
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
                         sm:text-6xl sm:top-[-10px]
@@ -293,9 +306,6 @@ function Index(){
                 xl:max-w-[1100px]
                 2xl:max-w-[50%] 2xl:translate-x-[-60%]
                 "
-                    initial={{ height: 0 }}
-                    transition={{type: "spring", stiffness: 70}}
-                    animate={{ height: opened3 ? "auto" : 0 }}
                 >
 
                     {/* Inner Subject Container */}
@@ -322,6 +332,7 @@ function Index(){
 
                         {/* Subject Container Arrow */}
                         <motion.div className="absolute float-right 
+                        tiny:text-3xl tiny:top-[0px]
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
                         sm:text-6xl sm:top-[-10px]
@@ -414,6 +425,7 @@ function Index(){
 
                         {/* Subject Container Arrow */}
                         <motion.div className="absolute float-right 
+                        tiny:text-3xl tiny:top-[0px]
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
                         sm:text-6xl sm:top-[-10px]

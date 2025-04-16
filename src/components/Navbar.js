@@ -2,7 +2,8 @@ import React from 'react';
 import {HiOutlineMenuAlt4} from 'react-icons/hi'
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/Website Logo.png';
-import { useState } from 'react';
+import honk from '../assets/honk.mp3';
+import { useEffect, useState, useRef } from 'react';
 import { motion } from "framer-motion";
 import '../index.css';
 
@@ -11,23 +12,52 @@ function Navbar() {
   const [navOpened, openNav] = useState(false);
   const [animStarted, startAnim] = useState(false);
   const [pageTitleText, setTitleText] = useState("HOME");
+  const audioRef = useRef(null);
+  
+  const useMediaQuery = (query) => {
+    const [matches, setMatches] = useState(false);
+    
+    // Determines screen size and checks if conditions are met.
+    useEffect(() => {
+      const media = window.matchMedia(query);
+      const listener = () => setMatches(media.matches);
+      
+      listener();
+      
+      media.addEventListener("change", listener);
+      
+      // returns whether screen matches query.
+      return () => media.removeEventListener("change", listener);
+    }, [query]);
+    
+    return matches;
+  };
+  
+  // Boolean to check if media query is met.
+  const isScreenTiny = useMediaQuery("(max-width: 335px)");
+  
 
+  // Routes to respective page.
   const PageNavigation = (path) => {
     navigate(path);
     DelayClose();
 
-   if(path.length == 1)
+  // Checking whether the current page is Home or something else.
+   if(path.length === 1)
    {
      setTitleText("HOME");
    }
 
    else
    {
+
+    // Sets page title variable to match current page.
      let str = path.substring(1, path.length);
      setTitleText(str.toUpperCase());
    }
  };
 
+ // Delays side nav menu container from closing too soon. Avoids animation error.
   const DelayClose = () => {
     startAnim(prev => !prev)
 
@@ -42,20 +72,29 @@ function Navbar() {
       setTimeout(() => openNav(false), 500);
     }
   };
+
+  const PlaySound = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  };
   
 
   return (
 
     // Navbar main container
-    <div className='z-50 bg-mainThree min-w-[320px] w-full
+    <div className='z-50 bg-mainThree min-w-[335px] w-full
     h-20
     sm:h-24
     lg:h-32 lg:fixed
     '>
 
         {/* Page Title  */}
-        <div class="font-bold hidden text-white float-right mr-[3%] text-3xl mt-[45px]
-        lg:block
+        <div class="font-bold text-white text-center w-[50%] left-1/2 absolute min-w-[167.5px]
+        tiny:translate-x-[-40%] tiny:text-sm tiny:mt-[30px]
+        text-lg mt-[25px] translate-x-[-50%]
+        sm:text-5xl sm:mt-[22px]
+        lg:float-right lg:mr-[3%] lg:text-4xl lg:mt-[43px] lg:w-auto lg:left-0 lg:relative lg:translate-x-0
         ">
         
         {pageTitleText}
@@ -63,11 +102,16 @@ function Navbar() {
         </div>
 
       {/* LogoImg */}
-      <img src={logo} alt="logo" className=' absolute ml-[3%] select-none
-        h-[50px] mt-[13px]
-        sm:h-[60px] sm:mt-[17px]
-        lg:h-[80px] lg:mt-[22px]
-      '/>
+      <div className='h-fit w-fit'>
+        <img onClick={PlaySound} src={logo} alt="logo" className=' absolute ml-[3%] select-none
+          h-[50px] mt-[13px]
+          sm:h-[60px] sm:mt-[17px]
+          lg:h-[80px] lg:mt-[22px]
+        '>
+        </img>
+
+        <audio ref={audioRef} src={honk} preload="auto" />
+      </div>
 
       {/* Nav Menu */}
       <ul className="h-full absolute hidden text-center text-white text-[20px] max-w-[1536px]
@@ -129,7 +173,7 @@ function Navbar() {
           lg:hidden
           "
             initial={{ right: "-80%" }}
-            animate={{ right: animStarted ? 0 : "-80%" }}
+            animate={{ right: animStarted ? isScreenTiny ? "-5%" : 0 : "-80%" }}
             transition={{ duration: 0.4 }}
           >
             {/* Home Option */}
@@ -180,7 +224,7 @@ function Navbar() {
           </motion.div>
 
 
-          {/* Motion Animatior for Side Menu */}
+          {/* Motion Animatior for Side Menu Shadow */}
           <motion.div className="z-40 float-right absolute w-[60%] h-[100%] bg-black/50
           mt-[12px]
           sm:mt-[11px]

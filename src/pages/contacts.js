@@ -1,6 +1,7 @@
 import React from 'react';
 import resume from '../assets/Alberto_S_Hernandez_Resume.pdf'
 import LetterOfRec from '../assets/ASH_UKG_LetterOfReccomendation.pdf'
+import { motion } from "framer-motion"
 
 function Contacts() {
   return (
@@ -15,22 +16,16 @@ function Contacts() {
         lg:top-32
       '>
 
-        {/* Title  */}
-        <div class="font-bold text-MainRedThree
-        text-4xl pt-[15px] mb-[20px]
-        sm:text-6xl sm:pt-[20px]
-        ">
-        
-        CONTACTS
+          <motion.div className='bg-main 0 relative w-[90%] text-center text-white max-w-[768px]
+          h-[200px] ml-[5%] mt-[5%]
+          sm:h-[250px] 
+          md:ml-0 md:translate-x-[-50%] md:left-1/2
+          '
 
-        </div>
-
-
-        <div className='bg-main 0 relative w-[90%] text-center text-white max-w-[768px]
-        h-[200px] ml-[5%] mt-[5%]
-        sm:h-[250px] 
-        md:ml-0 md:translate-x-[-50%] md:left-1/2
-        '>
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+          >
             
             {/* Title  */}
             <div class="font-bold underline text-MainRedThree 
@@ -60,13 +55,18 @@ function Contacts() {
             
             </div>
 
-        </div>
+          </motion.div>
 
-        <div className='bg-main relative w-[90%] text-center text-white underline max-w-[768px]
-        h-[200px] ml-[5%] mt-[5%]
-        sm:h-[250px] 
-        md:ml-0 md:translate-x-[-50%] md:left-1/2
-        '>
+          <motion.div className='bg-main relative w-[90%] text-center text-white underline max-w-[768px]
+          h-[200px] ml-[5%] mt-[5%]
+          sm:h-[250px] 
+          md:ml-0 md:translate-x-[-50%] md:left-1/2
+          '
+          
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
+          >
             
             {/* Title  */}
             <div class="font-bold underline text-MainRedThree 
@@ -96,13 +96,18 @@ function Contacts() {
                 
             </a>
 
-        </div>
+        </motion.div>
 
-        <div className='bg-main relative w-[90%] text-center text-white max-w-[768px]
+        <motion.div className='bg-main relative w-[90%] text-center text-white max-w-[768px]
         h-[200px] ml-[5%] mt-[5%] mb-[10%]
         sm:h-[250px] 
         md:ml-0 md:translate-x-[-50%] md:left-1/2
-        '>
+        '
+          
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.6, ease: 'easeOut' }}
+        >
             
             {/* Title  */}
             <div class="font-bold underline text-MainRedThree 
@@ -132,7 +137,7 @@ function Contacts() {
                 
             </a>
 
-        </div>
+        </motion.div>
 
       </div>
 
