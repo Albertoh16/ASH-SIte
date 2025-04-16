@@ -41,7 +41,8 @@ function Index(){
             '>
 
                 {/* Large Collage */}
-                <img src={largeCollage} alt="port" className='z-0 h-full blur-sm w-full opacity-0 animate-fadeIn2'/>   
+                <img src={largeCollage} alt="port" className='z-0 h-full blur-sm w-full opacity-0 animate-fadeIn2
+                '/>   
                 
             </div>
 
@@ -53,7 +54,7 @@ function Index(){
             '>
 
                 {/* Fakout Container */}
-                <div className='z-10 text-white list-none text-center 
+                <div className='z-10 text-white list-none text-center
                 text-2xl
                 sm:text-4xl
                 lg:text-5xl
@@ -67,16 +68,16 @@ function Index(){
                     lg:translate-y-[120%]
                     '>
                      
-                        &lt;h1&gt;HELLO WORLD!&lt;/h1&gt;
+                        &lt;h1&gt;HELLO WORLD!&lt;/h1&gt; 
 
                     </h1>
                     
                     {/* Fakeout Container */}
-                    <div className='flex justify-center 
-                    mt-[15%]
-                    sm:mt-[11%]
-                    md:mt-[8%]
-                    lg:mt-[12%]
+                    <div className='flex justify-center
+                    mt-[90px]
+                    sm:mt-[90px]
+                    md:mt-[90px]
+                    lg:mt-[170px]
                     '>
                         
                         <li className=' opacity-0 animate-fadeIn08out2 select-none'>Nah,</li>
@@ -87,7 +88,7 @@ function Index(){
                 </div>
                 
                 {/* Welcome Text */}
-                <div className='z-10 opacity-0 animate-fadeIn2 w-full absolute select-none
+                <div className='z-10 opacity-0 animate-fadeIn2 w-full absolute select-none max-w-[1536px]
                 top-1/2 left-1/2 translate-y-[-70%] -translate-x-1/2
                 '>
                     
@@ -105,12 +106,13 @@ function Index(){
                 
                 {/* About Me Subject Container */}
                 <div onClick={() => open(prev => !prev)} 
-                className='-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom active:mt-1 active:shadow-none
-                translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveAMdown
+                className='-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom 
+                active:mt-1 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveAMdown 
                 sm:translate-x-[-56.5%] sm:h-20 sm:ml-[5%] sm:mb-1 sm:max-w-[600px]
                 md:translate-x-[-55.5%] md:max-w-[700px]
                 lg:translate-x-[-56%] lg:max-w-[900px]
                 xl:max-w-[1100px]
+                2xl:max-w-[50%] 2xl:translate-x-[-60%]
                 '>
 
                     {/* Inner Subject Container */}
@@ -153,12 +155,13 @@ function Index(){
                 {opened && (
 
                     // About Me Subject Context Section
-                    <motion.div className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 overflow-hidden
-                    translate-x-[-55.5%] h-fit ml-[5%] mb-[30px] mt-[-50px] max-w-[485px]
+                    <motion.div className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative 
+                    left-1/2 overflow-hidden translate-x-[-55.5%] h-fit ml-[5%] mb-[30px] mt-[-50px] max-w-[485px]
                     sm:translate-x-[-56.5%] sm:max-w-[600px] 
                     md:translate-x-[-55.5%] md:max-w-[700px]
                     lg:translate-x-[-56%] lg:max-w-[900px]
                     xl:max-w-[1100px]
+                    2xl:max-w-[50%] 2xl:translate-x-[-60%]
                     '
                         initial={{ height: 0 }}
                         transition={{type: "spring", stiffness: 70}}
@@ -179,11 +182,11 @@ function Index(){
                         xl:text-[1.7rem]
                         ">
 
-                            My name is Alberto Hernandez, I'm currently a senior in FIU studying for my Bachelor's in Computer Science (CS).
-                            While doing my studies, i've made it my mission to dip my thumbs in all sorts of fields relating to tech. Whether 
-                            it be software engineering, systems programming, or even my greatest passion, directing, and 
-                            engineering, video games! So far it's been a very busy, yet enlightning experience getting to understand such a wide
-                            variety of intricacies and I only plan on continuing to span on as much knowledge the CS field has to offer!
+                        My name is Alberto Hernandez. I'm currently a senior at FIU, studying for my Bachelor's in Computer Science (CS). 
+                        Throughout my studies, I've made it my mission to dip my thumbs into all sorts of tech-related fields; whether it 
+                        be software engineering, systems programming, or even my greatest passion: directing and engineering video games! 
+                        So far, it's been a very busy, yet enlightening experience, getting to understand such a wide variety of intricacies 
+                        and I only plan on continuing to expand my knowledge in everything the CS field has to offer!
                         
                         </div>
             
@@ -192,12 +195,13 @@ function Index(){
 
                 {/* About Site Subject Container */}
                 <div onClick={() => open2(prev => !prev)} 
-                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom active:mt-5 active:shadow-none
-                translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveASdown 
+                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom 
+                active:mt-5 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveASdown 
                 sm:translate-x-[-56.5%] sm:h-20 sm:ml-[5%] sm:mb-1 sm:mt-4 sm:max-w-[600px]
                 md:translate-x-[-55.5%] md:max-w-[700px]
                 lg:translate-x-[-56%] lg:max-w-[900px]
                 xl:max-w-[1100px]
+                2xl:max-w-[50%] 2xl:translate-x-[-60%]
                 ">
 
                     {/* Inner Subject Container */}
@@ -247,6 +251,7 @@ function Index(){
                     md:translate-x-[-55.5%] md:max-w-[700px]
                     lg:translate-x-[-56%] lg:max-w-[900px]
                     xl:max-w-[1100px]
+                    2xl:max-w-[50%] 2xl:translate-x-[-60%]
                     '
                         initial={{ height: 0 }}
                         transition={{type: "spring", stiffness: 70}}
@@ -268,11 +273,11 @@ function Index(){
                         xl:text-[1.7rem]
                         ">
 
-                            Well first and foremost I want to leave my own little spec in this gigantic world-wide
-                            internet, I just think it's cool to be a part of it in some way. However, I have my other
-                            reasons; for instance, I want to have my own unique looking portfolio, something where I can
-                            show my personality, expertise, and my overall journey in life. I've been lucky to have the
-                            opportunity to work with all kinds of different teams, many of which are my closest friends!
+                        First and foremost, I want to leave my own little speck in this gigantic world-wide internet, I just think 
+                        it’s cool to be a part of it in some way. That said, I have other reasons too. For instance, I want to create 
+                        a unique-looking portfolio, something that showcases my personality, expertise, and overall journey in life. I’ve 
+                        been lucky to work with all kinds of different teams, many of which include my closest friends!
+                        
                         </div>
                     
                     </motion.div>
@@ -280,12 +285,13 @@ function Index(){
 
                 {/* About CS Subject Container */}
                 <div onClick={() => open3(prev => !prev)} 
-                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom active:mt-5 active:shadow-none
-                translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveACSdown
+                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom 
+                active:mt-5 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveACSdown
                 sm:translate-x-[-56.5%] sm:h-20 sm:mb-1 sm:mt-4 sm:max-w-[600px]
                 md:translate-x-[-55.5%] md:mb-1 md:max-w-[700px]
                 lg:translate-x-[-56%] lg:max-w-[900px]
                 xl:max-w-[1100px]
+                2xl:max-w-[50%] 2xl:translate-x-[-60%]
                 "
                     initial={{ height: 0 }}
                     transition={{type: "spring", stiffness: 70}}
@@ -339,6 +345,7 @@ function Index(){
                     md:translate-x-[-55.5%] md:max-w-[700px]
                     lg:translate-x-[-56%] lg:max-w-[900px]
                     xl:max-w-[1100px]
+                    2xl:max-w-[50%] 2xl:translate-x-[-60%]
                     '
                         initial={{ height: 0 }}
                         transition={{type: "spring", stiffness: 70}}
@@ -360,15 +367,13 @@ function Index(){
                         xl:text-[1.7rem]
                         ">
 
-                            As a child in the mid 2000s, I used to play with my dad's Dell laptop all
-                            the time. Just opening all sorts of random Windows applications and not haveing
-                            a clue in the world. I had no idea how any of that worked, but all I knew is that 
-                            it was incredibly intriguing. I always compare it to seeing a magic trick unfold 
-                            in front of you, except, in this scenario, I wanted to not only learn how the magic 
-                            is done, but I wanted to do it myself; bringing me to where I am now. Nowadays, you
-                            can find me working on random small projects, working in internships for large tech
-                            companies such as Mercedes-Benz and UKG, and even directing and developing on a 
-                            large-scale video game slated for commercial release with a sizable team!
+                        As a child in the mid-2000s, I used to play with my dad's Dell laptop all the time, just opening all sorts 
+                        of random Windows applications. Even though I had no clue what I was doing, I knew one thing: it was incredibly 
+                        intriguing. I always compare it to watching a magic trick unfold in front of you, except, in this scenario, I didn’t 
+                        just want to learn how the magic was done; I wanted to perform it myself. That curiosity brought me to where I am now. 
+                        These days, you can find me working on small personal projects, interning at major tech companies like Mercedes-Benz 
+                        and UKG, and even directing and developing a large-scale video game, slated for commercial release with a sizable team!
+                       
                         </div>
                     
                     </motion.div>
@@ -376,12 +381,13 @@ function Index(){
 
                 {/* About Logo Subject Container */}
                 <div onClick={() => open4(prev => !prev)} 
-                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom active:mt-5 active:shadow-none
-                translate-x-[-55.5%] h-16 ml-[5%] mb-12 max-w-[485px] animate-moveALdown
+                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom 
+                active:mt-5 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-12 max-w-[485px] animate-moveALdown
                 sm:translate-x-[-56.5%] sm:h-20 sm:mt-4 sm:max-w-[600px]
                 md:translate-x-[-55.5%] md:max-w-[700px]
                 lg:translate-x-[-56%] lg:max-w-[900px]
                 xl:max-w-[1100px]
+                2xl:max-w-[50%] 2xl:translate-x-[-60%]
                 ">
 
                     {/* Inner Subject Container */}
@@ -424,20 +430,21 @@ function Index(){
                 
                 {opened4 && (
                     // About Logo Subject Context Section
-                    <motion.div className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 overflow-hidden
-                    translate-x-[-55.5%] h-fit ml-[5%] mb-[80px] mt-[-61px] max-w-[485px]
+                    <motion.div className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative 
+                    left-1/2 overflow-hidden translate-x-[-55.5%] h-fit ml-[5%] mb-[80px] mt-[-61px] max-w-[485px]
                     sm:translate-x-[-56.5%] sm:max-w-[600px] 
                     md:translate-x-[-55.5%] md:max-w-[700px]
                     lg:translate-x-[-56%] lg:max-w-[900px]
                     xl:max-w-[1100px]
+                    2xl:max-w-[50%] 2xl:translate-x-[-60%]
                     '
                         initial={{ height: 0 }}
                         transition={{type: "spring", stiffness: 70}}
                         animate={{ height: opened4 ? "auto" : 0 }}
                     >
                     
-                        {/* Team Picture Container */}
-                        <img src={logoImage} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
+                        {/* Logo Picture Container */}
+                        <img src={logoImage} alt="port" className='relative left-1/2 translate-x-[-50%]
                         h-[120px] w-[220px] mt-[50px]
                         sm:h-[180px] sm:w-[320px] sm:mt-[60px]
                         lg:mt-[60px]
@@ -451,10 +458,10 @@ function Index(){
                         xl:text-[1.7rem]
                         ">
 
-                            ASH is the initials of my full name, Alberto Sebastian Hernandez (ASH). The design
-                            mimics that of my professional signature, where the S not only ties my first and last 
-                            initials together, but also resembles the infinity symbol. Why the infinity symbol?
-                            Well, there's an infinite amount of interpretations to that.
+                        ASH represents the initials of my full name: Alberto Sebastian Hernandez. The design mimics my professional 
+                        signature, where the “S” not only ties my first and last initials together but also resembles the infinity symbol. 
+                        Why the infinity symbol? Well, there's an infinite number of ways to interpret that.
+                        
                         </div>
                         
                     </motion.div>

@@ -1,11 +1,15 @@
 import React from 'react';
 
-function experience() {
+function Experience() {
   return (
     <div>
-      <h1>experience Page</h1>
+
+      <body className='-z-50 bg-mainTwo m-0 p-0'></body>
+
+      <div className='text-white absolute mt-[130px] text-1xl'>Experience Page [this page is under maintenence]</div>
+
     </div>
   );
 }
 
-export default experience;
+export default Experience;

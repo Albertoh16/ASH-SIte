@@ -49,14 +49,15 @@ function Navbar() {
       '/>
 
       {/* Nav Menu */}
-      <ul className="h-full absolute hidden text-center text-white text-[20px]
+      <ul className="h-full absolute hidden text-center text-white text-[20px] max-w-[1536px]
       w-[50%] left-1/2 translate-x-[-49%]
       lg:flex
       ">
 
         {/* Navbar Options */}
         <div onClick={() => Pagenvigation('/')} 
-        className="w-1/3 h-[80%] mt-[13px] bg-mainThree font-semibold hover:bg-mainTwo cursor-pointer select-none shadow-lg shadow-black/50 active:mt-4 active:shadow-none
+        className="w-1/3 h-[80%] mt-[13px] bg-mainThree font-semibold hover:bg-mainTwo cursor-pointer select-none 
+        shadow-lg shadow-black/50 active:mt-4 active:shadow-none border-4 border-mainTwo
         leading-[5] ml-[10px] mr-[10px]
         ">
         
@@ -65,7 +66,8 @@ function Navbar() {
         </div>
         
         <div onClick={() => Pagenvigation('/experience')} 
-        className="w-1/3 h-[80%] mt-[13px] bg-mainThree font-semibold hover:bg-mainTwo cursor-pointer select-none shadow-lg shadow-black/50 active:mt-4 active:shadow-none
+        className="w-1/3 h-[80%] mt-[13px] bg-mainThree font-semibold hover:bg-mainTwo cursor-pointer select-none 
+        shadow-lg shadow-black/50 active:mt-4 active:shadow-none border-4 border-mainTwo
         leading-[5]
         ">
         
@@ -74,7 +76,8 @@ function Navbar() {
         </div>
         
         <div onClick={() => Pagenvigation('/projects')} 
-        className="w-1/3 h-[80%] mt-[13px] bg-mainThree font-semibold hover:bg-mainTwo cursor-pointer select-none shadow-lg shadow-black/50 active:mt-4 active:shadow-none
+        className="w-1/3 h-[80%] mt-[13px] bg-mainThree font-semibold hover:bg-mainTwo cursor-pointer select-none 
+        shadow-lg shadow-black/50 active:mt-4 active:shadow-none border-4 border-mainTwo
         leading-[5] ml-[10px] mr-[10px]
         ">
           
@@ -99,8 +102,8 @@ function Navbar() {
         <div className='z-50 w-[100%] h-[100%] overflow-hidden
         '>
           {/* Motion Animatior for Side Menu */}
-          <motion.div className="z-50 float-right absolute w-[50%] h-[100%] bg-mainThree bor flex flex-col text-center border-4 border-mainTwo
-          mt-[12px]
+          <motion.div className="z-50 float-right absolute w-[50%] h-[100%] bg-mainThree bor flex flex-col text-center border-4 
+          border-mainTwo mt-[12px]
           sm:mt-[11px]
           lg:hidden
           "
