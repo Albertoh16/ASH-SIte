@@ -10,12 +10,24 @@ function Navbar() {
   const navigate = useNavigate();  
   const [navOpened, openNav] = useState(false);
   const [animStarted, startAnim] = useState(false);
+  const [pageTitleText, setTitleText] = useState("HOME");
 
-  const Pagenvigation = (path) => {
-     navigate(path);
-     DelayClose();
-  };
-  
+  const PageNavigation = (path) => {
+    navigate(path);
+    DelayClose();
+
+   if(path.length == 1)
+   {
+     setTitleText("HOME");
+   }
+
+   else
+   {
+     let str = path.substring(1, path.length);
+     setTitleText(str.toUpperCase());
+   }
+ };
+
   const DelayClose = () => {
     startAnim(prev => !prev)
 
@@ -41,6 +53,15 @@ function Navbar() {
     lg:h-32 lg:fixed
     '>
 
+        {/* Page Title  */}
+        <div class="font-bold hidden text-white float-right mr-[3%] text-3xl mt-[45px]
+        lg:block
+        ">
+        
+        {pageTitleText}
+
+        </div>
+
       {/* LogoImg */}
       <img src={logo} alt="logo" className=' absolute ml-[3%] select-none
         h-[50px] mt-[13px]
@@ -55,7 +76,7 @@ function Navbar() {
       ">
 
         {/* Navbar Options */}
-        <div onClick={() => Pagenvigation('/')} 
+        <div onClick={() => PageNavigation('/')} 
         className="w-1/3 h-[80%] mt-[13px] bg-mainThree font-semibold hover:bg-mainTwo cursor-pointer select-none 
         shadow-lg shadow-black/50 active:mt-4 active:shadow-none border-4 border-mainTwo
         leading-[5] ml-[10px] mr-[10px]
@@ -65,7 +86,7 @@ function Navbar() {
         
         </div>
         
-        <div onClick={() => Pagenvigation('/experience')} 
+        <div onClick={() => PageNavigation('/experience')} 
         className="w-1/3 h-[80%] mt-[13px] bg-mainThree font-semibold hover:bg-mainTwo cursor-pointer select-none 
         shadow-lg shadow-black/50 active:mt-4 active:shadow-none border-4 border-mainTwo
         leading-[5]
@@ -75,7 +96,7 @@ function Navbar() {
         
         </div>
         
-        <div onClick={() => Pagenvigation('/projects')} 
+        <div onClick={() => PageNavigation('/projects')} 
         className="w-1/3 h-[80%] mt-[13px] bg-mainThree font-semibold hover:bg-mainTwo cursor-pointer select-none 
         shadow-lg shadow-black/50 active:mt-4 active:shadow-none border-4 border-mainTwo
         leading-[5] ml-[10px] mr-[10px]
@@ -93,7 +114,7 @@ function Navbar() {
         lg:hidden
       \">
 
-          <HiOutlineMenuAlt4 onClick={DelayClose}
+          <HiOutlineMenuAlt4 onClick={() => DelayClose(0)}
       />
       </div>
 
@@ -112,7 +133,7 @@ function Navbar() {
             transition={{ duration: 0.4 }}
           >
             {/* Home Option */}
-            <div onClick={() => Pagenvigation('/')} 
+            <div onClick={() => PageNavigation('/')} 
             className=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
             border-mainTwo shadow-bottom shadow-black/50 active:bg-mainTwo active:mt-[6%] active:shadow-none
             text-[20px] leading-[4.2]
@@ -124,7 +145,7 @@ function Navbar() {
             </div>
 
             {/* Projects Option */}
-            <div onClick={() => Pagenvigation('/projects')} 
+            <div onClick={() => PageNavigation('/projects')} 
             className=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
             border-mainTwo shadow-bottom shadow-black/50 active:bg-mainTwo active:mt-[6%] active:shadow-none
             text-[20px] leading-[4.2] 
@@ -135,7 +156,7 @@ function Navbar() {
             </div>
             
             {/* Experience Option */} 
-            <div onClick={() => Pagenvigation('/experience')} 
+            <div onClick={() => PageNavigation('/experience')} 
             className=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
             border-mainTwo shadow-bottom shadow-black/50 active:bg-mainTwo active:mt-[6%] active:shadow-none
             text-[20px] leading-[4.2]
@@ -146,7 +167,7 @@ function Navbar() {
             </div>
 
             {/* Contacts Option */}
-            <div onClick={() => Pagenvigation('/contacts')}
+            <div onClick={() => PageNavigation('/contacts')}
             className=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
             border-mainTwo shadow-bottom shadow-black/50 active:bg-mainTwo active:mt-[6%] active:shadow-none
             text-[20px] leading-[4.2]
