@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ASH-SIte/static/css/main.2707c315.css",
-    "main.js": "/ASH-SIte/static/js/main.d1b05dbf.js",
+    "main.css": "/ASH-SIte/static/css/main.9888d0fc.css",
+    "main.js": "/ASH-SIte/static/js/main.82100f63.js",
     "static/media/largeCollage.png": "/ASH-SIte/static/media/largeCollage.f9f7c2628d40f8182b33.png",
     "static/media/smallCollage.png": "/ASH-SIte/static/media/smallCollage.7c728be14b0e7204aacc.png",
     "static/media/Alberto_S_Hernandez_Resume.pdf": "/ASH-SIte/static/media/Alberto_S_Hernandez_Resume.d0a5f146f2a0f3b5ce5f.pdf",
@@ -10,11 +10,11 @@
     "static/media/ProfessionalPic.jpg": "/ASH-SIte/static/media/ProfessionalPic.4b7bb0978bc7f665d045.jpg",
     "static/media/Website Logo.png": "/ASH-SIte/static/media/Website Logo.e1eb28d73f662da572de.png",
     "index.html": "/ASH-SIte/index.html",
-    "main.2707c315.css.map": "/ASH-SIte/static/css/main.2707c315.css.map",
-    "main.d1b05dbf.js.map": "/ASH-SIte/static/js/main.d1b05dbf.js.map"
+    "main.9888d0fc.css.map": "/ASH-SIte/static/css/main.9888d0fc.css.map",
+    "main.82100f63.js.map": "/ASH-SIte/static/js/main.82100f63.js.map"
   },
   "entrypoints": [
-    "static/css/main.2707c315.css",
-    "static/js/main.d1b05dbf.js"
+    "static/css/main.9888d0fc.css",
+    "static/js/main.82100f63.js"
   ]
 }
