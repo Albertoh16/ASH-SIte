@@ -7,7 +7,7 @@ import portrait from './assets/ProfessionalPic.jpg'
 import logoImage from './assets/Website Logo.png'
 import teamPic from './assets/TeamPicture.jpg'
 import smallCollage from './assets/smallCollage.png'
-import { FaArrowDown, FaArrowUp } from "react-icons/fa";
+import { FaArrowDown } from "react-icons/fa";
 import largeCollage from './assets/largeCollage.png'
 import { motion } from "framer-motion";
 

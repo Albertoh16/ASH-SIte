@@ -35,7 +35,7 @@ function Navbar() {
   return (
 
     // Navbar main container
-    <div className='z-50 bg-mainThree min-w-[335px] w-full
+    <div className='z-50 bg-mainThree min-w-[320px] w-full
     h-20
     sm:h-24
     lg:h-32 lg:fixed
@@ -113,7 +113,7 @@ function Navbar() {
           >
             {/* Home Option */}
             <div onClick={() => Pagenvigation('/')} 
-            class=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
+            className=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
             border-mainTwo shadow-bottom shadow-black/50 active:bg-mainTwo active:mt-[6%] active:shadow-none
             text-[20px] leading-[4.2]
             subAdj1:text-[30px] subAdj1:leading-[2.8]        
@@ -125,7 +125,7 @@ function Navbar() {
 
             {/* Projects Option */}
             <div onClick={() => Pagenvigation('/projects')} 
-            class=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
+            className=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
             border-mainTwo shadow-bottom shadow-black/50 active:bg-mainTwo active:mt-[6%] active:shadow-none
             text-[20px] leading-[4.2] 
             subAdj1:text-[30px] subAdj1:leading-[2.8]      
@@ -136,7 +136,7 @@ function Navbar() {
             
             {/* Experience Option */} 
             <div onClick={() => Pagenvigation('/experience')} 
-            class=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
+            className=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
             border-mainTwo shadow-bottom shadow-black/50 active:bg-mainTwo active:mt-[6%] active:shadow-none
             text-[20px] leading-[4.2]
             subAdj1:text-[30px] subAdj1:leading-[2.8]    
@@ -146,7 +146,8 @@ function Navbar() {
             </div>
 
             {/* Contacts Option */}
-            <div class=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
+            <div onClick={() => Pagenvigation('/contacts')}
+            className=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
             border-mainTwo shadow-bottom shadow-black/50 active:bg-mainTwo active:mt-[6%] active:shadow-none
             text-[20px] leading-[4.2]
             subAdj1:text-[30px] subAdj1:leading-[2.8]    
