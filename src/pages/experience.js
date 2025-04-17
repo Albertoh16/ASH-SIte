@@ -53,59 +53,38 @@ function Experience() {
       <body className='-z-50 bg-mainTwo m-0 p-0'></body>
 
       {/* Main Container */}
-      <div className='z-0 bg-emerald-300 min-w-[320px] ml-[5%] mt-[20px]
-      w-[90%] h-[400px] 
-      top-[20px] 
-      lg:top-[150px]
-      '>
-      
-      {/* Title */}
-      <div className='z-50 w-full h-[50px] text-center text-white bg-slate-600 font-bold 
-      text-2xl leading-[2]
-      '>
+      <div className='bg-lime-300 w-full h-full absolute flex flex-col'>
 
-        {company}
-      
-      </div>
-
-      {/* Date and Title Container */}
-      <div className='z-50 w-full h-[30px] text-center text-gray-300 bg-slate-700 italic 
-      text-sm leading-[2]
-      '>
         
-        {/* Job Title */}
-        <div className='float-left ml-[2%] w-fit font-semibold'> {position} </div>
+        <div className='relative h-fit w-fit
+        rotate-[20deg] ml-[-5%] mt-[50px]'>
 
-        {/* Time Worked */}
-        <div className='float-right mr-[2%] w-fit'> {date} </div>
+          {/* Card */}
+          <div className='z-0 bg-emerald-400 ml-[50px]
+          w-[170px] h-[150px]'>
 
-      </div>     
+          </div>
 
-      {/* Image Container */}
-      <div className='bg-red-500 h-[169px] w-full '>
+          {/* Pocket */}
+          <div className='z-30 bg-amber-300 shadow-top absolute
+          w-[200px] h-[200px] ml-[30px] mt-[-60px]'>
 
-        {/* <div className='relative'>
-            <img src={UKG} alt="mer" className='h-[169px]'></img>
-          </div> */}
-
-        {/* Left Arrow */}
-        <div onClick={() => ShiftExperience(false)} className='z-50 bg-black/50 hover:bg-black/60 active:bg-black/70 float-left h-[169px] w-[10%] text-white '>
-
-          <FaArrowLeft className='active:ml-[-2px] h-[100%] w-full' />
+          </div>
 
         </div>
 
-        {/* Right Arrow */}
-        <div onClick={() => ShiftExperience(true)} className='z-50 bg-black/50 hover:bg-black/60 active:bg-black/70 float-right ml-[80%] h-[169px] w-[10%] text-white '>
+        <div className='relative h-fit w-fit
+        rotate-[-20deg] mb-[100px]] ml-[55%] mt-[300px]'>
 
-          <FaArrowRight className='active:ml-[2px] h-[100%] w-full' />
+          {/* Pocket */}
+          <div className='bg-amber-300 shadow-top
+          w-[200px] h-[200px]'>
+
+          </div>
 
         </div>
-        
-        
       </div>
 
-      </div>
     </div>
   );
 }
