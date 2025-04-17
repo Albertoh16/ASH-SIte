@@ -3,7 +3,7 @@ import {HiOutlineMenuAlt4} from 'react-icons/hi'
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/Website Logo.png';
 import honk from '../assets/honk.mp3';
-import { useEffect, useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from "framer-motion";
 import '../index.css';
 
@@ -14,29 +14,6 @@ function Navbar() {
   const [pageTitleText, setTitleText] = useState("HOME");
   const audioRef = useRef(null);
   
-  const useMediaQuery = (query) => {
-    const [matches, setMatches] = useState(false);
-    
-    // Determines screen size and checks if conditions are met.
-    useEffect(() => {
-      const media = window.matchMedia(query);
-      const listener = () => setMatches(media.matches);
-      
-      listener();
-      
-      media.addEventListener("change", listener);
-      
-      // returns whether screen matches query.
-      return () => media.removeEventListener("change", listener);
-    }, [query]);
-    
-    return matches;
-  };
-  
-  // Boolean to check if media query is met.
-  const isScreenTiny = useMediaQuery("(max-width: 335px)");
-  
-
   // Routes to respective page.
   const PageNavigation = (path) => {
     navigate(path);
@@ -83,7 +60,7 @@ function Navbar() {
   return (
 
     // Navbar main container
-    <div className='z-50 bg-mainThree min-w-[335px] w-full
+    <div className='z-50 bg-mainThree min-w-[320px] w-full
     h-20
     sm:h-24
     lg:h-32 lg:fixed
@@ -114,12 +91,11 @@ function Navbar() {
       </div>
 
       {/* Nav Menu */}
-      <ul className="h-full absolute hidden text-center text-white text-[20px] max-w-[1536px]
+      {/* <ul className="h-full absolute hidden text-center text-white text-[20px] max-w-[1536px]
       w-[50%] left-1/2 translate-x-[-49%]
       lg:flex
       ">
 
-        {/* Navbar Options */}
         <div onClick={() => PageNavigation('/')} 
         className="w-1/3 h-[80%] mt-[13px] bg-mainThree font-semibold hover:bg-mainTwo cursor-pointer select-none 
         shadow-lg shadow-black/50 active:mt-4 active:shadow-none border-4 border-mainTwo
@@ -149,7 +125,7 @@ function Navbar() {
           MY PROJECTS
           
         </div>
-      </ul>
+      </ul> */}
 
       {/* Hamburger Icon */}
       <div className="text-white float-right me-[2%] cursor-pointer active:text-gray-500
@@ -173,7 +149,7 @@ function Navbar() {
           lg:hidden
           "
             initial={{ right: "-80%" }}
-            animate={{ right: animStarted ? isScreenTiny ? "-5%" : 0 : "-80%" }}
+            animate={{ right: animStarted ?  0 : "-80%" }}
             transition={{ duration: 0.4 }}
           >
             {/* Home Option */}
@@ -189,7 +165,7 @@ function Navbar() {
             </div>
 
             {/* Projects Option */}
-            <div onClick={() => PageNavigation('/projects')} 
+            {/* <div onClick={() => PageNavigation('/projects')} 
             className=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
             border-mainTwo shadow-bottom shadow-black/50 active:bg-mainTwo active:mt-[6%] active:shadow-none
             text-[20px] leading-[4.2] 
@@ -197,10 +173,10 @@ function Navbar() {
             ">
               My Projects
             
-            </div>
+            </div> */}
             
             {/* Experience Option */} 
-            <div onClick={() => PageNavigation('/experience')} 
+            {/* <div onClick={() => PageNavigation('/experience')} 
             className=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
             border-mainTwo shadow-bottom shadow-black/50 active:bg-mainTwo active:mt-[6%] active:shadow-none
             text-[20px] leading-[4.2]
@@ -208,7 +184,7 @@ function Navbar() {
             ">
               My Experience
               
-            </div>
+            </div> */}
 
             {/* Contacts Option */}
             <div onClick={() => PageNavigation('/contacts')}

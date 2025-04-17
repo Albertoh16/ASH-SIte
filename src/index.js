@@ -33,14 +33,14 @@ function Index(){
             <body className='-z-50 bg-mainTwo m-0 p-0'></body>
 
             {/* Main Image Container */}
-            <div className='-z-40 w-full absolute min-w-[335px]
+            <div className='-z-40 w-full absolute min-w-[320px]
             h-48 top-20 
             sm:top-24 
             lg:h-80 lg:top-32
             '>
 
                 {/* Large Collage */}
-                <motion.img src={largeCollage} alt="port" className='z-0 h-full blur-sm w-full opacity-0
+                <motion.img src={largeCollage} alt="port" className='z-0 h-full blur-sm w-full opacity-0 min-w-[320px]
                 '
 
                 initial={{ opacity: 0 }}
@@ -53,7 +53,7 @@ function Index(){
             </div>
 
             {/* Window */}
-            <div className='z-10 bg-window text-white w-full text-center font-bold absolute min-w-[335px]
+            <div className='z-10 bg-window text-white w-full text-center font-bold absolute min-w-[320px]
             h-52 top-20 text-3xl 
             sm:text-5xl sm:top-24
             lg:h-[340px] lg:top-32 lg:text-6xl 
@@ -83,7 +83,7 @@ function Index(){
                     </motion.div>
                     
                     {/* Fakeout Container */}
-                    <div className='flex justify-center
+                    <div className='flex justify-center min-w-[320px]
                     mt-[90px]
                     sm:mt-[90px]
                     md:mt-[90px]
@@ -98,7 +98,7 @@ function Index(){
                 </div>
                 
                 {/* Welcome Text */}
-                <div className='z-10 opacity-0 animate-fadeIn2 w-full absolute select-none max-w-[1536px]
+                <div className='z-10 opacity-0 animate-fadeIn2 w-full absolute select-none max-w-[1536px] min-w-[320px]
                 top-1/2 left-1/2 translate-y-[-70%] -translate-x-1/2
                 '>
                     
@@ -108,7 +108,7 @@ function Index(){
             </div>
             
             {/* Main Container */}
-            <div className='-z-50 bg-mainTwo w-full absolute flex flex-col min-w-[335px] h-fit
+            <div className='-z-50 bg-mainTwo w-full absolute flex flex-col min-w-[320px] h-fit
             top-[272px] 
             sm:top-[289px]
             lg:top-[448px]
@@ -149,7 +149,7 @@ function Index(){
 
                         {/* Subject Container Arrow */}
                         <motion.div className="absolute float-right 
-                        tiny:text-3xl tiny:top-[0px]
+                        tiny:text-xl tiny:top-[5px]
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
                         sm:text-6xl sm:top-[-10px]
@@ -239,7 +239,7 @@ function Index(){
 
                         {/* Subject Container Arrow */}
                         <motion.div className="absolute float-right 
-                        tiny:text-3xl tiny:top-[0px]
+                        tiny:text-xl tiny:top-[5px]
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
                         sm:text-6xl sm:top-[-10px]
@@ -332,7 +332,7 @@ function Index(){
 
                         {/* Subject Container Arrow */}
                         <motion.div className="absolute float-right 
-                        tiny:text-3xl tiny:top-[0px]
+                        tiny:text-xl tiny:top-[5px]
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
                         sm:text-6xl sm:top-[-10px]
@@ -425,7 +425,7 @@ function Index(){
 
                         {/* Subject Container Arrow */}
                         <motion.div className="absolute float-right 
-                        tiny:text-3xl tiny:top-[0px]
+                        tiny:text-xl tiny:top-[5px]
                         right-2 text-4xl top-[-5px]
                         subAdj1:top-[-3px]
                         sm:text-6xl sm:top-[-10px]
@@ -481,7 +481,7 @@ function Index(){
                 
 
                 {/* Footer Container */}
-                <div className='h-[200px] w-[100%] relative hidden bg-mainThree
+                <div className='h-[200px] w-[100%] relative hidden bg-mainThree min-w-[320px]
                 lg:flex
                 '>
                     <Footer />
