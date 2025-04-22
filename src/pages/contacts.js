@@ -6,9 +6,6 @@ import { motion } from "framer-motion"
 function Contacts() {
   return (
     <div>
-      
-      <body className='-z-50 bg-mainTwo m-0 p-0'></body>
-
         {/* Main Contacts Container */}
       <div className='w-full h-fit absolute min-w-[320px] text-center
         top-20
