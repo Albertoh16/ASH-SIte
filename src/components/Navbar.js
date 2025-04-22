@@ -60,14 +60,14 @@ function Navbar() {
   return (
 
     // Navbar main container
-    <div className='z-50 bg-mainThree min-w-[320px] w-full
+    <div className='z-50 bg-mainThree w-[100%]
     h-20
     sm:h-24
     lg:h-32 lg:fixed
     '>
 
         {/* Page Title  */}
-        <div class="font-bold text-white text-center w-[50%] left-1/2 absolute min-w-[167.5px]
+        <div className="font-bold text-white text-center w-[50%] left-1/2 absolute min-w-[167.5px]
         tiny:translate-x-[-40%] tiny:text-sm tiny:mt-[30px]
         text-lg mt-[25px] translate-x-[-50%]
         sm:text-5xl sm:mt-[22px]

@@ -29,8 +29,6 @@ function Index(){
         <div>
             <title>ASH</title>
             <link rel="shortcut icon" type= 'image/png' href="assets/favicon.png" />
-            
-            <body className='-z-50 bg-mainTwo m-0 p-0'></body>
 
             {/* Main Image Container */}
             <div className='-z-40 w-full absolute min-w-[320px]

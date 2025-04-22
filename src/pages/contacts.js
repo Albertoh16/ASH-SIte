@@ -28,7 +28,7 @@ function Contacts() {
           >
             
             {/* Title  */}
-            <div class="font-bold underline text-MainRedThree 
+            <div className="font-bold underline text-MainRedThree 
             text-2xl pt-[10px] mb-[20px]
             sm:text-4xl sm:pt-[20px]
             ">
@@ -69,7 +69,7 @@ function Contacts() {
           >
             
             {/* Title  */}
-            <div class="font-bold underline text-MainRedThree 
+            <div className="font-bold underline text-MainRedThree 
             text-2xl pt-[10px] mb-[20px]
             sm:text-4xl sm:pt-[20px]
             ">
@@ -110,7 +110,7 @@ function Contacts() {
         >
             
             {/* Title  */}
-            <div class="font-bold underline text-MainRedThree 
+            <div className="font-bold underline text-MainRedThree 
             text-2xl pt-[10px] mb-[20px]
             sm:text-4xl sm:pt-[20px]
             ">

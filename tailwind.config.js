@@ -42,7 +42,8 @@ module.exports = {
 
       // Shadows for layering.
       boxShadow: {
-        bottom: "0 10px 4px -2px rgba(0, 0, 0, 0.2)"
+        bottom: "0 10px 4px -2px rgba(0, 0, 0, 0.2)",
+        top: '0 -4px 10px rgba(0, 0, 0, 0.2)'
       },
 
       keyframes:{
@@ -94,7 +95,7 @@ module.exports = {
         slideShadowRight: {
           '0%': { right: 400  },
           '100%': {right: -500 }
-        },
+        }
       },
 
       animation: {
@@ -108,6 +109,7 @@ module.exports = {
         moveALdown: 'moveALdown 0.5s ease-in 2.4s forwards',
         slideMenuLeft: 'slideMenuLeft 0.5s ease-in forwards',
         slideMenuLRight: 'slideMenuRight 0.5s ease-in forwards',
+        slideCardOut: 'slideCardOut 3s ease-in forwards'
       }
     },
   },
