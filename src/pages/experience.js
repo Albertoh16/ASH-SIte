@@ -1,54 +1,15 @@
 import React from 'react';
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useState } from 'react';
 import { motion } from "framer-motion";
 import UKG from '../assets/UKGLogo.png'
 import UKGTeam from '../assets/UKGTeam.png'
 import mercedes from '../assets/mercedesLogo.png'
+import mercedesBuilding from '../assets/mercedesBuilding.png'
 import MDC from '../assets/MDCLogo.png'
+import MDCFriends from '../assets/friends.jpg'
 import Footer from '../components/Footer';
 
-function Experience() {
-  const [index, setIndex] = useState(1);
-  const [company, setCompany] = useState("Ultimate Kronos Group");
-  const [position, setPosition] = useState("Software Engineer Intern");
-  const [date, setDate] = useState("09/2024-12/2024");
-  const totalIndexes = 3;
-
-  const ShiftExperience = (right) => {
-    if(right)
-    {
-      setIndex(prev => (prev + 1) % totalIndexes);
-    }
-  
-    else
-    {
-      setIndex(prev => (prev - 1 + totalIndexes) % totalIndexes);
-    }
-
-    switch(index)
-    {
-      case 0:
-        setCompany("Ultimate Kronos Group");
-        setPosition("Software Engineer Intern");
-        setDate("09/2024-12/2024");
-        break;
-
-      case 1:
-        setCompany("Mercedes-Benz");
-        setPosition("System/Network Analyst");
-        setDate("08/2023-09/2024");      
-        break;
-
-      case 2:
-        setCompany("Miami Dade College");
-        setPosition("Computer Science Tutor");
-        setDate("08/2022-08/2023");       
-        break;
-    }
-
-  }
-  
+function Experience() {  
   const [cardAnimated, setCardAnimation] = useState(false);
   const [cardAnimated2, setCardAnimation2] = useState(false);
   const [cardAnimated3, setCardAnimation3] = useState(false);
@@ -70,7 +31,7 @@ function Experience() {
         if (!visible) 
         {
           // 200ms delay
-          setTimeout(() => setVisibility(true), 100);
+          setTimeout(() => setVisibility(true), 200);
 
           // 500ms delay
           setTimeout(() => setContent(true), 200);
@@ -91,10 +52,10 @@ function Experience() {
         if (!visible2) 
         {
           // Sets a 200ms delay
-          setTimeout(() => setVisibility2(true), 100);
+          setTimeout(() => setVisibility2(true), 200);
 
           // 500ms delay
-          setTimeout(() => setContent2(true), 500);
+          setTimeout(() => setContent2(true), 200);
         } 
         
         else 
@@ -115,7 +76,7 @@ function Experience() {
           setTimeout(() => setVisibility3(true), 100);
 
           // 500ms delay
-          setTimeout(() => setContent3(true), 500);
+          setTimeout(() => setContent3(true), 200);
         } 
         
         else 
@@ -132,34 +93,35 @@ function Experience() {
   return (
     <div>
 
-      {/*Pocket Container*/}
-      <div className='bg-lime-300 w-full h-[1400px] absolute flex overflow-hidden justify-center'>
+      {/*Main Container*/}
+      <div className='bg-lime-300 w-full h-fit relative'>
         
-        <motion.div className='z-10 bg-red-600 relative h-full w-full flex justify-center'
-
+        {/*UKG Sub Container*/}
+        <motion.div className='z-10 bg-red-400 relative grid place-items-center h-[400px] w-full mt-[0px]'
+        
         animate={          
-          cardAnimated
-          ? 
-          {
-            marginBottom: [0, 800]
-          }
-          : 
-          {
-            marginBottom: [800, 0]
-          }}
+        cardAnimated
+        ? 
+        {
+          paddingBottom: [0, 1400]
+        }
+        : 
+        {
+          paddingBottom: [1400, 0]
+        }}
 
-          transition={{
-            duration: 1,
-            times: [0, 0.5],
-            ease: "easeInOut",
-          }}
+        transition={{
+          duration: 1,
+          times: [0, 0.5],
+          ease: "easeInOut",
+        }}
+
         >
-
-          {/* Card */}
-          <motion.div className={`absolute bg-emerald-400 text-white cursor-default text-center select-none border-black shadow-xl
-          flex flex-col justify-center
-          ${ visible ? 'z-50' : 'z-0' } ${ cardAnimated ? '' : 'lg:hover:mt-[-100px]' }
-          mt-[110px] 
+          
+          {/* Subject Container */}
+          <motion.div className={`bg-emerald-400 text-white cursor-default text-center select-none border-black shadow-xl block justify-center
+          ${ visible ? 'z-50' : 'z-0' } ${ cardAnimated ? '' : 'lg:hover:mt-[100px]' }
+          mt-[-40px] max-w-[400px]
           w-[70%] h-fit leading-[2]
           `}
           
@@ -169,15 +131,15 @@ function Experience() {
             cardAnimated
             ? 
             {
-              y: [0, -130, -130, -40],
+              y: [0, 40, 40, 100],
               width: ['60%', '60%', '90%', '90%'],
-              height: [100, 100, 1150, 1150],
+              height: [70, 70, 1290, 1290],
             }
             : 
             {
-              y: [-10, -130, -130, 0],
+              y: [100, 40, 40, 0],
               width: ['90%', '90%', '60%', '60%'],
-              height: [650, 650, 100, 100],
+              height: [1290, 650, 70, 70],
             }}
 
             transition={{
@@ -187,22 +149,26 @@ function Experience() {
             }}
           >
 
-            <div className='bg-orange-400 font-bold underline h-fit mt-[12px] 
-            mb-[20px] text-3xl
-            sm:text-4xl
+            {/* Company Name */}
+            <div className='bg-orange-400 font-bold underline h-[40px]
+            mb-[10px] text-3xl
             '> 
 
               UKG 
             
             </div>
 
-            <div className='bg-pink-600 font-semibold h-fit text-[16px] mt-[-10px] mb-[10px]'> Software Engineering Intern </div>
+            {/* Position */}
+            <div className='bg-pink-600 relative font-semibold h-fit text-[16px] mt-[-10px] mb-[10px]'> Software Engineering Intern </div>
 
-            <div className='bg-purple-600 italic h-fit text-[16px] mt-[-10px] mb-[20px]'> 09/2024 - 12/2025 </div>
+            {/* Date */}
+            <div className='bg-purple-600 relative italic h-fit text-[16px] mt-[-10px] mb-[20px]'> 09/2024 - 12/2024 </div>
 
-            { contentDisplayed && (<img src={UKG} alt="ukglog" className='h-[150px] w-[90%] ring-2 ring-black' />)}
+            {/* Image One */}
+            { contentDisplayed && (<img src={UKG} alt="ukglog" className='w-[90%] ring-2 ring-black ml-[5%] h-[150px] max-w-[300px]'/>)}
 
-            { contentDisplayed && (<div className='bg-red-300 font-semibold w-full h-fit mt-[20px]'>
+            {/* Text Container One */}
+            { contentDisplayed && (<div className='bg-red-300 relative w-[95%] ml-[2.5%] font-semibold h-fit mt-[20px]'>
 
               In my time on UKG, I collaborated with the finance software development IT team and utilized C# with the ASP.NET MVC framework, 
               and used internal APIs to enhance our Microsoft Dynamics 365 environment. I also designed a solution for efficient customer data 
@@ -210,10 +176,11 @@ function Experience() {
 
             </div>)}
 
-            { contentDisplayed && (<img src={UKGTeam} alt="ukgteam" className='h-[160px] w-[90%] ring-2 ring-black mt-[20px]' />)}
+            {/* Image Two */}
+            { contentDisplayed && (<img src={UKGTeam} alt="ukgteam" className='relative w-[90%] ring-2 ring-black ml-[5%] h-[160px] mt-[20px] max-w-[300px]' />)}
 
-
-            { contentDisplayed && (<div className='bg-yellow-950 font-semibold w-full h-fit mt-[20px]'>
+            {/* Text Container Two */}
+            { contentDisplayed && (<div className='bg-yellow-950 relative w-[95%] ml-[2.5%] font-semibold h-fit mt-[20px]'>
 
               I had a wonderful time working with my team! I was treated as if I had been there for years, and I was even asked for advice 
               on several technical design choices for our internal products. My time there felt short, but I decided to continue my college 
@@ -224,10 +191,220 @@ function Experience() {
 
           </motion.div>
 
-          {/* Pocket */}
-          <motion.div className={`bg-amber-300 shadow-top absolute left-1/2 translate-x-[-50%]
-          w-[70%] h-[200px] mt-[130px] ${ visible ? 'z-0' : 'z-50' }
-          sm:h-[300px] sm:mt-[145px]
+          {/* UKG Pocket */}
+          <motion.div className={`bg-amber-300 shadow-top absolute left-1/2 translate-x-[-50%] max-w-[400px]
+          w-[70%] h-[200px] mt-[170px] ${ visible ? 'z-0' : 'z-50' }
+          `}>
+
+          </motion.div>
+
+        </motion.div>
+
+        {/*Mercedes Sub Container*/}
+        <motion.div className='z-10 bg-red-600 relative grid place-items-center h-[300px] w-full mt-[0px]'
+        
+        animate={          
+        cardAnimated2
+        ? 
+        {
+          paddingBottom: [0, 1950]
+        }
+        : 
+        {
+          paddingBottom: [1950, 0]
+        }}
+
+        transition={{
+          duration: 1,
+          times: [0, 0.5],
+          ease: "easeInOut",
+        }}
+
+        >
+          
+          {/* Subject Container */}
+          <motion.div className={`bg-emerald-400 text-white cursor-default text-center select-none border-black shadow-xl block justify-center
+          ${ visible2 ? 'z-50' : 'z-0' } ${ cardAnimated2 ? '' : 'lg:hover:mt-[100px]' }
+          mt-[-150px] max-w-[400px]
+          w-[70%] h-fit leading-[2]
+          `}
+          
+          onClick={() => VisibilityToggle(2)}
+
+          animate={          
+            cardAnimated2
+            ? 
+            {
+              y: [0, 40, 40, 180],
+              width: ['60%', '60%', '90%', '90%'],
+              height: [70, 70, 1840, 1840],
+            }
+            : 
+            {
+              y: [180, 40, 40, 0],
+              width: ['90%', '90%', '60%', '60%'],
+              height: [1840, 650, 70, 70],
+            }}
+
+            transition={{
+              duration: 1,
+              times: [0, 0.1, 0.3, 0.5],
+              ease: "linear",
+            }}
+          >
+
+            {/* Company Name */}
+            <div className='bg-orange-400 font-bold underline h-[40px]
+            mb-[10px] text-[25px] leading-[1.5]
+            '> 
+
+              Mercedes-Benz 
+            
+            </div>
+
+            {/* Position */}
+            <div className='bg-pink-600 relative font-semibold h-fit text-[16px] mt-[-10px] mb-[10px]'> System/Network Analyst </div>
+
+            {/* Date */}
+            <div className='bg-purple-600 relative italic h-fit text-[16px] mt-[-10px] mb-[20px]'> 08/2023 - 09/2024 </div>
+
+            {/* Image One */}
+            { contentDisplayed2 && (<img src={mercedes} alt="ukglog" className='w-[90%] ring-2 ring-black ml-[5%] h-[130px] max-w-[300px]'/>)}
+
+            {/* Text Container One */}
+            { contentDisplayed2 && (<div className='bg-red-300 relative w-[95%] ml-[2.5%] font-semibold h-fit mt-[20px]'>
+
+              While working at Mercedes-Benz of Coral Gables, I gained hands on experience in back-end IT, which focused on managing Windows Server environments 
+              and ensuring system and network stability. I regularly utilized tools such as Office 365 Admin, Active Directory, and Azure to handle our user management, 
+              security policies, and even cloud services. Additionally, I worked with the Kaseya suite of software for endpoint monitoring, mass software deployment, and 
+              automating tasks. Even though this position had little to do with software engineering, it helped me sharpen my practical understanding of software engineering 
+              concepts like system architecture, API integration, and the role of automation in scalable infrastructure!
+
+            </div>)}
+
+            {/* Image Two */}
+            { contentDisplayed2 && (<img src={mercedesBuilding} alt="ukgteam" className='relative w-[90%] ring-2 ring-black ml-[5%] h-[150px] mt-[20px] max-w-[300px]' />)}
+
+            {/* Text Container Two */}
+            { contentDisplayed2 && (<div className='bg-yellow-950 relative w-[95%] ml-[2.5%] font-semibold h-fit mt-[20px]'>
+
+              The story of how I landed this position is pretty interesting! I actually started out as a porter for the company, and after just two months, I had the 
+              opportunity to speak with the building's IT team and was transferred over as a trainee. After a couple of weeks, I was considered fit for the role, and 
+              ever since then, I worked as IT support for the entire building! I was one of three team members and helped reorganize the company's infrastructure right 
+              up until my bittersweet, yet adventurous departure to UKG! I'll never forget how lucky I was to land that position and the incredible chance the Coral Gables 
+              branch gave me to join their IT team!
+
+            </div>)}
+
+          </motion.div>
+
+          {/* Mercedes Pocket */}
+          <motion.div className={`bg-amber-300 shadow-top absolute left-1/2 translate-x-[-50%] max-w-[400px]
+          w-[70%] h-[200px] mt-[60px] ${ visible2 ? 'z-0' : 'z-50' }
+          `}>
+
+          </motion.div>
+
+        </motion.div>
+
+        {/*Miami-Dade College Sub Container*/}
+        <motion.div className='z-10 bg-red-800 relative grid place-items-center h-[300px] w-full mt-[0px]'
+        
+        animate={          
+        cardAnimated3
+        ? 
+        {
+          paddingBottom: [0, 1500]
+        }
+        : 
+        {
+          paddingBottom: [1830, 0]
+        }}
+
+        transition={{
+          duration: 1,
+          times: [0, 0.5],
+          ease: "easeInOut",
+        }}
+
+        >
+          
+          {/* Subject Container */}
+          <motion.div className={`bg-emerald-400 text-white cursor-default text-center select-none border-black shadow-xl block justify-center
+          ${ visible3 ? 'z-50' : 'z-0' } ${ cardAnimated3 ? '' : 'lg:hover:mt-[100px]' }
+          mt-[-150px] max-w-[400px]
+          w-[70%] h-fit leading-[2]
+          `}
+          
+          onClick={() => VisibilityToggle(3)}
+
+          animate={          
+            cardAnimated3
+            ? 
+            {
+              y: [0, 40, 40, 180],
+              width: ['60%', '60%', '90%', '90%'],
+              height: [70, 70, 1390, 1390],
+            }
+            : 
+            {
+              y: [180, 40, 40, 0],
+              width: ['90%', '90%', '60%', '60%'],
+              height: [1390, 650, 70, 70],
+            }}
+
+            transition={{
+              duration: 1,
+              times: [0, 0.1, 0.3, 0.5],
+              ease: "linear",
+            }}
+          >
+
+            {/* Company Name */}
+            <div className='bg-orange-400 font-bold underline h-[40px]
+            mb-[10px] text-[19px] leading-[2]
+            '> 
+
+              Miami-Dade College
+            
+            </div>
+
+            {/* Position */}
+            <div className='bg-pink-600 relative font-semibold h-fit text-[16px] mt-[-10px] mb-[10px]'> Teacher's Assistant / CS Tutor </div>
+
+            {/* Date */}
+            <div className='bg-purple-600 relative italic h-fit text-[16px] mt-[-10px] mb-[20px]'> 08/2022 - 08/2023 </div>
+
+            {/* Image One */}
+            { contentDisplayed3 && (<img src={MDC} alt="ukglog" className='w-[90%] ring-2 ring-black ml-[5%] h-[130px] max-w-[300px]'/>)}
+
+            {/* Text Container One */}
+            { contentDisplayed3 && (<div className='bg-red-300 relative w-[95%] ml-[2.5%] font-semibold h-fit mt-[20px]'>
+
+              My venture first started in Miami Dade College. I first worked as a teacher's assistant, helping teach basic concepts for languages, such as C++, Java, and Python.
+              After the semester ended, I was moved to be a general tutor for Computer Science, in which I tutored students in the same aforementioned languages as well as C and
+              frameworks, like java spring and FX. 
+
+            </div>)}
+
+            {/* Image Two */}
+            { contentDisplayed3 && (<img src={MDCFriends} alt="ukgteam" className='relative w-[90%] ring-2 ring-black ml-[5%] h-[180px] mt-[20px] max-w-[300px]' />)}
+
+            {/* Text Container Two */}
+            { contentDisplayed3 && (<div className='bg-yellow-950 relative w-[95%] ml-[2.5%] font-semibold h-fit mt-[20px]'>
+
+              My time tutoring at MDC was fun, but I never would've guessed that it would also connect me with like-minded people, which you can see in the image above. I made 
+              great friends with other tutors, and now we occasionally get together to work on all kinds of projects! We even won second place at the 2024 FIU ShellHack, one 
+              of the largest hackathons in the nation! I may have taught many people at MDC, but I ended up learning something too; there are networking opportunities 
+              everywhere, you just have to put yourself out there!
+
+            </div>)}
+
+          </motion.div>
+
+          {/* Miami-Dade College Pocket */}
+          <motion.div className={`bg-amber-300 shadow-top absolute left-1/2 translate-x-[-50%] max-w-[400px]
+          w-[70%] h-[200px] mt-[60px] ${ visible3 ? 'z-0' : 'z-50' }
           `}>
 
           </motion.div>
