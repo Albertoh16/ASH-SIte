@@ -19,12 +19,13 @@ Optimized for viewing across devices — from desktops to smartphones.
 Motion effects throughout the site enhance interactivity and visual appeal.
 
 ## Tech Stack:
-Frontend Framework: 
+
+### Frontend Framework: 
 React.js
 
-Styling: 
+### Styling: 
 Tailwind CSS
 
-Animations: 
+### Animations: 
 Framer Motion
 
