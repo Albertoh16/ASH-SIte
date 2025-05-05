@@ -22,10 +22,15 @@ function Experience() {
   const [contentDisplayed2, setContent2] = useState(false);
   const [contentDisplayed3, setContent3] = useState(false);
 
+  const [fitHeight, setFitHeight] = useState(false);
+  const [fitHeight2, setFitHeight2] = useState(false);
+  const [fitHeight3, setFitHeight3] = useState(false);
+
   const VisibilityToggle = (num) => {
     switch(num)
     {
       case 1:
+        setFitHeight(false);
         setCardAnimation(!cardAnimated)
 
         if (!visible) 
@@ -34,7 +39,7 @@ function Experience() {
           setTimeout(() => setVisibility(true), 200);
 
           // 500ms delay
-          setTimeout(() => setContent(true), 200);
+          setTimeout(() => setContent(true), 400);
         } 
         
         else 
@@ -47,6 +52,7 @@ function Experience() {
         break;
 
       case 2:
+        setFitHeight2(false);
         setCardAnimation2(!cardAnimated2)      
         
         if (!visible2) 
@@ -55,7 +61,7 @@ function Experience() {
           setTimeout(() => setVisibility2(true), 200);
 
           // 500ms delay
-          setTimeout(() => setContent2(true), 200);
+          setTimeout(() => setContent2(true), 400);
         } 
         
         else 
@@ -68,15 +74,16 @@ function Experience() {
         break;
 
       case 3:
+        setFitHeight3(false);
         setCardAnimation3(!cardAnimated3)    
         
         if (!visible3) 
         {
           // Sets a 200ms delay
-          setTimeout(() => setVisibility3(true), 100);
+          setTimeout(() => setVisibility3(true), 200);
 
           // 500ms delay
-          setTimeout(() => setContent3(true), 200);
+          setTimeout(() => setContent3(true), 400);
         } 
         
         else 
@@ -90,85 +97,128 @@ function Experience() {
     }
   };
 
+
+  const animation = cardAnimated
+  ? {
+      y: [-30, -120, -120, 100],
+      width: ['60%', '75%', '85%', '100%'],
+      height: contentDisplayed ? 'auto' : [190, 190, 650, 1290]
+    }
+  : {
+      y: [100, -120, -120, -30],
+      width: ['100%', '85%', '75%', '60%'],
+      height: [1290, 650, 190, 190],
+    };
+
+    const animation2 = cardAnimated2
+    ? {
+      y: [-30, -120, -120, 100],
+      width: ['60%', '75%', '85%', '100%'],
+      height: contentDisplayed2 ? 'auto' : [190, 190, 650, 1290]
+    }
+  : {
+      y: [100, -120, -120, -30],
+      width: ['100%', '85%', '75%', '60%'],
+      height: [1290, 650, 190, 190],
+    };
+
+    const animation3 = cardAnimated3
+    ? {
+      y: [-30, -120, -120, 100],
+      width: ['60%', '75%', '85%', '100%'],
+      height: contentDisplayed3 ? 'auto' : [190, 190, 650, 1290]
+    }
+  : {
+      y: [100, -120, -120, -30],
+      width: ['100%', '85%', '75%', '60%'],
+      height: [1290, 650, 190, 190],
+    };
+  
+
   return (
     <div>
 
       {/*Main Container*/}
-      <div className='bg-lime-300 w-full h-fit relative'>
-        
+      <div className='bg-mainTwo w-screen h-fit flex flex-col overflow-hidden
+      lg:grid lg:grid-cols-3 lg:grid-row-1 lg:gap-0
+      '>
+
+{/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
+
         {/*UKG Sub Container*/}
-        <motion.div className='z-10 bg-red-400 relative grid place-items-center h-[400px] w-full mt-[0px]'
-        
-        animate={          
-        cardAnimated
-        ? 
-        {
-          paddingBottom: [0, 1400]
-        }
-        : 
-        {
-          paddingBottom: [1400, 0]
-        }}
-
-        transition={{
-          duration: 1,
-          times: [0, 0.5],
-          ease: "easeInOut",
-        }}
-
-        >
+        <motion.div className={`z-10 grid place-items-center w-full h-fit
+        ${ contentDisplayed ? 'h-auto' : 'h-[400px] lg:h-[550px]' }
+        lg:mt-[250px] lg:col-start-1 lg:row-start-1
+        `}>
           
           {/* Subject Container */}
-          <motion.div className={`bg-emerald-400 text-white cursor-default text-center select-none border-black shadow-xl block justify-center
-          ${ visible ? 'z-50' : 'z-0' } ${ cardAnimated ? '' : 'lg:hover:mt-[100px]' }
-          mt-[-40px] max-w-[400px]
-          w-[70%] h-fit leading-[2]
+          <motion.div className={`bg-mainFour text-MainRedThree cursor-pointer text-center select-none border-black border-4 shadow-xl flex flex-col items-center relative
+          ${ visible ? 'z-50' : 'z-0' } ${ cardAnimated ? 'mb-[120px] max-w-[500px] xl:max-w-[650px]' : 'max-w-[350px]' }
+          mt-[95px] min-h-0
+          w-[70%] leading-[2]
+          lg:mt-[-40px]
           `}
           
           onClick={() => VisibilityToggle(1)}
 
-          animate={          
-            cardAnimated
-            ? 
-            {
-              y: [0, 40, 40, 100],
-              width: ['60%', '60%', '90%', '90%'],
-              height: [70, 70, 1290, 1290],
-            }
-            : 
-            {
-              y: [100, 40, 40, 0],
-              width: ['90%', '90%', '60%', '60%'],
-              height: [1290, 650, 70, 70],
-            }}
+          animate={animation}
 
             transition={{
-              duration: 1,
-              times: [0, 0.1, 0.3, 0.5],
+              duration: 0.5,
+              times: [0, 0.3, 0.6, 0.9],
               ease: "linear",
+            }}
+
+            onAnimationComplete={() => {
+              setFitHeight(true);
             }}
           >
 
             {/* Company Name */}
-            <div className='bg-orange-400 font-bold underline h-[40px]
-            mb-[10px] text-3xl
+            <div className='font-bold h-[50px] w-full text-MainRedThree bg-black/20 
+            text-3xl leading-[1.5]
+            lg:h-[80px] lg:text-[30px] lg:leading-[2.5] 
             '> 
 
               UKG 
             
             </div>
 
+            {/* Divider */}
+            <div className='bg-black relative h-[5px] w-full'></div>
+
             {/* Position */}
-            <div className='bg-pink-600 relative font-semibold h-fit text-[16px] mt-[-10px] mb-[10px]'> Software Engineering Intern </div>
+            <div className='relative font-semibold h-fit w-full text-MainRedThree bg-black/20 
+            text-[16px] 
+            lg:text-[25px]
+            '> 
+            
+              Software Engineering Intern 
+              
+            </div>
+
+            {/* Divider */}
+            <div className='bg-black relative h-[5px] w-full'></div>
 
             {/* Date */}
-            <div className='bg-purple-600 relative italic h-fit text-[16px] mt-[-10px] mb-[20px]'> 09/2024 - 12/2024 </div>
+            <div className='relative italic h-fit w-full text-[16px] bg-black/20 
+            lg:text-[20px]
+            '> 
+            
+            09/2024 - 12/2024 
+            
+            </div>
+
+            {/* Divider */}
+            <div className='bg-black relative h-[5px] w-full'></div>
 
             {/* Image One */}
-            { contentDisplayed && (<img src={UKG} alt="ukglog" className='w-[90%] ring-2 ring-black ml-[5%] h-[150px] max-w-[300px]'/>)}
+            { contentDisplayed && (<img src={UKG} alt="ukglog" className='relative w-[90%] aspect-[2/1] border-black border-4 mt-[20px]'/>)}
 
             {/* Text Container One */}
-            { contentDisplayed && (<div className='bg-red-300 relative w-[95%] ml-[2.5%] font-semibold h-fit mt-[20px]'>
+            { contentDisplayed && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px]
+            lg:text-2xl            
+            '>
 
               In my time on UKG, I collaborated with the finance software development IT team and utilized C# with the ASP.NET MVC framework, 
               and used internal APIs to enhance our Microsoft Dynamics 365 environment. I also designed a solution for efficient customer data 
@@ -176,11 +226,16 @@ function Experience() {
 
             </div>)}
 
+            {/* Divider */}
+            <div className='bg-black relative h-[5px] w-full'></div>
+
             {/* Image Two */}
-            { contentDisplayed && (<img src={UKGTeam} alt="ukgteam" className='relative w-[90%] ring-2 ring-black ml-[5%] h-[160px] mt-[20px] max-w-[300px]' />)}
+            { contentDisplayed && (<img src={UKGTeam} alt="ukgteam" className='relative w-[90%] aspect-[2/1] border-black border-4 mt-[20px]' />)}
 
             {/* Text Container Two */}
-            { contentDisplayed && (<div className='bg-yellow-950 relative w-[95%] ml-[2.5%] font-semibold h-fit mt-[20px]'>
+            { contentDisplayed && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px]
+            lg:text-2xl
+            '>
 
               I had a wonderful time working with my team! I was treated as if I had been there for years, and I was even asked for advice 
               on several technical design choices for our internal products. My time there felt short, but I decided to continue my college 
@@ -192,87 +247,118 @@ function Experience() {
           </motion.div>
 
           {/* UKG Pocket */}
-          <motion.div className={`bg-amber-300 shadow-top absolute left-1/2 translate-x-[-50%] max-w-[400px]
-          w-[70%] h-[200px] mt-[170px] ${ visible ? 'z-0' : 'z-50' }
-          `}>
+          { !contentDisplayed && (<motion.div className={`bg-mainTwo shadow-top absolute max-w-[400px] mb-[30px] border-black border-2 flex flex-col select-none
+          ${ visible ? 'z-0' : 'z-50' }
+          justify-center text-MainRedThree items-center 
+          w-[70%] h-[200px] text-4xl mt-[180px]
+          sm:w-[70%] sm:text-5xl
+          lg:h-[300px] lg:mt-[200px] lg:text-6xl lg:max-w-[300px]
+          xl:max-w-[400px]
+          2xl:max-w-[500px]
+          `}
+          >
+            <div className='text-center p-0 font-bold mb-[5px]  
+            '>
 
-          </motion.div>
+              09/2024
+
+            </div>
+
+            {/* Divider */}
+            <div className='bg-MainRedTwo relative h-[10px] w-[70%] m-0
+            max-w-[150px]
+            sm:max-w-[220px]
+            '>
+            </div>
+
+            <div className='text-center p-0 font-bold outline-black outline-8
+            '>
+
+              12/2024 
+
+            </div>
+
+          </motion.div>)}
 
         </motion.div>
 
+{/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
+
         {/*Mercedes Sub Container*/}
-        <motion.div className='z-10 bg-red-600 relative grid place-items-center h-[300px] w-full mt-[0px]'
-        
-        animate={          
-        cardAnimated2
-        ? 
-        {
-          paddingBottom: [0, 1950]
-        }
-        : 
-        {
-          paddingBottom: [1950, 0]
-        }}
-
-        transition={{
-          duration: 1,
-          times: [0, 0.5],
-          ease: "easeInOut",
-        }}
-
-        >
+        <motion.div className={`z-10 grid place-items-center w-full h-fit
+        ${ contentDisplayed2 ? 'h-auto' : 'h-[300px] lg:h-[550px]' }
+        lg:mt-[250px] lg:col-start-2 lg:row-start-1
+        `}>
           
           {/* Subject Container */}
-          <motion.div className={`bg-emerald-400 text-white cursor-default text-center select-none border-black shadow-xl block justify-center
-          ${ visible2 ? 'z-50' : 'z-0' } ${ cardAnimated2 ? '' : 'lg:hover:mt-[100px]' }
-          mt-[-150px] max-w-[400px]
-          w-[70%] h-fit leading-[2]
+          <motion.div className={`bg-mainFour text-MainRedThree cursor-pointer text-center select-none border-black border-4 shadow-xl flex flex-col items-center relative 
+          ${ visible2 ? 'z-50' : 'z-0' } ${ cardAnimated2 ? 'mb-[120px] max-w-[500px] xl:max-w-[650px]' : 'max-w-[350px]' }
+          mt-[0px]
+          w-[70%] leading-[2]
+          lg:mt-[-40px]
           `}
           
           onClick={() => VisibilityToggle(2)}
 
-          animate={          
-            cardAnimated2
-            ? 
-            {
-              y: [0, 40, 40, 180],
-              width: ['60%', '60%', '90%', '90%'],
-              height: [70, 70, 1840, 1840],
-            }
-            : 
-            {
-              y: [180, 40, 40, 0],
-              width: ['90%', '90%', '60%', '60%'],
-              height: [1840, 650, 70, 70],
-            }}
+          animate={animation2}
+          
+          transition={{
+            duration: 0.5,
+            times: [0, 0.3, 0.6, 0.9],
+            ease: "linear",
+          }}
 
-            transition={{
-              duration: 1,
-              times: [0, 0.1, 0.3, 0.5],
-              ease: "linear",
-            }}
+          onAnimationComplete={() => {
+            setFitHeight2(true);
+          }}
           >
 
             {/* Company Name */}
-            <div className='bg-orange-400 font-bold underline h-[40px]
-            mb-[10px] text-[25px] leading-[1.5]
+            <div className='font-bold h-[50px] w-full bg-black/20 
+            text-2xl leading-[1.8]
+            sm:text-3xl sm:leading-[1.5]
+            lg:h-[80px] lg:text-[24px] lg:leading-[3] 
+            xl:text-[27px] xl:leading-[2.8] 
             '> 
 
               Mercedes-Benz 
             
             </div>
 
+            {/* Divider */}
+            <div className='bg-black relative h-[5px] w-full'></div>
+
             {/* Position */}
-            <div className='bg-pink-600 relative font-semibold h-fit text-[16px] mt-[-10px] mb-[10px]'> System/Network Analyst </div>
+            <div className='relative font-semibold h-fit text-[16px] w-full bg-black/20 
+            lg:text-[25px]
+            '> 
+            
+            System/Network Analyst 
+
+            </div>
+
+            {/* Divider */}
+            <div className='bg-black relative h-[5px] w-full'></div>
 
             {/* Date */}
-            <div className='bg-purple-600 relative italic h-fit text-[16px] mt-[-10px] mb-[20px]'> 08/2023 - 09/2024 </div>
+            <div className='relative italic h-fit text-[16px] w-full bg-black/20 
+            lg:text-[20px]
+            '> 
+            
+              08/2023 - 09/2024 
+              
+            </div>
+
+            {/* Divider */}
+            <div className='bg-black relative h-[5px] w-full'></div>
 
             {/* Image One */}
-            { contentDisplayed2 && (<img src={mercedes} alt="ukglog" className='w-[90%] ring-2 ring-black ml-[5%] h-[130px] max-w-[300px]'/>)}
+            { contentDisplayed2 && (<img src={mercedes} alt="ukglog" className='relative w-[90%] aspect-[2/1] border-black border-4 mt-[20px]'/>)}
 
             {/* Text Container One */}
-            { contentDisplayed2 && (<div className='bg-red-300 relative w-[95%] ml-[2.5%] font-semibold h-fit mt-[20px]'>
+            { contentDisplayed2 && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px]
+            lg:text-2xl            
+            '>
 
               While working at Mercedes-Benz of Coral Gables, I gained hands on experience in back-end IT, which focused on managing Windows Server environments 
               and ensuring system and network stability. I regularly utilized tools such as Office 365 Admin, Active Directory, and Azure to handle our user management, 
@@ -282,11 +368,16 @@ function Experience() {
 
             </div>)}
 
+            {/* Divider */}
+            <div className='bg-black relative h-[5px] w-full'></div>
+
             {/* Image Two */}
-            { contentDisplayed2 && (<img src={mercedesBuilding} alt="ukgteam" className='relative w-[90%] ring-2 ring-black ml-[5%] h-[150px] mt-[20px] max-w-[300px]' />)}
+            { contentDisplayed2 && (<img src={mercedesBuilding} alt="ukgteam" className='relative w-[90%] aspect-[2/1] border-black border-4 mt-[20px]'/>)}
 
             {/* Text Container Two */}
-            { contentDisplayed2 && (<div className='bg-yellow-950 relative w-[95%] ml-[2.5%] font-semibold h-fit mt-[20px]'>
+            { contentDisplayed2 && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px]
+            lg:text-2xl            
+            '>
 
               The story of how I landed this position is pretty interesting! I actually started out as a porter for the company, and after just two months, I had the 
               opportunity to speak with the building's IT team and was transferred over as a trainee. After a couple of weeks, I was considered fit for the role, and 
@@ -299,87 +390,117 @@ function Experience() {
           </motion.div>
 
           {/* Mercedes Pocket */}
-          <motion.div className={`bg-amber-300 shadow-top absolute left-1/2 translate-x-[-50%] max-w-[400px]
-          w-[70%] h-[200px] mt-[60px] ${ visible2 ? 'z-0' : 'z-50' }
-          `}>
+          { !contentDisplayed2 && (<motion.div className={`bg-mainTwo shadow-top absolute max-w-[400px] mb-[30px] border-black border-2 flex flex-col select-none
+          ${ visible2 ? 'z-0' : 'z-50' }
+          justify-center text-MainRedThree items-center 
+          w-[70%] h-[200px] text-4xl mt-[90px]
+          sm:w-[70%] sm:text-5xl
+          lg:h-[300px] lg:mt-[200px] lg:text-6xl lg:max-w-[300px]
+          xl:max-w-[400px]
+          2xl:max-w-[500px]
+          `}
+          >
+            <div className='text-center p-0 font-bold mb-[5px]'>
 
-          </motion.div>
+              08/2023
+
+            </div>
+
+            {/* Divider */}
+            <div className='bg-MainRedTwo relative h-[10px] w-[70%] m-0
+            max-w-[150px]
+            sm:max-w-[220px]
+            '>
+            </div>
+
+            <div className='text-center p-0 font-bold'>
+
+            09/2024 
+
+            </div>
+
+          </motion.div>)}
 
         </motion.div>
 
+{/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
+
         {/*Miami-Dade College Sub Container*/}
-        <motion.div className='z-10 bg-red-800 relative grid place-items-center h-[300px] w-full mt-[0px]'
-        
-        animate={          
-        cardAnimated3
-        ? 
-        {
-          paddingBottom: [0, 1500]
-        }
-        : 
-        {
-          paddingBottom: [1830, 0]
-        }}
-
-        transition={{
-          duration: 1,
-          times: [0, 0.5],
-          ease: "easeInOut",
-        }}
-
-        >
+        <motion.div className={`z-10 grid place-items-center w-full h-fit
+        ${ contentDisplayed3 ? 'h-auto' : 'h-[300px] lg:h-[550px]' }
+        lg:mt-[250px] lg:col-start-3 lg:row-start-1 
+        `}>
           
           {/* Subject Container */}
-          <motion.div className={`bg-emerald-400 text-white cursor-default text-center select-none border-black shadow-xl block justify-center
-          ${ visible3 ? 'z-50' : 'z-0' } ${ cardAnimated3 ? '' : 'lg:hover:mt-[100px]' }
-          mt-[-150px] max-w-[400px]
-          w-[70%] h-fit leading-[2]
+          <motion.div className={`bg-mainFour text-MainRedThree cursor-pointer text-center select-none border-black border-4 shadow-xl flex flex-col items-center relative
+          ${ visible3 ? 'z-50' : 'z-0' } ${ cardAnimated3 ? 'mb-[120px] max-w-[500px] xl:max-w-[650px]' : 'max-w-[350px]' }
+          mt-[0px]
+          w-[70%] leading-[2]
+          lg:mt-[-40px] 
           `}
           
           onClick={() => VisibilityToggle(3)}
 
-          animate={          
-            cardAnimated3
-            ? 
-            {
-              y: [0, 40, 40, 180],
-              width: ['60%', '60%', '90%', '90%'],
-              height: [70, 70, 1390, 1390],
-            }
-            : 
-            {
-              y: [180, 40, 40, 0],
-              width: ['90%', '90%', '60%', '60%'],
-              height: [1390, 650, 70, 70],
-            }}
+          animate={animation3}
 
             transition={{
-              duration: 1,
-              times: [0, 0.1, 0.3, 0.5],
+              duration: 0.5,
+              times: [0, 0.3, 0.6, 0.9],
               ease: "linear",
+            }}
+
+            onAnimationComplete={() => {
+              setFitHeight3(true);
             }}
           >
 
             {/* Company Name */}
-            <div className='bg-orange-400 font-bold underline h-[40px]
-            mb-[10px] text-[19px] leading-[2]
+            <div className='font-bold h-[50px] w-full bg-black/20 
+            text-lg leading-[2.5]
+            sm:text-3xl sm:leading-[1.5]
+            lg:h-[80px] lg:text-[20px] lg:leading-[3.7] 
+            xl:text-[27px] xl:leading-[2.8] 
             '> 
 
               Miami-Dade College
             
             </div>
 
+            {/* Divider */}
+            <div className='bg-black relative h-[5px] w-full'></div>
+
             {/* Position */}
-            <div className='bg-pink-600 relative font-semibold h-fit text-[16px] mt-[-10px] mb-[10px]'> Teacher's Assistant / CS Tutor </div>
+            <div className='relative font-semibold h-fit text-[16px] w-full bg-black/20 
+            lg:text-[25px]
+            '> 
+              
+              Teacher's Assistant / CS Tutor 
+              
+            </div>
+
+            {/* Divider */}
+            <div className='bg-black relative h-[5px] w-full'></div>
 
             {/* Date */}
-            <div className='bg-purple-600 relative italic h-fit text-[16px] mt-[-10px] mb-[20px]'> 08/2022 - 08/2023 </div>
+            <div className='relative italic h-fit w-full text-[16px] bg-black/20 
+            lg:text-[20px]
+            '> 
+            
+              08/2022 - 08/2023 
+              
+            </div>
+
+
+            {/* Divider */}
+            <div className='bg-black relative h-[5px] w-full'></div>
 
             {/* Image One */}
-            { contentDisplayed3 && (<img src={MDC} alt="ukglog" className='w-[90%] ring-2 ring-black ml-[5%] h-[130px] max-w-[300px]'/>)}
+            { contentDisplayed3 && (<img src={MDC} alt="ukglog"className='relative w-[90%] aspect-[2/1] border-black border-4 mt-[20px]'/>)}
 
             {/* Text Container One */}
-            { contentDisplayed3 && (<div className='bg-red-300 relative w-[95%] ml-[2.5%] font-semibold h-fit mt-[20px]'>
+            { contentDisplayed3 && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px]
+            lg:text-2xl           
+            '>
 
               My venture first started in Miami Dade College. I first worked as a teacher's assistant, helping teach basic concepts for languages, such as C++, Java, and Python.
               After the semester ended, I was moved to be a general tutor for Computer Science, in which I tutored students in the same aforementioned languages as well as C and
@@ -387,11 +508,16 @@ function Experience() {
 
             </div>)}
 
+            {/* Divider */}
+            <div className='bg-black relative h-[5px] w-full'></div>
+
             {/* Image Two */}
-            { contentDisplayed3 && (<img src={MDCFriends} alt="ukgteam" className='relative w-[90%] ring-2 ring-black ml-[5%] h-[180px] mt-[20px] max-w-[300px]' />)}
+            { contentDisplayed3 && (<img src={MDCFriends} alt="ukgteam" className='relative w-[90%] aspect-[2/1/5] border-black border-4 mt-[20px]' />)}
 
             {/* Text Container Two */}
-            { contentDisplayed3 && (<div className='bg-yellow-950 relative w-[95%] ml-[2.5%] font-semibold h-fit mt-[20px]'>
+            { contentDisplayed3 && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px]
+            lg:text-2xl            
+            '>
 
               My time tutoring at MDC was fun, but I never would've guessed that it would also connect me with like-minded people, which you can see in the image above. I made 
               great friends with other tutors, and now we occasionally get together to work on all kinds of projects! We even won second place at the 2024 FIU ShellHack, one 
@@ -403,16 +529,41 @@ function Experience() {
           </motion.div>
 
           {/* Miami-Dade College Pocket */}
-          <motion.div className={`bg-amber-300 shadow-top absolute left-1/2 translate-x-[-50%] max-w-[400px]
-          w-[70%] h-[200px] mt-[60px] ${ visible3 ? 'z-0' : 'z-50' }
-          `}>
+          { !contentDisplayed3 && (<motion.div className={`bg-mainTwo shadow-top absolute max-w-[400px] mb-[30px] border-black border-2 flex flex-col select-none
+          ${ visible3 ? 'z-0' : 'z-50' }
+          justify-center text-MainRedThree items-center 
+          w-[70%] h-[200px] text-4xl mt-[90px]
+          sm:w-[70%] sm:text-5xl
+          lg:h-[300px] lg:mt-[200px] lg:text-6xl lg:max-w-[300px]
+          xl:max-w-[400px]
+          2xl:max-w-[500px]
+          `}
+          >
+            <div className='text-center p-0 font-bold mb-[5px]'>
 
-          </motion.div>
+              08/2022
+
+            </div>
+
+            {/* Divider */}
+            <div className='bg-MainRedTwo relative h-[10px] w-[70%] m-0
+            max-w-[150px]
+            sm:max-w-[220px]
+            '>
+            </div>
+
+            <div className='text-center p-0 font-bold'>
+
+              08/2023 
+
+            </div>
+
+          </motion.div>)}
 
         </motion.div>
 
           {/* Footer Container */}
-          <div className='h-[200px] w-[100%] relative hidden bg-mainThree min-w-[320px]
+          <div className='h-[200px] w-[100%] relative hidden bg-mainThree min-w-[320px] col-span-3
           lg:flex
           '>
           

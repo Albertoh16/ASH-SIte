@@ -3,35 +3,42 @@ import {HiOutlineMenuAlt4} from 'react-icons/hi'
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/Website Logo.png';
 import honk from '../assets/honk.mp3';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from "framer-motion";
+import { useLocation } from 'react-router-dom';
 import '../index.css';
 
 function Navbar() {
   const navigate = useNavigate();  
   const [navOpened, openNav] = useState(false);
   const [animStarted, startAnim] = useState(false);
-  const [pageTitleText, setTitleText] = useState("HOME");
   const audioRef = useRef(null);
+  const location = useLocation();
+  const [pageTitleText, setTitleText] = useState("");
+
+
+  // This sets the Title text to the respective page.
+  useEffect(() => {
+    const path = location.pathname.substring(1);
+
+    if (path.length === 0) 
+    {
+      setTitleText("HOME");
+    } 
+    
+    else 
+    {
+      setTitleText(path.toUpperCase());
+    }
+  }, 
+  
+  [location]
+);
   
   // Routes to respective page.
   const PageNavigation = (path) => {
     navigate(path);
     DelayClose();
-
-  // Checking whether the current page is Home or something else.
-   if(path.length === 1)
-   {
-     setTitleText("HOME");
-   }
-
-   else
-   {
-
-    // Sets page title variable to match current page.
-     let str = path.substring(1, path.length);
-     setTitleText(str.toUpperCase());
-   }
  };
 
  // Delays side nav menu container from closing too soon. Avoids animation error.
@@ -91,7 +98,7 @@ function Navbar() {
       </div>
 
       {/* Nav Menu */}
-      {/* <ul className="h-full absolute hidden text-center text-white text-[20px] max-w-[1536px]
+      <ul className="h-full absolute hidden text-center text-white text-[20px] max-w-[1536px]
       w-[50%] left-1/2 translate-x-[-49%]
       lg:flex
       ">
@@ -116,7 +123,7 @@ function Navbar() {
         
         </div>
         
-        <div onClick={() => PageNavigation('/projects')} 
+        {/* <div onClick={() => PageNavigation('/projects')} 
         className="w-1/3 h-[80%] mt-[13px] bg-mainThree font-semibold hover:bg-mainTwo cursor-pointer select-none 
         shadow-lg shadow-black/50 active:mt-4 active:shadow-none border-4 border-mainTwo
         leading-[5] ml-[10px] mr-[10px]
@@ -124,8 +131,8 @@ function Navbar() {
           
           MY PROJECTS
           
-        </div>
-      </ul> */}
+        </div> */}
+      </ul>
 
       {/* Hamburger Icon */}
       <div className="text-white float-right me-[2%] cursor-pointer active:text-gray-500
@@ -143,7 +150,7 @@ function Navbar() {
         <div className='z-50 w-[100%] h-[100%] overflow-hidden
         '>
           {/* Motion Animatior for Side Menu */}
-          <motion.div className="z-50 float-right absolute w-[50%] h-[100%] bg-mainThree bor flex flex-col text-center border-4 
+          <motion.div className="z-50 float-right absolute w-[50%] h-[100%] bg-mainThree bor flex flex-col text-center border-4 touch-none
           border-mainTwo mt-[12px]
           sm:mt-[11px]
           lg:hidden
@@ -176,7 +183,7 @@ function Navbar() {
             </div> */}
             
             {/* Experience Option */} 
-            {/* <div onClick={() => PageNavigation('/experience')} 
+            <div onClick={() => PageNavigation('/experience')} 
             className=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
             border-mainTwo shadow-bottom shadow-black/50 active:bg-mainTwo active:mt-[6%] active:shadow-none
             text-[20px] leading-[4.2]
@@ -184,7 +191,7 @@ function Navbar() {
             ">
               My Experience
               
-            </div> */}
+            </div>
 
             {/* Contacts Option */}
             <div onClick={() => PageNavigation('/contacts')}
@@ -201,7 +208,7 @@ function Navbar() {
 
 
           {/* Motion Animatior for Side Menu Shadow */}
-          <motion.div className="z-40 float-right absolute w-[60%] h-[100%] bg-black/50
+          <motion.div className="z-40 float-right absolute w-[60%] h-screen bg-black/50 touch-none
           mt-[12px]
           sm:mt-[11px]
           lg:hidden
