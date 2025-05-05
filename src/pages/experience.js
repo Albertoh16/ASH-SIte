@@ -22,15 +22,10 @@ function Experience() {
   const [contentDisplayed2, setContent2] = useState(false);
   const [contentDisplayed3, setContent3] = useState(false);
 
-  const [fitHeight, setFitHeight] = useState(false);
-  const [fitHeight2, setFitHeight2] = useState(false);
-  const [fitHeight3, setFitHeight3] = useState(false);
-
   const VisibilityToggle = (num) => {
     switch(num)
     {
       case 1:
-        setFitHeight(false);
         setCardAnimation(!cardAnimated)
 
         if (!visible) 
@@ -52,7 +47,6 @@ function Experience() {
         break;
 
       case 2:
-        setFitHeight2(false);
         setCardAnimation2(!cardAnimated2)      
         
         if (!visible2) 
@@ -74,7 +68,6 @@ function Experience() {
         break;
 
       case 3:
-        setFitHeight3(false);
         setCardAnimation3(!cardAnimated3)    
         
         if (!visible3) 
@@ -100,38 +93,38 @@ function Experience() {
 
   const animation = cardAnimated
   ? {
-      y: [-30, -120, -120, 100],
+      y: [-30, -120, -120, 0],
       width: ['60%', '75%', '85%', '100%'],
-      height: contentDisplayed ? 'auto' : [190, 190, 650, 1290]
+      height: contentDisplayed ? 'auto' : [190, 190, 650, 2200]
     }
   : {
-      y: [100, -120, -120, -30],
+      y: [0, -120, -120, -30],
       width: ['100%', '85%', '75%', '60%'],
-      height: [1290, 650, 190, 190],
+      height: [2200, 650, 190, 190],
     };
 
     const animation2 = cardAnimated2
     ? {
-      y: [-30, -120, -120, 100],
+      y: [-30, -120, -120, 0],
       width: ['60%', '75%', '85%', '100%'],
-      height: contentDisplayed2 ? 'auto' : [190, 190, 650, 1290]
+      height: contentDisplayed2 ? 'auto' : [190, 190, 650, 2200]
     }
   : {
-      y: [100, -120, -120, -30],
+      y: [0, -120, -120, -30],
       width: ['100%', '85%', '75%', '60%'],
-      height: [1290, 650, 190, 190],
+      height: [2200, 650, 190, 190],
     };
 
     const animation3 = cardAnimated3
     ? {
-      y: [-30, -120, -120, 100],
+      y: [-30, -120, -120, 0],
       width: ['60%', '75%', '85%', '100%'],
-      height: contentDisplayed3 ? 'auto' : [190, 190, 650, 1290]
+      height: contentDisplayed3 ? 'auto' : [190, 190, 650, 2200]
     }
   : {
-      y: [100, -120, -120, -30],
+      y: [0, -120, -120, -30],
       width: ['100%', '85%', '75%', '60%'],
-      height: [1290, 650, 190, 190],
+      height: [2200, 650, 190, 190],
     };
   
 
@@ -146,7 +139,7 @@ function Experience() {
 {/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
 
         {/*UKG Sub Container*/}
-        <motion.div className={`z-10 grid place-items-center w-full h-fit bg-red-200
+        <motion.div className={`z-10 grid place-items-center w-full h-fit mb-[120px] mt-[50px]
         ${ contentDisplayed ? 'h-auto' : 'h-[410px] lg:h-[550px]' }
         lg:mt-[250px] lg:col-start-1 lg:row-start-1
         `}>
@@ -167,10 +160,6 @@ function Experience() {
               duration: 0.5,
               times: [0, 0.3, 0.6, 0.9],
               ease: "linear",
-            }}
-
-            onAnimationComplete={() => {
-              setFitHeight(true);
             }}
           >
 
@@ -285,7 +274,7 @@ function Experience() {
 {/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
 
         {/*Mercedes Sub Container*/}
-        <motion.div className={`z-10 grid place-items-center w-full h-fit bg-red-300
+        <motion.div className={`z-10 grid place-items-center w-full h-fit mb-[120px]
         ${ contentDisplayed2 ? 'h-auto' : 'h-[330px] lg:h-[550px]' }
         lg:mt-[250px] lg:col-start-2 lg:row-start-1
         `}>
@@ -306,10 +295,6 @@ function Experience() {
             duration: 0.5,
             times: [0, 0.3, 0.6, 0.9],
             ease: "linear",
-          }}
-
-          onAnimationComplete={() => {
-            setFitHeight2(true);
           }}
           >
 
@@ -426,7 +411,7 @@ function Experience() {
 {/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
 
         {/*Miami-Dade College Sub Container*/}
-        <motion.div className={`z-10 grid place-items-center w-full h-fit bg-red-400
+        <motion.div className={`z-10 grid place-items-center w-full h-fit
         ${ contentDisplayed3 ? 'h-auto' : 'h-[330px] lg:h-[550px]' }
         lg:mt-[250px] lg:col-start-3 lg:row-start-1 
         `}>
@@ -447,10 +432,6 @@ function Experience() {
               duration: 0.5,
               times: [0, 0.3, 0.6, 0.9],
               ease: "linear",
-            }}
-
-            onAnimationComplete={() => {
-              setFitHeight3(true);
             }}
           >
 
