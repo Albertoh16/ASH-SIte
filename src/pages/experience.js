@@ -146,8 +146,8 @@ function Experience() {
 {/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
 
         {/*UKG Sub Container*/}
-        <motion.div className={`z-10 grid place-items-center w-full h-fit
-        ${ contentDisplayed ? 'h-auto' : 'h-[400px] lg:h-[550px]' }
+        <motion.div className={`z-10 grid place-items-center w-full h-fit bg-red-200
+        ${ contentDisplayed ? 'h-auto' : 'h-[410px] lg:h-[550px]' }
         lg:mt-[250px] lg:col-start-1 lg:row-start-1
         `}>
           
@@ -285,8 +285,8 @@ function Experience() {
 {/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
 
         {/*Mercedes Sub Container*/}
-        <motion.div className={`z-10 grid place-items-center w-full h-fit
-        ${ contentDisplayed2 ? 'h-auto' : 'h-[300px] lg:h-[550px]' }
+        <motion.div className={`z-10 grid place-items-center w-full h-fit bg-red-300
+        ${ contentDisplayed2 ? 'h-auto' : 'h-[330px] lg:h-[550px]' }
         lg:mt-[250px] lg:col-start-2 lg:row-start-1
         `}>
           
@@ -426,8 +426,8 @@ function Experience() {
 {/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
 
         {/*Miami-Dade College Sub Container*/}
-        <motion.div className={`z-10 grid place-items-center w-full h-fit
-        ${ contentDisplayed3 ? 'h-auto' : 'h-[300px] lg:h-[550px]' }
+        <motion.div className={`z-10 grid place-items-center w-full h-fit bg-red-400
+        ${ contentDisplayed3 ? 'h-auto' : 'h-[330px] lg:h-[550px]' }
         lg:mt-[250px] lg:col-start-3 lg:row-start-1 
         `}>
           
