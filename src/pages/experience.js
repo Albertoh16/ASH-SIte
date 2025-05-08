@@ -132,14 +132,14 @@ function Experience() {
     <div>
 
       {/*Main Container*/}
-      <div className='bg-mainTwo w-screen h-fit flex flex-col overflow-hidden
-      lg:grid lg:grid-cols-3 lg:grid-row-1 lg:gap-0
+      <div className='bg-mainTwo w-screen h-fit flex flex-col justify-center items-center mb-[100px]
+      lg:grid lg:grid-cols-3 lg:grid-row-1 lg:gap-0 lg:mb-[0px]
       '>
 
 {/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
 
         {/*UKG Sub Container*/}
-        <motion.div className={`z-10 grid place-items-center w-full h-fit mb-[120px] mt-[50px]
+        <motion.div className={`z-10 flex flex-col justify-center items-center w-full h-fit mb-[120px] mt-[50px]
         ${ contentDisplayed ? 'h-auto' : 'h-[410px] lg:h-[550px]' }
         lg:mt-[250px] lg:col-start-1 lg:row-start-1
         `}>
@@ -274,7 +274,7 @@ function Experience() {
 {/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
 
         {/*Mercedes Sub Container*/}
-        <motion.div className={`z-10 grid place-items-center w-full h-fit mb-[120px]
+        <motion.div className={`z-10 flex flex-col justify-center items-center w-full h-fit mb-[120px]
         ${ contentDisplayed2 ? 'h-auto' : 'h-[330px] lg:h-[550px]' }
         lg:mt-[250px] lg:col-start-2 lg:row-start-1
         `}>
@@ -411,7 +411,7 @@ function Experience() {
 {/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
 
         {/*Miami-Dade College Sub Container*/}
-        <motion.div className={`z-10 grid place-items-center w-full h-fit
+        <motion.div className={`z-10 flex flex-col justify-center items-center w-full h-fit mb-[20px]
         ${ contentDisplayed3 ? 'h-auto' : 'h-[330px] lg:h-[550px]' }
         lg:mt-[250px] lg:col-start-3 lg:row-start-1 
         `}>
