@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ASH-SIte/static/css/main.71c33e3b.css",
-    "main.js": "/ASH-SIte/static/js/main.a72d785b.js",
+    "main.css": "/ASH-SIte/static/css/main.75f171d5.css",
+    "main.js": "/ASH-SIte/static/js/main.d9a3a23f.js",
     "static/media/largeCollage.png": "/ASH-SIte/static/media/largeCollage.f9f7c2628d40f8182b33.png",
     "static/media/smallCollage.png": "/ASH-SIte/static/media/smallCollage.7c728be14b0e7204aacc.png",
     "static/media/UKGTeam.png": "/ASH-SIte/static/media/UKGTeam.177cd361b252f5c7f03e.png",
@@ -15,11 +15,11 @@
     "static/media/mercedesLogo.png": "/ASH-SIte/static/media/mercedesLogo.08c0cebd405e7bece37a.png",
     "static/media/Website Logo.png": "/ASH-SIte/static/media/Website Logo.e1eb28d73f662da572de.png",
     "index.html": "/ASH-SIte/index.html",
-    "main.71c33e3b.css.map": "/ASH-SIte/static/css/main.71c33e3b.css.map",
-    "main.a72d785b.js.map": "/ASH-SIte/static/js/main.a72d785b.js.map"
+    "main.75f171d5.css.map": "/ASH-SIte/static/css/main.75f171d5.css.map",
+    "main.d9a3a23f.js.map": "/ASH-SIte/static/js/main.d9a3a23f.js.map"
   },
   "entrypoints": [
-    "static/css/main.71c33e3b.css",
-    "static/js/main.a72d785b.js"
+    "static/css/main.75f171d5.css",
+    "static/js/main.d9a3a23f.js"
   ]
 }
