@@ -132,8 +132,8 @@ function Experience() {
     <div>
 
       {/*Main Container*/}
-      <div className='bg-mainTwo w-screen h-fit flex flex-col justify-center items-center mb-[100px]
-      lg:grid lg:grid-cols-3 lg:grid-row-1 lg:gap-0 lg:mb-[0px]
+      <div className='bg-mainTwo w-screen h-fit flex flex-col items-center mb-[100px]
+      lg:grid lg:grid-cols-3 lg:grid-row-1 lg:gap-0 lg:mb-[0px] lg:items-start lg:ml-0 lg:mr-0
       '>
 
 {/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
@@ -146,7 +146,7 @@ function Experience() {
           
           {/* Subject Container */}
           <motion.div className={`bg-mainFour text-MainRedThree cursor-pointer text-center select-none border-black border-4 shadow-xl flex flex-col items-center relative
-          ${ visible ? 'z-50' : 'z-0' } ${ cardAnimated ? 'mb-[120px] max-w-[500px] xl:max-w-[650px]' : 'max-w-[350px]' }
+          ${ visible ? 'z-50' : 'z-0' } ${ cardAnimated ? 'mb-[120px] max-w-[500px] xl:max-w-[800px]' : 'max-w-[350px]' }
           mt-[95px] min-h-0
           w-[70%] leading-[2]
           lg:mt-[-40px]
@@ -205,8 +205,11 @@ function Experience() {
             { contentDisplayed && (<img src={UKG} alt="ukglog" className='relative w-[90%] aspect-[2/1] border-black border-4 mt-[20px]'/>)}
 
             {/* Text Container One */}
-            { contentDisplayed && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px]
-            lg:text-2xl            
+            { contentDisplayed && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px] p-2
+            text-[1.2rem]
+            sm:text-[1.3rem]
+            lg:text-[1.5rem]
+            xl:text-[1.7rem]         
             '>
 
               In my time on UKG, I collaborated with the finance software development IT team and utilized C# with the ASP.NET MVC framework, 
@@ -222,8 +225,11 @@ function Experience() {
             { contentDisplayed && (<img src={UKGTeam} alt="ukgteam" className='relative w-[90%] aspect-[2/1] border-black border-4 mt-[20px]' />)}
 
             {/* Text Container Two */}
-            { contentDisplayed && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px]
-            lg:text-2xl
+            { contentDisplayed && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px] p-2
+            text-[1.2rem]
+            sm:text-[1.3rem]
+            lg:text-[1.5rem]
+            xl:text-[1.7rem]    
             '>
 
               I had a wonderful time working with my team! I was treated as if I had been there for years, and I was even asked for advice 
@@ -273,7 +279,7 @@ function Experience() {
 
 {/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
 
-        {/*Mercedes Sub Container*/}
+        {/*Mercedes Sub Container*/} 
         <motion.div className={`z-10 flex flex-col justify-center items-center w-full h-fit mb-[120px]
         ${ contentDisplayed2 ? 'h-auto' : 'h-[330px] lg:h-[550px]' }
         lg:mt-[250px] lg:col-start-2 lg:row-start-1
@@ -281,7 +287,7 @@ function Experience() {
           
           {/* Subject Container */}
           <motion.div className={`bg-mainFour text-MainRedThree cursor-pointer text-center select-none border-black border-4 shadow-xl flex flex-col items-center relative 
-          ${ visible2 ? 'z-50' : 'z-0' } ${ cardAnimated2 ? 'mb-[120px] max-w-[500px] xl:max-w-[650px]' : 'max-w-[350px]' }
+          ${ visible2 ? 'z-50' : 'z-0' } ${ cardAnimated2 ? 'mb-[120px] max-w-[500px] xl:max-w-[800px]' : 'max-w-[350px]' }
           mt-[0px]
           w-[70%] leading-[2]
           lg:mt-[-40px]
@@ -341,8 +347,11 @@ function Experience() {
             { contentDisplayed2 && (<img src={mercedes} alt="ukglog" className='relative w-[90%] aspect-[2/1] border-black border-4 mt-[20px]'/>)}
 
             {/* Text Container One */}
-            { contentDisplayed2 && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px]
-            lg:text-2xl            
+            { contentDisplayed2 && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px] p-2
+            text-[1.2rem]
+            sm:text-[1.3rem]
+            lg:text-[1.5rem]
+            xl:text-[1.7rem]               
             '>
 
               While working at Mercedes-Benz of Coral Gables, I gained hands on experience in back-end IT, which focused on managing Windows Server environments 
@@ -360,8 +369,11 @@ function Experience() {
             { contentDisplayed2 && (<img src={mercedesBuilding} alt="ukgteam" className='relative w-[90%] aspect-[2/1] border-black border-4 mt-[20px]'/>)}
 
             {/* Text Container Two */}
-            { contentDisplayed2 && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px]
-            lg:text-2xl            
+            { contentDisplayed2 && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px] p-2
+            text-[1.2rem]
+            sm:text-[1.3rem]
+            lg:text-[1.5rem]
+            xl:text-[1.7rem]              
             '>
 
               The story of how I landed this position is pretty interesting! I actually started out as a porter for the company, and after just two months, I had the 
@@ -411,14 +423,14 @@ function Experience() {
 {/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
 
         {/*Miami-Dade College Sub Container*/}
-        <motion.div className={`z-10 flex flex-col justify-center items-center w-full h-fit mb-[20px]
+        <motion.div className={`z-10 flex flex-col justify-center items-center w-full h-fit mb-[120px]
         ${ contentDisplayed3 ? 'h-auto' : 'h-[330px] lg:h-[550px]' }
         lg:mt-[250px] lg:col-start-3 lg:row-start-1 
         `}>
           
           {/* Subject Container */}
           <motion.div className={`bg-mainFour text-MainRedThree cursor-pointer text-center select-none border-black border-4 shadow-xl flex flex-col items-center relative
-          ${ visible3 ? 'z-50' : 'z-0' } ${ cardAnimated3 ? 'mb-[120px] max-w-[500px] xl:max-w-[650px]' : 'max-w-[350px]' }
+          ${ visible3 ? 'z-50' : 'z-0' } ${ cardAnimated3 ? 'mb-[120px] max-w-[500px] xl:max-w-[800px]' : 'max-w-[350px]' }
           mt-[0px]
           w-[70%] leading-[2]
           lg:mt-[-40px] 
@@ -479,8 +491,11 @@ function Experience() {
             { contentDisplayed3 && (<img src={MDC} alt="ukglog"className='relative w-[90%] aspect-[2/1] border-black border-4 mt-[20px]'/>)}
 
             {/* Text Container One */}
-            { contentDisplayed3 && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px]
-            lg:text-2xl           
+            { contentDisplayed3 && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px] p-2
+            text-[1.2rem]
+            sm:text-[1.3rem]
+            lg:text-[1.5rem]
+            xl:text-[1.7rem]              
             '>
 
               My venture first started in Miami Dade College. I first worked as a teacher's assistant, helping teach basic concepts for languages, such as C++, Java, and Python.
@@ -496,8 +511,11 @@ function Experience() {
             { contentDisplayed3 && (<img src={MDCFriends} alt="ukgteam" className='relative w-[90%] aspect-[2/1/5] border-black border-4 mt-[20px]' />)}
 
             {/* Text Container Two */}
-            { contentDisplayed3 && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px]
-            lg:text-2xl            
+            { contentDisplayed3 && (<div className='bg-black/20 relative w-[95%] font-semibold h-fit mt-[20px] mb-[20px] p-2
+            text-[1.2rem]
+            sm:text-[1.3rem]
+            lg:text-[1.5rem]
+            xl:text-[1.7rem]               
             '>
 
               My time tutoring at MDC was fun, but I never would've guessed that it would also connect me with like-minded people, which you can see in the image above. I made 

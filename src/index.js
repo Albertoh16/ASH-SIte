@@ -114,7 +114,7 @@ function Index(){
                 
                 {/* About Me Subject Container */}
                 <div onClick={() => open(prev => !prev)} 
-                className='-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom 
+                className='-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
                 active:mt-1 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveAMdown 
                 sm:translate-x-[-56.5%] sm:h-20 sm:ml-[5%] sm:mb-1 sm:max-w-[600px]
                 md:translate-x-[-55.5%] md:max-w-[700px]
@@ -165,8 +165,8 @@ function Index(){
                 {opened && (
 
                     // About Me Subject Context Section
-                    <motion.div className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative 
-                    left-1/2 overflow-hidden translate-x-[-55.5%] h-fit ml-[5%] mb-[30px] mt-[-50px] max-w-[485px]
+                    <motion.div className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center items-center relative 
+                    left-1/2 overflow-hidden translate-x-[-55.5%] h-fit ml-[5%] mb-[30px] mt-[-50px] max-w-[485px] border-2 border-black
                     sm:translate-x-[-56.5%] sm:max-w-[600px] 
                     md:translate-x-[-55.5%] md:max-w-[700px]
                     lg:translate-x-[-56%] lg:max-w-[900px]
@@ -178,15 +178,20 @@ function Index(){
                         animate={{ height: opened ? "auto" : 0 }}
                     >
 
-                        {/* Self Portrait Image */}
-                        <img src={portrait} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
-                        h-[200px] w-[200px] top-[80px]
-                        sm:h-[300px] sm:w-[300px] sm:top-[100px]
-                        '/>      
-                        
+                        {/* Self Portrait Image */}  
+                        <div className='top-[80px] sm:top-[100px] bg-black/20 w-[90%] flex justify-center items-center 
+                        h-[320px]
+                        sm:h-[450px]
+                        '>
+                            <img src={portrait} alt="port" className='relative border-2 border-black
+                            h-[200px] w-[200px] top-[30px]
+                            sm:h-[300px] sm:w-[300px] sm:top-[40px]
+                            '/>    
+                        </div>
+
                         {/* "Who Am I" Text Container */}
-                        <div className="text-center font-bold w-[90%] 
-                        text-[1.2rem] ml-[5%] mt-[115px] mb-[14px]
+                        <div className="text-center font-bold w-[90%] bg-black/20 p-2
+                        text-[1.2rem] mt-[15px] mb-[14px]
                         sm:text-[1.3rem]
                         lg:text-[1.5rem]
                         xl:text-[1.7rem]
@@ -205,7 +210,7 @@ function Index(){
 
                 {/* About Site Subject Container */}
                 <div onClick={() => open2(prev => !prev)} 
-                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom 
+                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
                 active:mt-5 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveASdown 
                 sm:translate-x-[-56.5%] sm:h-20 sm:ml-[5%] sm:mb-1 sm:mt-4 sm:max-w-[600px]
                 md:translate-x-[-55.5%] md:max-w-[700px]
@@ -256,8 +261,8 @@ function Index(){
 
                     // About Me Subject Context Section
                     <motion.div 
-                    className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 overflow-hidden
-                    translate-x-[-55.5%] h-fit ml-[5%] mb-[30px] mt-[-55px] max-w-[485px]
+                    className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 overflow-hidden items-center
+                    translate-x-[-55.5%] h-fit ml-[5%] mb-[30px] mt-[-55px] max-w-[485px] border-2 border-black
                     sm:translate-x-[-56.5%] sm:max-w-[600px]
                     md:translate-x-[-55.5%] md:max-w-[700px]
                     lg:translate-x-[-56%] lg:max-w-[900px]
@@ -270,15 +275,22 @@ function Index(){
                     >
 
                         {/* Different Teams Image */}
-                        <img src={smallCollage} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
-                        h-[170px] w-[240px] mt-[80px]
-                        sm:h-[250px] sm:w-[350px] sm:mt-[100px]
-                        lg:h-[400px] lg:w-[500px] lg:mt-[100px]
-                        '/>   
+                        <div className='top-[80px] sm:top-[100px] bg-black/20 w-[90%] flex justify-center items-center 
+                        h-[290px]
+                        sm:h-[390px]
+                        lg:h-[550px]
+                        '>
+                            <img src={smallCollage} alt="port" className='relative border-2 border-black
+                            h-[170px] w-[240px] mt-[70px]
+                            sm:h-[250px] sm:w-[350px] sm:mt-[80px]
+                            lg:h-[400px] lg:w-[500px] lg:mt-[85px]
+                            '/>   
+                        </div>
+
 
                         {/* "What's the point of this website?" Text Container */}
-                        <div className="text-center font-bold w-[90%] 
-                        text-[1.2rem] ml-[5%] mt-[20px] mb-[14px]
+                        <div className="text-center font-bold w-[90%] bg-black/20 p-2
+                        text-[1.2rem] mt-[20px] mb-[14px]
                         sm:text-[1.3rem]
                         lg:text-[1.5rem]
                         xl:text-[1.7rem]
@@ -296,7 +308,7 @@ function Index(){
 
                 {/* About CS Subject Container */}
                 <div onClick={() => open3(prev => !prev)} 
-                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom 
+                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
                 active:mt-5 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveACSdown
                 sm:translate-x-[-56.5%] sm:h-20 sm:mb-1 sm:mt-4 sm:max-w-[600px]
                 md:translate-x-[-55.5%] md:mb-1 md:max-w-[700px]
@@ -348,8 +360,8 @@ function Index(){
                 {opened3 && (
 
                     // About Me Subject Context Section
-                    <motion.div className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 overflow-hidden
-                    translate-x-[-55.5%] h-fit ml-[5%] mb-[30px] mt-[-58px] max-w-[485px]
+                    <motion.div className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 overflow-hidden items-center
+                    translate-x-[-55.5%] h-fit ml-[5%] mb-[30px] mt-[-58px] max-w-[485px] border-2 border-black
                     sm:translate-x-[-56.5%] sm:max-w-[600px]
                     md:translate-x-[-55.5%] md:max-w-[700px]
                     lg:translate-x-[-56%] lg:max-w-[900px]
@@ -362,15 +374,23 @@ function Index(){
                     >
 
                         {/* Team Picture Container */}
-                        <img src={teamPic} alt="port" className='relative ring-2 ring-black left-1/2 translate-x-[-50%]
-                        h-[170px] w-[250px] mt-[80px]
-                        sm:h-[250px] sm:w-[350px] sm:mt-[100px]
-                        lg:h-[350px] lg:w-[450px]
-                        '/>    
+                        <div className='top-[80px] sm:top-[100px] bg-black/20 w-[90%] flex justify-center items-center
+                        h-[290px]
+                        sm:h-[390px]
+                        lg:h-[500px]
+                        '>
+
+                            <img src={teamPic} alt="port" className='relative border-2 border-black
+                            h-[170px] w-[250px] mt-[65px]
+                            sm:h-[250px] sm:w-[350px] sm:mt-[80px]
+                            lg:h-[350px] lg:w-[450px]
+                            '/>    
+
+                        </div>
 
                         {/* "What's the point of this website?" Text Container */}
-                        <div className=" text-center font-bold w-[90%] 
-                        text-[1.2rem] ml-[5%] mt-[20px] mb-[14px]
+                        <div className=" text-center font-bold w-[90%] bg-black/20 p-2 
+                        text-[1.2rem] mt-[20px] mb-[14px]
                         sm:text-[1.3rem]
                         lg:text-[1.5rem]
                         xl:text-[1.7rem]
@@ -390,7 +410,7 @@ function Index(){
 
                 {/* About Logo Subject Container */}
                 <div onClick={() => open4(prev => !prev)} 
-                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom 
+                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
                 active:mt-5 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-12 max-w-[485px] animate-moveALdown
                 sm:translate-x-[-56.5%] sm:h-20 sm:mt-4 sm:max-w-[600px]
                 md:translate-x-[-55.5%] md:max-w-[700px]
@@ -440,7 +460,7 @@ function Index(){
                 
                 {opened4 && (
                     // About Logo Subject Context Section
-                    <motion.div className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative 
+                    <motion.div className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative items-center
                     left-1/2 overflow-hidden translate-x-[-55.5%] h-fit ml-[5%] mb-[80px] mt-[-61px] max-w-[485px]
                     sm:translate-x-[-56.5%] sm:max-w-[600px] 
                     md:translate-x-[-55.5%] md:max-w-[700px]
@@ -454,15 +474,21 @@ function Index(){
                     >
                     
                         {/* Logo Picture Container */}
-                        <img src={logoImage} alt="port" className='relative left-1/2 translate-x-[-50%]
-                        h-[120px] w-[220px] mt-[50px]
-                        sm:h-[180px] sm:w-[320px] sm:mt-[60px]
-                        lg:mt-[60px]
-                        '/>   
-                    
+                        <div className='top-[80px] sm:top-[100px] bg-black/10 w-[90%] flex justify-center items-center
+                        h-[200px]
+                        sm:h-[280px]
+                        lg:h-[290px]
+                        '>
+                            <img src={logoImage} alt="port" className='relative
+                            h-[120px] w-[220px] mt-[40px]
+                            sm:h-[180px] sm:w-[320px] sm:mt-[45px]
+                            lg:mt-[45px]
+                            '/>   
+                        </div> 
+
                         {/* "Where did the logo come from?" Text Container */}
-                        <div className=" text-center font-bold w-[90%]
-                        text-[1.2rem] ml-[5%] mt-[20px] mb-[14px]
+                        <div className=" text-center font-bold w-[90%] bg-black/20 p-2
+                        text-[1.2rem] mt-[20px] mb-[14px]
                         sm:text-[1.3rem]
                         lg:text-[1.5rem]
                         xl:text-[1.7rem]
