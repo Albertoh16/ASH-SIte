@@ -501,7 +501,9 @@ function Index(){
                 
 
                 {/* Footer Component */}
-                <Footer />
+                <div className='hidden xl:block w-full'>
+                    <Footer />
+                </div>
             </div>
         </div>
     );

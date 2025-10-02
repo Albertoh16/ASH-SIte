@@ -123,19 +123,31 @@ function Projects() {
     <div className="relative min-h-screen overflow-y-auto">
 
       {/* Main Container */}
-      <div className='bg-mainTwo w-screen h-full flex flex-col items-center justify-center 
-      pt-10 pb-10 pl-5 pr-5
-      md:pl-10 md:pr-10
+      <div className='bg-mainTwo w-screen h-full flex flex-col items-center justify-center
+      pt-20 pb-10 px-3
+      subAdj1:px-5
+      sm:px-8
+      md:px-10 md:pt-24
       lg:pt-44
+      xl:px-12
+      2xl:px-16
       '>
 
         {/* Sort Controls Container */}
-        <div className='w-full max-w-[1200px] flex justify-end gap-4 mb-4'>
+        <div className='w-full max-w-[1200px] flex flex-col gap-2 mb-4
+        tiny:gap-2
+        subAdj1:flex-row subAdj1:justify-end subAdj1:gap-3
+        sm:gap-4
+        '>
           {/* Sort By Dropdown */}
           <select
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className='bg-MainRedThree hover:bg-MainRedTwo text-white font-bold py-2 px-4 rounded cursor-pointer border-2 border-black'
+            className='bg-MainRedThree hover:bg-MainRedTwo text-white font-bold rounded cursor-pointer border-2 border-black
+            py-1 px-2 text-sm
+            subAdj1:py-2 subAdj1:px-3 subAdj1:text-base
+            sm:py-2 sm:px-4
+            '
           >
             <option value="updated">Sort by Updated</option>
             <option value="created">Sort by Created</option>
@@ -145,18 +157,26 @@ function Projects() {
           {/* Sort Order Button */}
           <button
             onClick={toggleSortOrder}
-            className='bg-MainRedThree hover:bg-MainRedTwo text-white font-bold py-2 px-4 rounded border-2 border-black'
+            className='bg-MainRedThree hover:bg-MainRedTwo text-white font-bold rounded border-2 border-black
+            py-1 px-2 text-sm
+            subAdj1:py-2 subAdj1:px-3 subAdj1:text-base
+            sm:py-2 sm:px-4
+            '
           >
             {sortOrder === 'desc' ? '↓ Descending' : '↑ Ascending'}
           </button>
         </div>
 
         {/* Repository Container */}
-        <div className='bg-mainFour grid gap-10 p-10 h-fit rounded-lg border-MainRedTwo border-2
-        w-full grid-cols-1
-        sm:w-[900px] sm:grid-cols-2
-        lg:grid-cols-3
+        <div className='bg-mainFour grid h-fit rounded-lg border-MainRedTwo border-2
+        w-full grid-cols-1 gap-4 p-4
+        tiny:gap-5 tiny:p-5
+        subAdj1:gap-6 subAdj1:p-6 subAdj1:w-[400px]
+        sm:w-[600px] sm:grid-cols-2 sm:gap-8 sm:p-8
+        md:w-[700px]
+        lg:w-[900px] lg:grid-cols-3 lg:gap-10 lg:p-10
         xl:w-[1200px]
+        2xl:w-[1400px]
         '>
 
           {loading ? (
@@ -172,7 +192,7 @@ function Projects() {
                 onClick={() => openProject(repo)}
               >
                 <div className='w-full h-full text-center rounded-2xl flex flex-col items-center justify-center text-MainRedThree font-bold p-5
-                text-lg
+                text-3xl
                 sm:text-xl
                 md:text-2xl
                 xl:text-3xl
@@ -195,20 +215,35 @@ function Projects() {
 
             <div className='bg-main rounded-3xl mt-10 mb-10 border-2 border-MainRedTwo overflow-hidden
             h-fit
-            w-[60%] max-w-[800px]
             flex flex-col
+            w-[95%] max-w-[500px]
+            tiny:w-[90%]
+            subAdj1:max-w-[600px]
+            sm:w-[85%] sm:max-w-[700px]
+            md:w-[80%] md:max-w-[800px]
+            lg:w-[70%] lg:max-w-[900px]
+            xl:w-[65%] xl:max-w-[1000px]
+            2xl:w-[60%] 2xl:max-w-[1100px]
             '>
 
               <div className='min-h-[70px] flex items-center justify-center relative z-50 border-black border-b-2 bg-mainTwo py-2'>
-                <div className='font-bold flex items-center justify-center px-20 uppercase w-full max-w-[85%] text-center leading-tight overflow-wrap-anywhere break-all
-                text-xl
-                sm:text-2xl
-                md:text-3xl
-                lg:text-4xl text-white
+                <div className='font-bold flex items-center justify-center uppercase w-full text-center leading-tight overflow-wrap-anywhere break-all text-white
+                text-base px-12 max-w-[80%]
+                tiny:text-lg
+                subAdj1:text-xl subAdj1:px-14
+                sm:text-2xl sm:px-16 sm:max-w-[85%]
+                md:text-3xl md:px-18
+                lg:text-4xl lg:px-20
+                xl:text-5xl
                 ' style={{wordBreak: 'break-all', overflowWrap: 'anywhere'}}>
                   {selectedProject.name}
                 </div>
-                <FiX className='border-white border-2 rounded-md absolute text-white right-[20px] bg-black/30 text-[55px] cursor-pointer hover:bg-black/60 z-50' onClick={closeProject}/>
+                <FiX className='border-white border-2 rounded-md absolute text-white bg-black/30 cursor-pointer hover:bg-black/60 z-50
+                text-[40px] right-[10px]
+                tiny:text-[45px]
+                subAdj1:text-[50px] subAdj1:right-[15px]
+                sm:text-[55px] sm:right-[20px]
+                ' onClick={closeProject}/>
               </div>
 
               {/* Project Content */}
