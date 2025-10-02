@@ -67,7 +67,7 @@ function Navbar() {
   return (
 
     // Navbar main container
-    <div className='z-50 bg-mainThree w-[100%]
+    <div className='z-50 bg-mainThree w-[100%] border-b-4 border-black
     h-20
     sm:h-24
     lg:h-32 lg:fixed

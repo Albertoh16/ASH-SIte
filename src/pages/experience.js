@@ -557,9 +557,9 @@ function Experience() {
       </div>   
 
       {/* Footer Container */}
+    <Footer />
       <div className='h-[200px] w-[100%] relative bg-mainThree min-w-[320px] flex mt-auto
       '>
-          <Footer />
       </div>
     </div>
   );

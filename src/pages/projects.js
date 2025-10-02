@@ -2,18 +2,36 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { FiX  } from "react-icons/fi";
 import Footer from '../components/Footer';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [repositories, setRepositories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [sortOrder, setSortOrder] = useState('desc'); // 'desc' or 'asc'
+  const [sortBy, setSortBy] = useState('updated'); // 'created', 'updated', 'alphabetical'
+  const [readme, setReadme] = useState('');
 
   useEffect(() => {
-    // Fetch repositories from GitHub API
+    // Fetch repositories from GitHub API (including private repos)
     const fetchRepositories = async () => {
       try {
-        const response = await fetch('https://api.github.com/users/Albertoh16/repos?sort=updated&per_page=100');
+        // Using authenticated request to fetch both public and private repos
+        // You need to set your GitHub Personal Access Token in an environment variable
+        const token = process.env.REACT_APP_GITHUB_TOKEN; // Add your token to .env file
+
+        const headers = token ? {
+          'Authorization': `token ${token}`,
+          'Accept': 'application/vnd.github.v3+json'
+        } : {
+          'Accept': 'application/vnd.github.v3+json'
+        };
+
+        const response = await fetch('https://api.github.com/user/repos?visibility=all&per_page=100&sort=updated', {
+          headers: headers
+        });
+
         const data = await response.json();
         setRepositories(data);
         setLoading(false);
@@ -30,42 +48,111 @@ function Projects() {
     setSortOrder(prev => prev === 'desc' ? 'asc' : 'desc');
   };
 
-  const sortedRepositories = [...repositories].sort((a, b) => {
-    const dateA = new Date(a.updated_at);
-    const dateB = new Date(b.updated_at);
-    return sortOrder === 'desc' ? dateB - dateA : dateA - dateB;
-  });
+  // Remove duplicates, keeping the one with a homepage
+  const uniqueRepos = repositories.reduce((acc, repo) => {
+    const existing = acc.find(r => r.name === repo.name);
+    if (!existing) {
+      acc.push(repo);
+    } else if (repo.homepage && !existing.homepage) {
+      // Replace with the one that has a homepage
+      const index = acc.indexOf(existing);
+      acc[index] = repo;
+    }
+    return acc;
+  }, []);
 
-  const openProject = (repo) => {
+  const sortedRepositories = [...uniqueRepos]
+    .filter(repo => repo.name !== 'AutoShortsCreator') // Exclude this repository
+    .sort((a, b) => {
+      let compareA, compareB;
+
+      if (sortBy === 'created') {
+        compareA = new Date(a.created_at);
+        compareB = new Date(b.created_at);
+      } else if (sortBy === 'updated') {
+        compareA = new Date(a.updated_at);
+        compareB = new Date(b.updated_at);
+      } else if (sortBy === 'alphabetical') {
+        compareA = a.name.toLowerCase();
+        compareB = b.name.toLowerCase();
+      }
+
+      if (sortBy === 'alphabetical') {
+        return sortOrder === 'desc' ? compareB.localeCompare(compareA) : compareA.localeCompare(compareB);
+      } else {
+        return sortOrder === 'desc' ? compareB - compareA : compareA - compareB;
+      }
+    });
+
+  const openProject = async (repo) => {
     setSelectedProject(repo);
+    setReadme('Loading README...');
+
+    // Fetch README content
+    try {
+      const token = process.env.REACT_APP_GITHUB_TOKEN;
+      const headers = token ? {
+        'Authorization': `token ${token}`,
+        'Accept': 'application/vnd.github.v3.raw'
+      } : {
+        'Accept': 'application/vnd.github.v3.raw'
+      };
+
+      const response = await fetch(`https://api.github.com/repos/${repo.owner.login}/${repo.name}/readme`, {
+        headers: headers
+      });
+
+      if (response.ok) {
+        const readmeContent = await response.text();
+        setReadme(readmeContent);
+      } else {
+        setReadme('No README available for this repository.');
+      }
+    } catch (error) {
+      console.error('Error fetching README:', error);
+      setReadme('Error loading README.');
+    }
   }
 
   const closeProject = () => {
     setSelectedProject(null);
+    setReadme('');
   }
 
   return (
     <div className="relative min-h-screen overflow-y-auto">
 
       {/* Main Container */}
-      <div className='bg-mainTwo w-screen h-full flex flex-col items-center justify-center
+      <div className='bg-mainTwo w-screen h-full flex flex-col items-center justify-center 
       pt-10 pb-10 pl-5 pr-5
       md:pl-10 md:pr-10
       lg:pt-44
       '>
 
-        {/* Sort Button Container */}
-        <div className='w-full max-w-[1200px] flex justify-end mb-4'>
+        {/* Sort Controls Container */}
+        <div className='w-full max-w-[1200px] flex justify-end gap-4 mb-4'>
+          {/* Sort By Dropdown */}
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value)}
+            className='bg-MainRedThree hover:bg-MainRedTwo text-white font-bold py-2 px-4 rounded cursor-pointer border-2 border-black'
+          >
+            <option value="updated">Sort by Updated</option>
+            <option value="created">Sort by Created</option>
+            <option value="alphabetical">Sort Alphabetically</option>
+          </select>
+
+          {/* Sort Order Button */}
           <button
             onClick={toggleSortOrder}
-            className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+            className='bg-MainRedThree hover:bg-MainRedTwo text-white font-bold py-2 px-4 rounded border-2 border-black'
           >
-            Sort: {sortOrder === 'desc' ? 'Newest First' : 'Oldest First'}
+            {sortOrder === 'desc' ? '↓ Descending' : '↑ Ascending'}
           </button>
         </div>
 
         {/* Repository Container */}
-        <div className='bg-mainFour grid gap-10 p-10 h-fit rounded-lg
+        <div className='bg-mainFour grid gap-10 p-10 h-fit rounded-lg border-MainRedTwo border-2
         w-full grid-cols-1
         sm:w-[900px] sm:grid-cols-2
         lg:grid-cols-3
@@ -101,21 +188,24 @@ function Projects() {
       </div>
     
         {selectedProject && (
-          <div className='bg-black/50 fixed z-40 flex h-full w-screen inset-0 overflow-y-auto overscroll-contain touch-pan-y
+          <div className='bg-black/50 fixed z-40 flex h-full w-screen inset-0 overflow-y-auto
           pt-28
           justify-center
           '>
 
             <div className='bg-main rounded-3xl mt-10 mb-10 border-2 border-MainRedTwo overflow-hidden
             h-fit
-            w-[50%]
+            w-[60%] max-w-[800px]
             flex flex-col
             '>
 
-              <div className='h-[70px] flex items-center justify-center relative z-50 border-black border-b-2 bg-mainTwo'>
-                <div className='h-full font-bold flex items-center justify-center p-10
-                text-5xl text-white uppercase 
-                '>
+              <div className='min-h-[70px] flex items-center justify-center relative z-50 border-black border-b-2 bg-mainTwo py-2'>
+                <div className='font-bold flex items-center justify-center px-20 uppercase w-full max-w-[85%] text-center leading-tight overflow-wrap-anywhere break-all
+                text-xl
+                sm:text-2xl
+                md:text-3xl
+                lg:text-4xl text-white
+                ' style={{wordBreak: 'break-all', overflowWrap: 'anywhere'}}>
                   {selectedProject.name}
                 </div>
                 <FiX className='border-white border-2 rounded-md absolute text-white right-[20px] bg-black/30 text-[55px] cursor-pointer hover:bg-black/60 z-50' onClick={closeProject}/>
@@ -127,7 +217,14 @@ function Projects() {
                 {/* Description Section */}
                 <div className='mb-4 w-full max-w-[900px] border-black border-2 rounded-md bg-mainThree'>
                   <h3 className='text-2xl font-bold mb-2 text-center border-black bg-mainTwo border-b-2 p-2'>Description</h3>
-                  <p className='text-center p-2'>{selectedProject.description || 'No description available'}</p>
+                  <div className='text-left p-4 overflow-auto max-h-[500px] prose prose-invert max-w-none
+                    prose-headings:text-white prose-p:text-white prose-li:text-white prose-strong:text-white
+                    prose-a:text-blue-400 prose-a:hover:text-blue-300 prose-code:text-pink-400
+                    prose-pre:bg-gray-800 prose-pre:text-white prose-blockquote:text-gray-300'>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      {readme || 'Loading README...'}
+                    </ReactMarkdown>
+                  </div>
                 </div>
 
                 {/* Repository Details Section */}
@@ -163,6 +260,10 @@ function Projects() {
                 <div className='mb-4 w-full max-w-[900px] border-black border-2 rounded-md bg-mainThree'>
                   <h3 className='text-2xl font-bold mb-2 text-center  border-black bg-mainTwo border-b-2 p-2'>Repository Status</h3>
                   <div className='flex flex-wrap gap-2 justify-center p-2'>
+                    {selectedProject.owner?.login === 'Albertoh16' ?
+                      <span className='bg-orange-600 px-2 py-1 rounded text-sm'>Owner</span> :
+                      <span className='bg-cyan-600 px-2 py-1 rounded text-sm'>Contributor</span>
+                    }
                     {selectedProject.private && <span className='bg-red-600 px-2 py-1 rounded text-sm'>Private</span>}
                     {!selectedProject.private && <span className='bg-green-600 px-2 py-1 rounded text-sm'>Public</span>}
                     {selectedProject.fork && <span className='bg-yellow-600 px-2 py-1 rounded text-sm'>Forked</span>}
@@ -187,8 +288,8 @@ function Projects() {
                 )}
 
                 {selectedProject.homepage && (
-                  <div className='mb-4'>
-                    <h3 className='text-xl font-bold mb-2'>Homepage</h3>
+                  <div className='mb-4 w-full max-w-[900px] border-black border-2 rounded-md bg-mainThree'>
+                    <h3 className='text-2xl font-bold mb-2 text-center  border-black bg-mainTwo border-b-2 p-2'>Homepage</h3>
                     <a
                       href={selectedProject.homepage}
                       target="_blank"
@@ -205,7 +306,7 @@ function Projects() {
                     href={selectedProject.html_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block border-black border-2'
+                    className='bg-MainRedThree hover:bg-MainRedTwo text-white font-bold py-2 px-4 rounded inline-block border-black border-2'
                   >
                     View on GitHub
                   </a>
@@ -225,11 +326,8 @@ function Projects() {
           </div>
         )}
 
-      {/* Footer Container */}
-      <div className='h-[200px] w-[100%] relative bg-mainThree min-w-[320px] flex mt-auto
-      '>
-          <Footer />
-      </div>
+        {/* Footer Component */}
+        <Footer />
     </div>
   );
 }

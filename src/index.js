@@ -500,12 +500,8 @@ function Index(){
                 )}
                 
 
-                {/* Footer Container */}
-                <div className='h-[200px] w-[100%] relative bg-mainThree min-w-[320px] flex mt-auto
-                '>
-                    <Footer />
-                </div>
-
+                {/* Footer Component */}
+                <Footer />
             </div>
         </div>
     );
