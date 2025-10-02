@@ -13,11 +13,7 @@ import { motion } from "framer-motion";
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <App />
-
-    
-);
+root.render( <App /> );
 
 function Index(){
     const [opened, open] = useState(false);
@@ -26,7 +22,7 @@ function Index(){
     const [opened4, open4] = useState(false);
 
     return(
-        <div>
+        <div className='flex flex-col min-h-screen'>
             <title>ASH</title>
             <link rel="shortcut icon" type= 'image/png' href="assets/favicon.png" />
 
@@ -106,16 +102,16 @@ function Index(){
             </div>
             
             {/* Main Container */}
-            <div className='-z-50 bg-mainTwo w-full absolute flex flex-col min-w-[320px] h-fit
-            top-[272px] 
-            sm:top-[289px]
-            lg:top-[448px]
+            <div className='z-0 bg-mainTwo w-full absolute flex flex-col min-w-[320px] min-h-[calc(100vh-272px)]
+            top-[272px]
+            sm:top-[289px] sm:min-h-[calc(100vh-289px)]
+            lg:top-[448px] lg:min-h-[calc(100vh-448px)]
             '>
                 
                 {/* About Me Subject Container */}
-                <div onClick={() => open(prev => !prev)} 
-                className='-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
-                active:mt-1 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveAMdown 
+                <div onClick={() => open(prev => !prev)}
+                className='z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
+                active:mt-1 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveAMdown
                 sm:translate-x-[-56.5%] sm:h-20 sm:ml-[5%] sm:mb-1 sm:max-w-[600px]
                 md:translate-x-[-55.5%] md:max-w-[700px]
                 lg:translate-x-[-56%] lg:max-w-[900px]
@@ -165,9 +161,9 @@ function Index(){
                 {opened && (
 
                     // About Me Subject Context Section
-                    <motion.div className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center items-center relative 
+                    <motion.div className='z-0 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center items-center relative
                     left-1/2 overflow-hidden translate-x-[-55.5%] h-fit ml-[5%] mb-[30px] mt-[-50px] max-w-[485px] border-2 border-black
-                    sm:translate-x-[-56.5%] sm:max-w-[600px] 
+                    sm:translate-x-[-56.5%] sm:max-w-[600px]
                     md:translate-x-[-55.5%] md:max-w-[700px]
                     lg:translate-x-[-56%] lg:max-w-[900px]
                     xl:max-w-[1100px]
@@ -209,9 +205,9 @@ function Index(){
                 )}
 
                 {/* About Site Subject Container */}
-                <div onClick={() => open2(prev => !prev)} 
-                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
-                active:mt-5 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveASdown 
+                <div onClick={() => open2(prev => !prev)}
+                className="z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
+                active:mt-5 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveASdown
                 sm:translate-x-[-56.5%] sm:h-20 sm:ml-[5%] sm:mb-1 sm:mt-4 sm:max-w-[600px]
                 md:translate-x-[-55.5%] md:max-w-[700px]
                 lg:translate-x-[-56%] lg:max-w-[900px]
@@ -260,8 +256,8 @@ function Index(){
                 {opened2 && (
 
                     // About Me Subject Context Section
-                    <motion.div 
-                    className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 overflow-hidden items-center
+                    <motion.div
+                    className='z-0 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 overflow-hidden items-center
                     translate-x-[-55.5%] h-fit ml-[5%] mb-[30px] mt-[-55px] max-w-[485px] border-2 border-black
                     sm:translate-x-[-56.5%] sm:max-w-[600px]
                     md:translate-x-[-55.5%] md:max-w-[700px]
@@ -307,8 +303,8 @@ function Index(){
                 )}
 
                 {/* About CS Subject Container */}
-                <div onClick={() => open3(prev => !prev)} 
-                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
+                <div onClick={() => open3(prev => !prev)}
+                className="z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
                 active:mt-5 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveACSdown
                 sm:translate-x-[-56.5%] sm:h-20 sm:mb-1 sm:mt-4 sm:max-w-[600px]
                 md:translate-x-[-55.5%] md:mb-1 md:max-w-[700px]
@@ -360,7 +356,7 @@ function Index(){
                 {opened3 && (
 
                     // About Me Subject Context Section
-                    <motion.div className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 overflow-hidden items-center
+                    <motion.div className='z-0 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 overflow-hidden items-center
                     translate-x-[-55.5%] h-fit ml-[5%] mb-[30px] mt-[-58px] max-w-[485px] border-2 border-black
                     sm:translate-x-[-56.5%] sm:max-w-[600px]
                     md:translate-x-[-55.5%] md:max-w-[700px]
@@ -409,8 +405,8 @@ function Index(){
                 )}
 
                 {/* About Logo Subject Container */}
-                <div onClick={() => open4(prev => !prev)} 
-                className="-z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
+                <div onClick={() => open4(prev => !prev)}
+                className="z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
                 active:mt-5 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-12 max-w-[485px] animate-moveALdown
                 sm:translate-x-[-56.5%] sm:h-20 sm:mt-4 sm:max-w-[600px]
                 md:translate-x-[-55.5%] md:max-w-[700px]
@@ -460,9 +456,9 @@ function Index(){
                 
                 {opened4 && (
                     // About Logo Subject Context Section
-                    <motion.div className='-z-20 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative items-center
-                    left-1/2 overflow-hidden translate-x-[-55.5%] h-fit ml-[5%] mb-[80px] mt-[-61px] max-w-[485px]
-                    sm:translate-x-[-56.5%] sm:max-w-[600px] 
+                    <motion.div className='z-0 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative items-center
+                    left-1/2 overflow-hidden translate-x-[-55.5%] h-fit ml-[5%] mb-[80px] mt-[-61px] max-w-[485px] border-2 border-black
+                    sm:translate-x-[-56.5%] sm:max-w-[600px]
                     md:translate-x-[-55.5%] md:max-w-[700px]
                     lg:translate-x-[-56%] lg:max-w-[900px]
                     xl:max-w-[1100px]
@@ -505,12 +501,11 @@ function Index(){
                 
 
                 {/* Footer Container */}
-                <div className='h-[200px] w-[100%] relative hidden bg-mainThree min-w-[320px]
-                lg:flex
+                <div className='h-[200px] w-[100%] relative bg-mainThree min-w-[320px] flex mt-auto
                 '>
                     <Footer />
                 </div>
-            
+
             </div>
         </div>
     );

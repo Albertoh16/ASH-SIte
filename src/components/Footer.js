@@ -5,8 +5,7 @@ import '../index.css';
 function Footer() {
     return (
       // Main Footer Container
-      <div className="hidden h-[90%] w-[90%] mt-[1%] ml-[5%] text-center
-      lg:flex lg:justify-center
+      <div className="flex justify-center h-[90%] w-[90%] mt-[1%] ml-[5%] text-center
       2xl:w-[50%] 2xl:ml-[25%]
       ">
           {/* Footer Division */}

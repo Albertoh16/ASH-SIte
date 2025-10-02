@@ -123,7 +123,7 @@ function Navbar() {
         
         </div>
         
-        {/* <div onClick={() => PageNavigation('/projects')} 
+        <div onClick={() => PageNavigation('/projects')} 
         className="w-1/3 h-[80%] mt-[13px] bg-mainThree font-semibold hover:bg-mainTwo cursor-pointer select-none 
         shadow-lg shadow-black/50 active:mt-4 active:shadow-none border-4 border-mainTwo
         leading-[5] ml-[10px] mr-[10px]
@@ -131,7 +131,7 @@ function Navbar() {
           
           MY PROJECTS
           
-        </div> */}
+        </div>
       </ul>
 
       {/* Hamburger Icon */}
@@ -172,7 +172,7 @@ function Navbar() {
             </div>
 
             {/* Projects Option */}
-            {/* <div onClick={() => PageNavigation('/projects')} 
+            <div onClick={() => PageNavigation('/projects')} 
             className=" mt-[5%] h-[90px] w-[100%] bg-mainThree text-white font-semibold cursor-pointer select-none border-2 
             border-mainTwo shadow-bottom shadow-black/50 active:bg-mainTwo active:mt-[6%] active:shadow-none
             text-[20px] leading-[4.2] 
@@ -180,7 +180,7 @@ function Navbar() {
             ">
               My Projects
             
-            </div> */}
+            </div>
             
             {/* Experience Option */} 
             <div onClick={() => PageNavigation('/experience')} 

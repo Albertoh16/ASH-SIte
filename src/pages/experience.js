@@ -136,8 +136,6 @@ function Experience() {
       lg:grid lg:grid-cols-3 lg:grid-row-1 lg:gap-0 lg:mb-[0px] lg:items-start lg:ml-0 lg:mr-0
       '>
 
-{/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
-
         {/*UKG Sub Container*/}
         <motion.div className={`z-10 flex flex-col justify-center items-center w-full h-fit mb-[120px] mt-[50px]
         ${ contentDisplayed ? 'h-auto' : 'h-[410px] lg:h-[550px]' }
@@ -276,8 +274,6 @@ function Experience() {
           </motion.div>)}
 
         </motion.div>
-
-{/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
 
         {/*Mercedes Sub Container*/} 
         <motion.div className={`z-10 flex flex-col justify-center items-center w-full h-fit mb-[120px]
@@ -420,8 +416,6 @@ function Experience() {
 
         </motion.div>
 
-{/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/}
-
         {/*Miami-Dade College Sub Container*/}
         <motion.div className={`z-10 flex flex-col justify-center items-center w-full h-fit mb-[120px]
         ${ contentDisplayed3 ? 'h-auto' : 'h-[330px] lg:h-[550px]' }
@@ -560,18 +554,13 @@ function Experience() {
           </motion.div>)}
 
         </motion.div>
-
-          {/* Footer Container */}
-          <div className='h-[200px] w-[100%] relative hidden bg-mainThree min-w-[320px] col-span-3
-          lg:flex
-          '>
-          
-              <Footer />
-          
-          </div>
-
       </div>   
 
+      {/* Footer Container */}
+      <div className='h-[200px] w-[100%] relative bg-mainThree min-w-[320px] flex mt-auto
+      '>
+          <Footer />
+      </div>
     </div>
   );
 }
