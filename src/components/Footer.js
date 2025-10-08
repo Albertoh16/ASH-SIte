@@ -5,7 +5,7 @@ import '../index.css';
 function Footer() {
     return (
       // Main Footer Container
-      <div className='h-[200px] w-[100%] relative bg-mainThree min-w-[320px] mt-auto border-t-4 border-black justify-center items-center hidden xl:flex'>
+      <div className='h-[200px] w-[100%] relative bg-mainThree min-w-[320px] mt-auto border-t-4 border-black justify-center items-center hidden lg:flex'>
         <div className="flex justify-center h-[90%] w-[90%] text-center
         2xl:w-[50%]
         ">

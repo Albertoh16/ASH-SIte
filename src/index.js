@@ -102,7 +102,7 @@ function Index(){
             </div>
             
             {/* Main Container */}
-            <div className='z-0 bg-mainTwo w-full absolute flex flex-col min-w-[320px] min-h-[calc(100vh-272px)]
+            <div className='z-0 bg-gradient-to-b from-mainTwo via-mainTwo to-black/40 w-full absolute flex flex-col min-w-[320px] min-h-[calc(100vh-272px)]
             top-[272px]
             sm:top-[289px] sm:min-h-[calc(100vh-289px)]
             lg:top-[448px] lg:min-h-[calc(100vh-448px)]
@@ -110,13 +110,13 @@ function Index(){
                 
                 {/* About Me Subject Container */}
                 <div onClick={() => open(prev => !prev)}
-                className='z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
-                active:mt-1 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveAMdown
-                sm:translate-x-[-56.5%] sm:h-20 sm:ml-[5%] sm:mb-1 sm:max-w-[600px]
-                md:translate-x-[-55.5%] md:max-w-[700px]
-                lg:translate-x-[-56%] lg:max-w-[900px]
+                className='z-10 bg-main font-bold text-MainRedThree relative left-1/2 -translate-x-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
+                active:mt-1 active:shadow-none active:bg-mainThree h-16 mb-4 max-w-[485px] animate-moveAMdown
+                sm:h-20 sm:mb-1 sm:max-w-[600px]
+                md:max-w-[700px]
+                lg:max-w-[900px]
                 xl:max-w-[1100px]
-                2xl:max-w-[50%] 2xl:translate-x-[-60%]
+                2xl:max-w-[50%]
                 '
                 >
 
@@ -162,12 +162,12 @@ function Index(){
 
                     // About Me Subject Context Section
                     <motion.div className='z-0 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center items-center relative
-                    left-1/2 overflow-hidden translate-x-[-55.5%] h-fit ml-[5%] mb-[30px] mt-[-50px] max-w-[485px] border-2 border-black
-                    sm:translate-x-[-56.5%] sm:max-w-[600px]
-                    md:translate-x-[-55.5%] md:max-w-[700px]
-                    lg:translate-x-[-56%] lg:max-w-[900px]
+                    left-1/2 -translate-x-1/2 overflow-hidden h-fit mb-[30px] mt-[-50px] max-w-[485px] border-2 border-black
+                    sm:max-w-[600px]
+                    md:max-w-[700px]
+                    lg:max-w-[900px]
                     xl:max-w-[1100px]
-                    2xl:max-w-[50%] 2xl:translate-x-[-60%]
+                    2xl:max-w-[50%]
                     '
                         initial={{ height: 0 }}
                         transition={{type: "spring", stiffness: 70}}
@@ -206,13 +206,13 @@ function Index(){
 
                 {/* About Site Subject Container */}
                 <div onClick={() => open2(prev => !prev)}
-                className="z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
-                active:mt-5 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveASdown
-                sm:translate-x-[-56.5%] sm:h-20 sm:ml-[5%] sm:mb-1 sm:mt-4 sm:max-w-[600px]
-                md:translate-x-[-55.5%] md:max-w-[700px]
-                lg:translate-x-[-56%] lg:max-w-[900px]
+                className="z-10 bg-main font-bold text-MainRedThree relative left-1/2 -translate-x-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
+                active:mt-5 active:shadow-none active:bg-mainThree h-16 mb-4 max-w-[485px] animate-moveASdown
+                sm:h-20 sm:mb-1 sm:mt-4 sm:max-w-[600px]
+                md:max-w-[700px]
+                lg:max-w-[900px]
                 xl:max-w-[1100px]
-                2xl:max-w-[50%] 2xl:translate-x-[-60%]
+                2xl:max-w-[50%]
                 ">
 
                     {/* Inner Subject Container */}
@@ -257,13 +257,13 @@ function Index(){
 
                     // About Me Subject Context Section
                     <motion.div
-                    className='z-0 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 overflow-hidden items-center
-                    translate-x-[-55.5%] h-fit ml-[5%] mb-[30px] mt-[-55px] max-w-[485px] border-2 border-black
-                    sm:translate-x-[-56.5%] sm:max-w-[600px]
-                    md:translate-x-[-55.5%] md:max-w-[700px]
-                    lg:translate-x-[-56%] lg:max-w-[900px]
+                    className='z-0 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 -translate-x-1/2 overflow-hidden items-center
+                    h-fit mb-[30px] mt-[-55px] max-w-[485px] border-2 border-black
+                    sm:max-w-[600px]
+                    md:max-w-[700px]
+                    lg:max-w-[900px]
                     xl:max-w-[1100px]
-                    2xl:max-w-[50%] 2xl:translate-x-[-60%]
+                    2xl:max-w-[50%]
                     '
                         initial={{ height: 0 }}
                         transition={{type: "spring", stiffness: 70}}
@@ -304,13 +304,13 @@ function Index(){
 
                 {/* About CS Subject Container */}
                 <div onClick={() => open3(prev => !prev)}
-                className="z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
-                active:mt-5 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-4 max-w-[485px] animate-moveACSdown
-                sm:translate-x-[-56.5%] sm:h-20 sm:mb-1 sm:mt-4 sm:max-w-[600px]
-                md:translate-x-[-55.5%] md:mb-1 md:max-w-[700px]
-                lg:translate-x-[-56%] lg:max-w-[900px]
+                className="z-10 bg-main font-bold text-MainRedThree relative left-1/2 -translate-x-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
+                active:mt-5 active:shadow-none active:bg-mainThree h-16 mb-4 max-w-[485px] animate-moveACSdown
+                sm:h-20 sm:mb-1 sm:mt-4 sm:max-w-[600px]
+                md:mb-1 md:max-w-[700px]
+                lg:max-w-[900px]
                 xl:max-w-[1100px]
-                2xl:max-w-[50%] 2xl:translate-x-[-60%]
+                2xl:max-w-[50%]
                 "
                 >
 
@@ -356,13 +356,13 @@ function Index(){
                 {opened3 && (
 
                     // About Me Subject Context Section
-                    <motion.div className='z-0 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 overflow-hidden items-center
-                    translate-x-[-55.5%] h-fit ml-[5%] mb-[30px] mt-[-58px] max-w-[485px] border-2 border-black
-                    sm:translate-x-[-56.5%] sm:max-w-[600px]
-                    md:translate-x-[-55.5%] md:max-w-[700px]
-                    lg:translate-x-[-56%] lg:max-w-[900px]
+                    <motion.div className='z-0 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative left-1/2 -translate-x-1/2 overflow-hidden items-center
+                    h-fit mb-[30px] mt-[-58px] max-w-[485px] border-2 border-black
+                    sm:max-w-[600px]
+                    md:max-w-[700px]
+                    lg:max-w-[900px]
                     xl:max-w-[1100px]
-                    2xl:max-w-[50%] 2xl:translate-x-[-60%]
+                    2xl:max-w-[50%]
                     '
                         initial={{ height: 0 }}
                         transition={{type: "spring", stiffness: 70}}
@@ -406,13 +406,13 @@ function Index(){
 
                 {/* About Logo Subject Container */}
                 <div onClick={() => open4(prev => !prev)}
-                className="z-10 bg-main font-bold text-MainRedThree relative left-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
-                active:mt-5 active:shadow-none active:bg-mainThree translate-x-[-55.5%] h-16 ml-[5%] mb-12 max-w-[485px] animate-moveALdown
-                sm:translate-x-[-56.5%] sm:h-20 sm:mt-4 sm:max-w-[600px]
-                md:translate-x-[-55.5%] md:max-w-[700px]
-                lg:translate-x-[-56%] lg:max-w-[900px]
+                className="z-10 bg-main font-bold text-MainRedThree relative left-1/2 -translate-x-1/2 top-[-1000px] cursor-pointer shadow-bottom border-2 border-black
+                active:mt-5 active:shadow-none active:bg-mainThree h-16 mb-12 max-w-[485px] animate-moveALdown
+                sm:h-20 sm:mt-4 sm:max-w-[600px]
+                md:max-w-[700px]
+                lg:max-w-[900px]
                 xl:max-w-[1100px]
-                2xl:max-w-[50%] 2xl:translate-x-[-60%]
+                2xl:max-w-[50%]
                 ">
 
                     {/* Inner Subject Container */}
@@ -457,12 +457,12 @@ function Index(){
                 {opened4 && (
                     // About Logo Subject Context Section
                     <motion.div className='z-0 bg-mainThree text-MainRedThree rounded-lg flex flex-col justify-center relative items-center
-                    left-1/2 overflow-hidden translate-x-[-55.5%] h-fit ml-[5%] mb-[80px] mt-[-61px] max-w-[485px] border-2 border-black
-                    sm:translate-x-[-56.5%] sm:max-w-[600px]
-                    md:translate-x-[-55.5%] md:max-w-[700px]
-                    lg:translate-x-[-56%] lg:max-w-[900px]
+                    left-1/2 -translate-x-1/2 overflow-hidden h-fit mb-[80px] mt-[-61px] max-w-[485px] border-2 border-black
+                    sm:max-w-[600px]
+                    md:max-w-[700px]
+                    lg:max-w-[900px]
                     xl:max-w-[1100px]
-                    2xl:max-w-[50%] 2xl:translate-x-[-60%]
+                    2xl:max-w-[50%]
                     '
                         initial={{ height: 0 }}
                         transition={{type: "spring", stiffness: 70}}
@@ -501,9 +501,7 @@ function Index(){
                 
 
                 {/* Footer Component */}
-                <div className='hidden xl:block w-full'>
-                    <Footer />
-                </div>
+                <Footer />
             </div>
         </div>
     );

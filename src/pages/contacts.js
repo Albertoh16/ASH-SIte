@@ -5,11 +5,11 @@ import { motion } from "framer-motion"
 
 function Contacts() {
   return (
-    <div>
+    <div className='min-h-screen bg-gradient-to-b from-mainTwo via-mainTwo to-black/25'>
         {/* Main Contacts Container */}
       <div className='w-full h-fit absolute min-w-[320px] text-center
         top-20
-        sm:top-24 
+        sm:top-24
         lg:top-32
       '>
 

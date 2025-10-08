@@ -1,0 +1,136 @@
+[
+    {
+    "id": 1,
+    "company": "Feam Aero",
+    "position": "Software Engineering Intern",
+    "startDate": "2025-09",
+    "endDate": "Present",
+    "location": "Hybrid",
+    "logo": "FeamAeroLogo.png",
+    "images": [
+    ],
+    "descriptions": [
+      "Maintained an aviation reporting platform utilizing C#, React, TypeScript, Bootstrap, and SQL Server, improving data reliability and achieving a 20% faster report generation time.",
+      "Developed an aviation maintenance AI platform with Python, Flask, and React, enhancing predictive accuracy by 15% and reducing data processing time by 30%.",
+      "Partnered with cross-functional teams in an Agile environment using Azure DevOps for sprint planning, backlog refinement, and cloud-based deployments, sustaining a 95% sprint completion rate."
+    ],
+    "skills": [
+      "C#",
+      "Python",
+      "TypeScript",
+      "JavaScript",
+      "SQL",
+      "React",
+      "Bootstrap",
+      "Flask",
+      ".NET",
+      "Microsoft SQL Management Studio",
+      "Data Reliability Improvement",
+      "Azure DevOps",
+      "CI/CD",
+      "Scrum"
+    ],
+    "current": true,
+    "personalNotes": [
+      "I recently started this internship so I don't have much to say yet; however, I do feel warmly welcomed by the team and i'm enjoying working on integrating/polishing features!"
+    ]
+  },
+  {
+    "id": 2,
+    "company": "UKG",
+    "position": "Software Engineering Intern",
+    "startDate": "2024-09",
+    "endDate": "2024-12",
+    "location": "Hybrid",
+    "logo": "UKGLogo.png",
+    "images": [
+      "UKGTeam.png"
+    ],
+    "descriptions": [
+      "Enhanced enterprise-level financial reporting software using C#, .NET MVC, and SQL Server, reducing report load times by 18%.",
+      "Designed and implemented a tool within Dynamics 365 using X++, Microsoft Power Platform, and SQL Server to manage bulk-action alerts, improving workflow automation by 25%.",
+      "Collaborated across engineering and QA teams through Azure DevOps pipelines, contributing to 4+ successful release cycles with zero major regressions."
+    ],
+    "skills": [
+    "C#",
+    ".NET MVC",
+    "Microsoft SQL Server",
+    "X++",
+    "Microsoft Dynamics 365",
+    "Microsoft Power Platform",
+    "Workflow Automation",
+    "Performance Optimization",
+    "Azure DevOps",
+    "CI/CD"
+    ],
+    "current": false,
+    "personalNotes": [
+      "In my time at UKG, I collaborated with the finance software development IT team and utilized C# with the ASP.NET MVC framework, and used internal APIs to enhance our Microsoft Dynamics 365 environment. I also designed a solution for efficient customer data management in SQL and even developed an in-house tool to streamline workflows and improve our internal operational efficiency!",
+      "I had a wonderful time working with my team! I was treated as if I had been there for years, and I was even asked for advice on several technical design choices for our internal products. My time there felt short, but I decided to continue my college studies so I can graduate and become an official software engineer, hopefully for a company as welcoming as UKG. Or who knows, maybe UKG is my calling!"
+    ]
+  },
+  {
+    "id": 3,
+    "company": "Mercedes-Benz",
+    "position": "System/Network Analyst",
+    "startDate": "2023-08",
+    "endDate": "2024-09",
+    "location": "Coral Gables, FL",
+    "logo": "mercedesLogo.png",
+    "images": [
+      "mercedesBuilding.png"
+    ],
+    "descriptions": [
+      "Supported enterprise infrastructure and automation efforts, collaborating directly with the System Administrator to strengthen system reliability and reduce recurring IT incidents by 40%.",
+      "Automated deployment workflows using PowerShell and managed systems in Office 365, Azure, and Active Directory, cutting manual setup time by 60%."
+    ],
+    "skills": [
+    "Infrastructure Support",
+    "IT Automation",
+    "System Reliability Improvement",
+    "Incident Reduction",
+    "PowerShell",
+    "Workflow Automation",
+    "Office 365 Administration",
+    "Microsoft Azure",
+    "Active Directory Management",
+    "Deployment Automation"
+    ],
+    "current": false,
+    "personalNotes": [
+      "While working at Mercedes-Benz of Coral Gables, I gained hands on experience in back-end IT, which focused on managing Windows Server environments and ensuring system and network stability. I regularly utilized tools such as Office 365 Admin, Active Directory, and Azure to handle our user management, security policies, and even cloud services. Additionally, I worked with the Kaseya suite of software for endpoint monitoring, mass software deployment, and automating tasks. Even though this position had little to do with software engineering, it helped me sharpen my practical understanding of software engineering concepts like system architecture, API integration, and the role of automation in scalable infrastructure!",
+      "The story of how I landed this position is pretty interesting! I actually started out as a porter for the company, and after just two months, I had the opportunity to speak with the building's IT team and was transferred over as a trainee. After a couple of weeks, I was considered fit for the role, and ever since then, I worked as IT support for the entire building! I was one of three team members and helped reorganize the company's infrastructure right up until my bittersweet, yet adventurous departure to UKG! I'll never forget how lucky I was to land that position and the incredible chance the Coral Gables branch gave me to join their IT team!"
+    ]
+  },
+  {
+    "id": 4,
+    "company": "Miami-Dade College",
+    "position": "Teacher's Assistant / CS Tutor",
+    "startDate": "2022-08",
+    "endDate": "2023-08",
+    "location": "Miami, FL",
+    "logo": "MDCLogo.png",
+    "images": [
+      "friends.jpg"
+    ],
+    "descriptions": [
+      "Provided assistance in teaching and testing college students in a multitude of computer programming classes as well as provided ideas on homework assignments and material that was used for teaching.",
+      "Tutored college students in various programming languages, such as: C, C++, Java, and Python. Also tutored frameworks and software development software."
+    ],
+    "skills": [
+    "Teaching Assistance",
+    "Tutoring",
+    "C/C++",
+    "Java",
+    "Python",
+    "Software Development Concepts",
+    "Programming Frameworks",
+    "Technical Communication"
+    ],
+    "current": false,
+    "personalNotes": [
+      "My venture first started in Miami Dade College. I first worked as a teacher's assistant, helping teach basic concepts for languages, such as C++, Java, and Python. After the semester ended, I was moved to be a general tutor for Computer Science, in which I tutored students in the same aforementioned languages as well as C and frameworks, like java spring and FX.",
+      "My time tutoring at MDC was fun, but I never would've guessed that it would also connect me with like-minded people, which you can see in the image above. I made great friends with other tutors, and now we occasionally get together to work on all kinds of projects! We even won second place at the 2024 FIU ShellHack, one of the largest hackathons in the nation! I may have taught many people at MDC, but I ended up learning something too; there are networking opportunities everywhere, you just have to put yourself out there!"
+    ]
+  }
+]

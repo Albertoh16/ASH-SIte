@@ -28,12 +28,14 @@ function Projects() {
           'Accept': 'application/vnd.github.v3+json'
         };
 
-        const response = await fetch('https://api.github.com/user/repos?visibility=all&per_page=100&sort=updated', {
+        const response = await fetch('https://api.github.com/users/Albertoh16/repos?per_page=100&sort=updated', {
           headers: headers
         });
 
         const data = await response.json();
-        setRepositories(data);
+        console.log('API Response:', data);
+        console.log('Is Array?', Array.isArray(data));
+        setRepositories(Array.isArray(data) ? data : []);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching repositories:', error);
@@ -49,7 +51,7 @@ function Projects() {
   };
 
   // Remove duplicates, keeping the one with a homepage
-  const uniqueRepos = repositories.reduce((acc, repo) => {
+  const uniqueRepos = Array.isArray(repositories) ? repositories.reduce((acc, repo) => {
     const existing = acc.find(r => r.name === repo.name);
     if (!existing) {
       acc.push(repo);
@@ -59,7 +61,7 @@ function Projects() {
       acc[index] = repo;
     }
     return acc;
-  }, []);
+  }, []) : [];
 
   const sortedRepositories = [...uniqueRepos]
     .filter(repo => repo.name !== 'AutoShortsCreator') // Exclude this repository
@@ -123,7 +125,7 @@ function Projects() {
     <div className="relative min-h-screen overflow-y-auto">
 
       {/* Main Container */}
-      <div className='bg-mainTwo w-screen h-full flex flex-col items-center justify-center
+      <div className='bg-gradient-to-b from-mainTwo via-mainTwo to-black/25 w-screen h-full flex flex-col items-center justify-center
       pt-20 pb-10 px-3
       subAdj1:px-5
       sm:px-8
@@ -133,51 +135,50 @@ function Projects() {
       2xl:px-16
       '>
 
-        {/* Sort Controls Container */}
-        <div className='w-full max-w-[1200px] flex flex-col gap-2 mb-4
-        tiny:gap-2
-        subAdj1:flex-row subAdj1:justify-end subAdj1:gap-3
-        sm:gap-4
-        '>
-          {/* Sort By Dropdown */}
-          <select
-            value={sortBy}
-            onChange={(e) => setSortBy(e.target.value)}
-            className='bg-MainRedThree hover:bg-MainRedTwo text-white font-bold rounded cursor-pointer border-2 border-black
-            py-1 px-2 text-sm
-            subAdj1:py-2 subAdj1:px-3 subAdj1:text-base
-            sm:py-2 sm:px-4
-            '
-          >
-            <option value="updated">Sort by Updated</option>
-            <option value="created">Sort by Created</option>
-            <option value="alphabetical">Sort Alphabetically</option>
-          </select>
+        {/* Wrapper for Grid and Controls */}
+        <div className='relative w-[90%] max-w-[1200px] mt-10'>
+          {/* Sort Controls - Fixed to Top Right, Outside Grid */}
+          <div className='absolute top-0 right-0 flex flex-col gap-2 z-10 -translate-y-[calc(100%+0.5rem)]
+          tiny:gap-2
+          subAdj1:flex-row subAdj1:gap-3
+          sm:gap-4
+          '>
+            {/* Sort By Dropdown */}
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className='bg-MainRedThree hover:bg-MainRedTwo text-white font-bold rounded cursor-pointer border-2 border-black
+              py-1 px-2 text-sm
+              subAdj1:py-2 subAdj1:px-3 subAdj1:text-base
+              sm:py-2 sm:px-4
+              '
+            >
+              <option value="updated">Sort by Updated</option>
+              <option value="created">Sort by Created</option>
+              <option value="alphabetical">Sort Alphabetically</option>
+            </select>
 
-          {/* Sort Order Button */}
-          <button
-            onClick={toggleSortOrder}
-            className='bg-MainRedThree hover:bg-MainRedTwo text-white font-bold rounded border-2 border-black
-            py-1 px-2 text-sm
-            subAdj1:py-2 subAdj1:px-3 subAdj1:text-base
-            sm:py-2 sm:px-4
-            '
-          >
-            {sortOrder === 'desc' ? '↓ Descending' : '↑ Ascending'}
-          </button>
-        </div>
+            {/* Sort Order Button */}
+            <button
+              onClick={toggleSortOrder}
+              className='bg-MainRedThree hover:bg-MainRedTwo text-white font-bold rounded border-2 border-black
+              py-1 px-2 text-sm
+              subAdj1:py-2 subAdj1:px-3 subAdj1:text-base
+              sm:py-2 sm:px-4
+              '
+            >
+              {sortOrder === 'desc' ? '↓ Descending' : '↑ Ascending'}
+            </button>
+          </div>
 
-        {/* Repository Container */}
-        <div className='bg-mainFour grid h-fit rounded-lg border-MainRedTwo border-2
-        w-full grid-cols-1 gap-4 p-4
-        tiny:gap-5 tiny:p-5
-        subAdj1:gap-6 subAdj1:p-6 subAdj1:w-[400px]
-        sm:w-[600px] sm:grid-cols-2 sm:gap-8 sm:p-8
-        md:w-[700px]
-        lg:w-[900px] lg:grid-cols-3 lg:gap-10 lg:p-10
-        xl:w-[1200px]
-        2xl:w-[1400px]
-        '>
+          {/* Repository Container */}
+          <div className='bg-mainFour grid h-fit rounded-lg border-MainRedTwo border-2
+          grid-cols-2 gap-4 p-4 mt-2
+          tiny:gap-5 tiny:p-5
+          subAdj1:gap-6 subAdj1:p-6
+          sm:grid-cols-2 sm:gap-8 sm:p-8
+          lg:grid-cols-3 lg:gap-10 lg:p-10
+          '>
 
           {loading ? (
             <div className='text-mainRed text-2xl col-span-full text-center'>Loading repositories...</div>
@@ -191,17 +192,18 @@ function Projects() {
                 '
                 onClick={() => openProject(repo)}
               >
-                <div className='w-full h-full text-center rounded-2xl flex flex-col items-center justify-center text-MainRedThree font-bold p-5
-                text-3xl
-                sm:text-xl
-                md:text-2xl
-                xl:text-3xl
-                '>
-                  <div className='break-words w-full uppercase'>{repo.name}</div>
+              <div className='w-full h-full text-center rounded-2xl flex flex-col items-center justify-center text-MainRedThree font-bold p-[3.5]
+              text-[3vw]
+              md:text-[3vw]
+              lg:text-[1.5vw]
+              '>
+                  <div className='break-words w-full uppercase'>{repo.name.replace(/-/g, ' ')}</div>
                 </div>
               </div>
             ))
           )}
+
+          </div>
 
         </div>
 
@@ -232,9 +234,7 @@ function Projects() {
                 tiny:text-lg
                 subAdj1:text-xl subAdj1:px-14
                 sm:text-2xl sm:px-16 sm:max-w-[85%]
-                md:text-3xl md:px-18
-                lg:text-4xl lg:px-20
-                xl:text-5xl
+                md:text-3xl md:px-12
                 ' style={{wordBreak: 'break-all', overflowWrap: 'anywhere'}}>
                   {selectedProject.name}
                 </div>
